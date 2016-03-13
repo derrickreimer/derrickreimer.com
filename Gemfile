@@ -10,5 +10,14 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 
 # Middleman Gems
 gem 'middleman', '>= 4.0.0'
-gem 'middleman-livereload'
-gem 'middleman-deploy'
+gem 'middleman-deploy', github: 'middleman-contrib/middleman-deploy'
+gem 'middleman-blog'
+
+gem 'redcarpet', '~> 3.3', '>= 3.3.3'
+
+# For feed.xml.builder
+gem 'builder', "~> 3.0"
+
+gem 'bitters'
+gem 'bourbon'
+gem 'neat'

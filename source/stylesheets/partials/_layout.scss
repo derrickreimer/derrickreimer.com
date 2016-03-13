@@ -1,0 +1,12 @@
+.site-container {
+  @include outer-container;
+}
+
+.page-header {
+  padding: 10px 0;
+}
+
+.logo {
+  margin-bottom: -8px;
+  margin-right: 5px;
+}

@@ -1,0 +1,13 @@
+<div class="post">
+  <h2 class="post-title"><%= link_to article.title, article %></h2>
+
+  <div class="post-metadata">
+    <span class="post-author"><%= article.data[:author] %></span>
+    &mdash;
+    <time class="post-timestamp"><%= article.date.strftime('%B %e, %Y') %></time>
+  </div>
+
+  <div class="post-body">
+    <%= article.body %>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+---
+title: "Announcing Codetree: GitHub Issues, Managed"
+date: 2016-03-13
+author: Derrick Reimer
+tags: example
+---
+
+After six months of intense product development, Codetree is officially
+open to the public. If you use GitHub issues, I think you're going to love
+what we've built. But don't take my word for it &mdash;
+[sign up for a free trial](https://codetree.com/signin)
+and take it for a spin. If you're interested in more details, keep reading.
+
+Six months ago, I set out to transform the way product teams interact with their
+GitHub issues. Before I get to the punch line, let me set some context for you.
+
+In addition to founding Codetree, I'm the tech lead for a burgeoning
+[marketing automation app](https://www.getdrip.com). Like many product teams these
+days, we settled on using the [GitHub Flow&trade;](https://guides.github.com/introduction/flow/index.html)
+and almost immediately began reaping the benefits. We were iterating faster,
+shipping higher quality code, and at the end of the day, making our customers happier.
+
+As my team continued to grow, I found myself spending more time on administrivia and less
+time in the code. My daily routine involved hopping between our project management tool
+and GitHub, solely to keep things happening in our GitHub issues and pull requests
+in sync with our PM tool. That's when I realized that my tools were getting in the
+way more than they were helping me.
+
+The endless back and forth between the project management app and GitHub was
+killing my productivity. And if your workflow is anything like mine, chances are
+it's killing your productivity too.
+
+GitHub Issues is an amazing product. Dare I say my favorite quality about GitHub Issues
+is what it *doesn't do*. You get a title, description, labels, milestone, and assignee.
+That's it. No giant list of fields to populate or boxes to tick.
+
+But, as we moved further towards migrating all project management to
+GitHub, we discovered there was some key functionality missing that was preventing
+us from making the leap.
+
+### That's when Codetree was born
+
+Codetree is a lightweight project management app that sits directly on top of GitHub.
+Every issue in Codetree corresponds to a GitHub issue and projects are kept continually in sync.
+We provide just the features needed for project management, without reinventing
+what GitHub already executes beautifully.
+
+My team and I had our own wish list, which included **prioritization**,
+a **compact list view**, and time/point **estimates**. Before long, I began receiving
+feature requests from potential customers, such as **multi-repository projects**, **dependency
+tracking**, and kanban **task boards**, to name a few. I'm proud to say that most of
+these features above are available today.
+
+### This is just the beginning
+
+If you use GitHub issues, I think you are going to love Codetree. We have much more
+in store for the product and look forward to helping product teams be more
+awesome at managing their development queues.
+[Sign up for a free trial](https://codetree.com) and let me know what you think!

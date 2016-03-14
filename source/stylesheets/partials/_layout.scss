@@ -5,10 +5,13 @@
 .page-header {
   @include clearfix;
   padding: 10px 0;
+  margin-bottom: 80px;
+  font-size: 16px;
 }
 
 .site-title {
   float: left;
+  font-weight: normal;
 }
 
 .logo {
@@ -26,4 +29,37 @@
 .page-header-nav-item {
   display: inline-block;
   margin: 0 15px;
+}
+
+.post {
+  // @include outer-container(680px);
+  max-width: 680px;
+  // margin-left: 100px;
+}
+
+.post-title {
+  font-size: 40px;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+  // font-weight: normal;
+  // text-align: center;
+
+  a {
+    color: $dark-gray;
+    // color: #555;
+
+    &:hover {
+      // color: $blue;
+    }
+  }
+}
+
+.post-metadata {
+  margin-bottom: $small-spacing;
+  color: $medium-gray;
+  // text-align: center;
+}
+
+.post-timestamp {
+
 }

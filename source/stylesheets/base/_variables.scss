@@ -3,19 +3,19 @@ $medium-screen: 600px;
 $large-screen: 900px;
 
 // Typography
-$base-font-family: "canada-type-gibson", $font-stack-system;
+$base-font-family: "source-sans-pro", $font-stack-system;
 $heading-font-family: $base-font-family;
 
 // Font Sizes
-$base-font-size: 1em;
+$base-font-size: 20px;
 
 // Line height
-$base-line-height: 1.5;
+$base-line-height: 1.7;
 $heading-line-height: 1.2;
 
 // Other Sizes
 $base-border-radius: 3px;
-$base-spacing: $base-line-height * 1em;
+$base-spacing: $base-line-height * $base-font-size * 1.8;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 

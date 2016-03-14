@@ -7,7 +7,7 @@
     <script src="https://use.typekit.net/bnm7pbu.js"></script>
     <script>try{Typekit.load({ async: false });}catch(e){}</script>
 
-    <title>Blog Title<%= ' - ' + current_article.title unless current_article.nil? %></title>
+    <title>Scaling SaaS<%= ' - ' + current_article.title unless current_article.nil? %></title>
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
 
     <%= stylesheet_link_tag :site %>
@@ -20,6 +20,16 @@
           <img src="/images/logo.svg" alt="Logo" class="logo" />
           Scaling SaaS
         </h1>
+
+        <ul class="page-header-nav">
+          <li class="page-header-nav-item">
+            <a href="#">Meet Derrick</a>
+          </li>
+
+          <li class="page-header-nav-item">
+            <a href="#">Get Updates</a>
+          </li>
+        </ul>
       </div>
 
       <div id="main" role="main">

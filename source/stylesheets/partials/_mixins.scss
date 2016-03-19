@@ -1,8 +1,0 @@
-@mixin sidebar-background-gradient($base-color) {
-  // @include linear-gradient(315deg, transparent 10px, lighten($base-color, 10%) 10px, $base-color);
-  @include linear-gradient(45deg, $base-color, lighten($base-color, 10%));
-}
-
-@mixin sidebar-heading-gradient($base-color) {
-  @include linear-gradient(45deg, $base-color, lighten($base-color, 10%));
-}

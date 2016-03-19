@@ -16,46 +16,27 @@
   <body>
     <div class="site-container">
       <div class="page-header">
-        <h1 class="site-title">
-          <img src="/images/logo.svg" alt="Logo" class="logo" />
-          Scaling SaaS
-        </h1>
+        <div class="page-header-inner">
+          <h1 class="site-title">
+            <img src="/images/logo.svg" alt="Logo" class="logo" />
+            Scaling SaaS
+          </h1>
 
-        <ul class="page-header-nav">
-          <li class="page-header-nav-item">
-            <a href="#">About</a>
-          </li>
+          <ul class="page-header-nav">
+            <li class="page-header-nav-item">
+              <a href="#">About</a>
+            </li>
 
-          <li class="page-header-nav-button">
-            <a href="#" class="button">Get Updates</a>
-          </li>
-        </ul>
+            <li class="page-header-nav-button">
+              <a href="#" class="button">Get Updates</a>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div class="main-content">
         <%= yield %>
       </div>
-
-      <aside class="sidebar">
-        <div class="sidebar-block">
-          <h3 class="sidebar-block-heading">New here?</h3>
-          <div class="sidebar-block-content">
-            <p>Scaling SaaS is a blog about building and scaling
-              software-as-a-service apps through the lens of a technical founder.</p>
-          </div>
-        </div>
-
-        <!-- <div class="sidebar-block yellow">
-          <h3 class="sidebar-block-heading">Dealing with Feature Requests: A Free Email Course</h3>
-          <div class="sidebar-block-content">
-            <p>Scaling SaaS is a blog about building and scaling
-              software-as-a-service apps through the lens of a technical founder.</p>
-
-            <input type="text" />
-            <input type="submit" />
-          </div>
-        </div> -->
-      </aside>
     </div>
   </body>
 </html>

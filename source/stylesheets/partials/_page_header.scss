@@ -1,8 +1,14 @@
 .page-header {
   @include clearfix;
-  padding: 15px 0 20px;
+  padding: 20px 12px;
   margin-bottom: 80px;
   font-size: $page-header-font-size;
+  border-bottom: 1px solid $light-gray;
+}
+
+.page-header-inner {
+  margin: 0 auto;
+  max-width: $page-header-width;
 }
 
 .site-title {

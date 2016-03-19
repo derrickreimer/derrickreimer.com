@@ -2,6 +2,10 @@
 $medium-screen: 600px;
 $large-screen: 1000px;
 
+// Widths
+$page-header-width: $large-screen;
+$post-width: 650px;
+
 // Grid
 $gutter: modular-scale(3, 1em, $golden) !global;
 

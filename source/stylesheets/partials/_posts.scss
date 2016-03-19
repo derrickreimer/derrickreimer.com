@@ -1,0 +1,29 @@
+.post-title {
+  font-size: 54px;
+  margin-bottom: 5px;
+  letter-spacing: -1px;
+
+  a {
+    color: $dark-gray;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+}
+
+.post-metadata {
+  // font-family: $mono-font-family;
+  // font-size: 16px;
+  font-size: $post-font-size;
+  margin-bottom: $small-spacing;
+  color: $medium-gray;
+}
+
+.post-timestamp {
+
+}
+
+.post-body {
+  font-size: $post-font-size;
+}

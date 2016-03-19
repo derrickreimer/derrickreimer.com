@@ -1,5 +1,5 @@
 ---
-title: "Announcing Codetree: GitHub Issues, Managed"
+title: "Battling Legacy"
 date: 2016-03-13
 author: Derrick Reimer
 tags: example

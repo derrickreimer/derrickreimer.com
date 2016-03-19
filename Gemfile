@@ -19,5 +19,5 @@ gem 'redcarpet', '~> 3.3', '>= 3.3.3'
 gem 'builder', "~> 3.0"
 
 gem 'bitters'
-gem 'bourbon'
+gem 'bourbon', '~> 4.2'
 gem 'neat'

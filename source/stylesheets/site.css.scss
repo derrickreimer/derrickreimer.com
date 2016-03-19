@@ -4,4 +4,10 @@
 @import "base/base";   /* Bitters needs to be imported before Neat */
 @import "neat";
 
+@import "partials/mixins";
+
 @import "partials/layout";
+@import "partials/page_header";
+@import "partials/main_content";
+@import "partials/sidebar";
+@import "partials/posts";

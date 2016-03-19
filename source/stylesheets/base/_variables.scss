@@ -1,29 +1,41 @@
 // Breakpoints
 $medium-screen: 600px;
-$large-screen: 900px;
+$large-screen: 1000px;
+
+// Grid
+$gutter: modular-scale(3, 1em, $golden) !global;
 
 // Typography
-$base-font-family: "ff-dagny-web-pro", $font-stack-system;
+$font-stack-system: 'Helvetica', 'Arial', sans-serif;
+$base-font-family: 'ff-dagny-web-pro', $font-stack-system;
 $heading-font-family: $base-font-family;
+$mono-font-family: 'courier-prime', monospace;
 
 // Font Sizes
-$base-font-size: 20px;
+$base-font-size: 16px;
+$post-font-size: 20px;
 
 // Line height
 $base-line-height: 1.6;
-$heading-line-height: 1.2;
+$heading-line-height: 1.4;
 
 // Other Sizes
 $base-border-radius: 3px;
-$base-spacing: $base-line-height * $base-font-size * 1.8;
+$base-spacing: $base-line-height * $base-font-size * 2.4;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
-$blue: #1565c0;
+$blue: #095cc4;
+
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
+
+$dark-mint: #2aad77;
+$light-mint: #7bfebf;
+
+$medium-yellow: #f6e417;
 
 // Font Colors
 $base-font-color: $dark-gray;

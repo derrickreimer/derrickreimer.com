@@ -1,6 +1,10 @@
+.post {
+  margin-bottom: $base-spacing * 2;
+}
+
 .post-title {
   font-size: 54px;
-  margin-bottom: 0;
+  margin-bottom: 5px;
   letter-spacing: -1px;
 
   a {
@@ -24,8 +28,6 @@
 .post-body {
 
   a {
-    color: lighten($blue, 20%);
-    // font-weight: bold;
-    border-bottom: 2px solid lighten($blue, 50%);
+    border-bottom: 2px solid lighten($blue, 40%);
   }
 }

@@ -11,7 +11,7 @@
 
 .site-title {
   float: left;
-  font-weight: normal;
+  font-family: $base-font-family;
 }
 
 .logo {
@@ -38,9 +38,9 @@
 }
 
 .post-title {
-  font-size: 40px;
+  font-size: 54px; //40px;
   margin-bottom: 10px;
-  letter-spacing: -0.5px;
+  letter-spacing: -1px;
   // font-weight: normal;
   // text-align: center;
 

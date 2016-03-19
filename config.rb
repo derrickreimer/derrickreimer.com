@@ -71,3 +71,9 @@ end
 activate :deploy do |deploy|
   deploy.deploy_method = :git
 end
+
+helpers do
+  def disqus_page_identifier(url)
+    Digest::SHA256.hexdigest(url)
+  end
+end

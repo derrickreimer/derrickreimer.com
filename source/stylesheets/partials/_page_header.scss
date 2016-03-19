@@ -2,6 +2,7 @@
   @include clearfix;
   padding: 20px 12px;
   margin-bottom: 80px;
+  font-family: $mono-font-family;
   font-size: $page-header-font-size;
   border-bottom: 1px solid $light-gray;
 }
@@ -14,7 +15,16 @@
 .site-title {
   margin-bottom: 0;
   float: left;
-  font-family: $base-font-family;
+  font-family: $mono-font-family;
+  font-size: 20px;
+
+  a {
+    color: $dark-gray;
+
+    &:hover {
+      color: $action-color;
+    }
+  }
 }
 
 .logo {
@@ -32,10 +42,9 @@
 
 .page-header-nav-item {
   display: inline-block;
-  margin: 0 12px;
-}
+  margin: 0 10px;
 
-.page-header-nav-button {
-  display: inline-block;
-  margin: 0 0 0 12px;
+  &:last-child {
+    margin-right: 0;
+  }
 }

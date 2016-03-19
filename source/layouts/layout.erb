@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://use.typekit.net/bnm7pbu.js"></script>
     <script>try{Typekit.load({ async: false });}catch(e){}</script>
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
     <title>Scaling SaaS<%= ' - ' + current_article.title unless current_article.nil? %></title>
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
@@ -18,8 +19,10 @@
       <div class="page-header">
         <div class="page-header-inner">
           <h1 class="site-title">
-            <img src="/images/logo.svg" alt="Logo" class="logo" />
-            Scaling SaaS
+            <a href="/">
+              <img src="/images/logo.svg" alt="Logo" class="logo" />
+              Scaling SaaS
+            </a>
           </h1>
 
           <ul class="page-header-nav">
@@ -27,7 +30,7 @@
               <a href="#">About</a>
             </li>
 
-            <li class="page-header-nav-button">
+            <li class="page-header-nav-item">
               <a href="#" class="button">Get Updates</a>
             </li>
           </ul>

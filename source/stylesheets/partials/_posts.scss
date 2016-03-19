@@ -22,4 +22,10 @@
 }
 
 .post-body {
+
+  a {
+    color: lighten($blue, 20%);
+    // font-weight: bold;
+    border-bottom: 2px solid lighten($blue, 50%);
+  }
 }

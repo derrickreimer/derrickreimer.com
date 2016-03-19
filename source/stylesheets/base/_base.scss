@@ -3,6 +3,10 @@
 // Copyright 2013-2015 thoughtbot, inc.
 // MIT License
 
+// Borrowed from a new version of Bourbon (5 beta) which is currently buggy for us:
+// https://github.com/thoughtbot/bourbon/blob/1888e67e21ccfbfa68f513c8577768ce7660d05d/core/bourbon/library/_font-stacks.scss
+@import "font-stacks";
+
 @import "variables";
 
 @import "buttons";

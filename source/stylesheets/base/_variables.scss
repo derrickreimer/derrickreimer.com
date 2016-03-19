@@ -3,17 +3,16 @@ $medium-screen: 600px;
 $large-screen: 1000px;
 
 // Widths
-$page-header-width: $large-screen;
+$page-header-width: 1100px;
 $post-width: 650px;
 
 // Grid
 $gutter: modular-scale(3, 1em, $golden) !global;
 
 // Typography
-$font-stack-system: 'Helvetica', 'Arial', sans-serif;
 $base-font-family: 'franklin-gothic-urw', $font-stack-system;
 $heading-font-family: $base-font-family;
-$mono-font-family: 'courier-prime', monospace;
+$mono-font-family: 'Inconsolata', $font-stack-courier-new;
 
 // Font Sizes
 $base-font-size: 20px;

@@ -12,8 +12,9 @@ $heading-font-family: $base-font-family;
 $mono-font-family: 'courier-prime', monospace;
 
 // Font Sizes
-$base-font-size: 16px;
-$post-font-size: 20px;
+$base-font-size: 20px;
+$page-header-font-size: $base-font-size * 0.8;
+$sidebar-font-size: $base-font-size * 0.8;
 
 // Line height
 $base-line-height: 1.6;
@@ -21,7 +22,7 @@ $heading-line-height: 1.4;
 
 // Other Sizes
 $base-border-radius: 3px;
-$base-spacing: $base-line-height * $base-font-size * 2.4;
+$base-spacing: $base-line-height * $base-font-size * 1.8;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 

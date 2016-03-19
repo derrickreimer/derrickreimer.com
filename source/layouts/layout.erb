@@ -12,7 +12,20 @@
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
 
     <%= stylesheet_link_tag :site %>
-    <%= javascript_include_tag :all %>
+    <%= javascript_include_tag :analytics %>
+
+    <script type="text/javascript">
+      analytics.initialize({
+        'Google Analytics': {
+           trackingId: 'UA-75340229-1'
+         },
+         'Drip': {
+           account: '8045758'
+         }
+      });
+
+      analytics.page();
+    </script>
   </head>
   <body>
     <div class="site-container">

@@ -1,21 +1,18 @@
 .page-header {
   @include clearfix;
-  padding: 20px 12px;
+  padding: 30px 12px;
   margin-bottom: 80px;
-  font-family: $mono-font-family;
   font-size: $page-header-font-size;
-  border-bottom: 1px solid $light-gray;
-}
 
-.page-header-inner {
-  margin: 0 auto;
-  max-width: $page-header-width;
+  &.inverse {
+    background-color: $blue;
+    color: white;
+  }
 }
 
 .site-title {
   margin-bottom: 0;
   float: left;
-  font-family: $mono-font-family;
   font-size: 20px;
 
   a {
@@ -23,6 +20,14 @@
 
     &:hover {
       color: $action-color;
+    }
+
+    .inverse & {
+      color: white;
+
+      &:hover {
+        color: white;
+      }
     }
   }
 }
@@ -35,7 +40,6 @@
 .page-header-nav {
   margin: 10px 0;
   padding: 0;
-  // font-family: $mono-font-family;
   list-style-type: none;
   float: right;
 }
@@ -47,4 +51,18 @@
   &:last-child {
     margin-right: 0;
   }
+
+  a {
+
+    .inverse & {
+      color: white;
+    }
+  }
+}
+
+.bkg-overhead {
+  background-image: url('/images/bkg-overhead.jpg');
+  background-size: cover;
+  background-position: 50%;
+  min-height: 300px;
 }

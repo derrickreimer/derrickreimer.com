@@ -27,29 +27,33 @@
       analytics.page();
     </script>
   </head>
-  <body>
-    <div class="site-container">
-      <div class="page-header">
-        <div class="page-header-inner">
-          <h1 class="site-title">
-            <a href="/">
+  <body class="<%= page_classes %>">
+    <div class="page-header <%= 'inverse' if current_page.data[:header_inverted] %> <%= current_page.data[:header_classes] %>">
+      <div class="site-container">
+        <h1 class="site-title">
+          <a href="/">
+            <% if current_page.data[:header_inverted] %>
+              <img src="/images/logo-white.svg" alt="Logo" class="logo" />
+            <% else %>
               <img src="/images/logo.svg" alt="Logo" class="logo" />
-              Scaling SaaS
-            </a>
-          </h1>
+            <% end %>
+            Scaling SaaS
+          </a>
+        </h1>
 
-          <ul class="page-header-nav">
-            <li class="page-header-nav-item">
-              <a href="#">About</a>
-            </li>
+        <ul class="page-header-nav">
+          <li class="page-header-nav-item">
+            <%= link_to 'About', '/about.html' %>
+          </li>
 
-            <li class="page-header-nav-item">
-              <a href="#" class="button">Get Updates</a>
-            </li>
-          </ul>
-        </div>
+          <li class="page-header-nav-item">
+            <a href="mailto:derrick@scalingsaas.com" class="button">Email Me</a>
+          </li>
+        </ul>
       </div>
+    </div>
 
+    <div class="site-container">
       <div class="main-content">
         <%= yield %>
       </div>

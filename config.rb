@@ -13,8 +13,7 @@ page '/*.txt', layout: false
 # page "/path/to/file.html", layout: :otherlayout
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
-# proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
-#  which_fake_page: "Rendering a fake page with a local variable" }
+proxy "/index.html", "/about.html" # Override the home page temporarily
 
 # General configuration
 
@@ -53,28 +52,19 @@ activate :directory_indexes
 # end
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def disqus_page_identifier(url)
+    Digest::SHA256.hexdigest(url)
+  end
+end
 
 # Build-specific configuration
 configure :build do
-  # Minify CSS on build
   activate :minify_css
-
-  # Minify Javascript on build
   activate :minify_javascript
 end
 
 # Deployment to GH pages
 activate :deploy do |deploy|
   deploy.deploy_method = :git
-end
-
-helpers do
-  def disqus_page_identifier(url)
-    Digest::SHA256.hexdigest(url)
-  end
 end

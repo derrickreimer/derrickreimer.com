@@ -40,3 +40,7 @@ hr {
   border-top: 0;
   margin: $base-spacing 0;
 }
+
+figcaption {
+  font-size: modular-scale(-1);
+}

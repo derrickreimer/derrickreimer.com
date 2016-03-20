@@ -4,7 +4,7 @@
 
 .post-title {
   font-size: 54px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   letter-spacing: -1px;
 
   a {
@@ -30,4 +30,8 @@
   a {
     border-bottom: 2px solid lighten($blue, 40%);
   }
+}
+
+.post-full-image {
+  margin-bottom: $small-spacing;
 }

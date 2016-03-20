@@ -3,6 +3,8 @@
   padding: 30px 12px;
   margin-bottom: 80px;
   font-size: $page-header-font-size;
+  // background-color: #f2f2f2;
+  @include linear-gradient(315deg, #e8e8e8, #fafafa);
 
   &.inverse {
     background-color: $blue;

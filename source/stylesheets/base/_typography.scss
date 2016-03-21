@@ -44,3 +44,23 @@ hr {
 figcaption {
   font-size: modular-scale(-1);
 }
+
+blockquote {
+  position: relative;
+  margin: $small-spacing $small-spacing * 1.5;
+  color: $medium-gray;
+
+  &:before {
+    content: '“';
+    position: absolute;
+    font-family: $font-stack-georgia;
+    left: -38px;
+    top: 30px;
+    font-size: 60px;
+    line-height: 0;
+  }
+
+  cite {
+    font-style: italic;
+  }
+}

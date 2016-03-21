@@ -13,7 +13,7 @@ page '/*.txt', layout: false
 # page "/path/to/file.html", layout: :otherlayout
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
-proxy "/index.html", "/about.html" # Override the home page temporarily
+# proxy "/index.html", "/about.html" # Override the home page temporarily
 
 # General configuration
 

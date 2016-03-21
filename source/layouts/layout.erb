@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="shortcut icon" href="/favicon.png">
     <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://use.typekit.net/bnm7pbu.js"></script>
@@ -27,6 +27,11 @@
 
       analytics.page();
     </script>
+
+    <meta property="og:title" content="Scaling SaaS<%= ' - ' + current_article.title unless current_article.nil? %>" />
+    <meta property="og:type" content="text/html" />
+    <meta property="og:url" content="http://www.scalingsaas.com<%= current_page.url %>" />
+    <meta property="og:image" content="http://www.scalingsaas.com/images/logo-square-300.png" />
   </head>
   <body class="<%= page_classes %>">
     <div class="page-header <%= 'inverse' if current_page.data[:header_inverted] %> <%= current_page.data[:header_classes] %>">

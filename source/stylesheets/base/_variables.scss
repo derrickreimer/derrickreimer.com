@@ -4,13 +4,13 @@ $large-screen: 1000px;
 
 // Widths
 $page-width: 1100px;
-$post-width: 650px;
+$post-width: 680px;
 
 // Grid
 $gutter: modular-scale(3, 1em, $golden) !global;
 
 // Typography
-$base-font-family: 'franklin-gothic-urw', $font-stack-system;
+$base-font-family: 'europa', $font-stack-system;
 $heading-font-family: $base-font-family;
 $mono-font-family: 'Inconsolata', $font-stack-courier-new;
 
@@ -32,7 +32,7 @@ $base-z-index: 0;
 // Colors
 $blue: #095cc4;
 
-$dark-gray: #333;
+$dark-gray: #444;
 $medium-gray: #999;
 $light-gray: #ddd;
 

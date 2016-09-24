@@ -52,10 +52,11 @@
 
 a.podcast-post-artwork {
   float: left;
+  margin: 0 15px 15px 0;
   border: 0;
 
   img {
-    margin-right: 3px;
+    display: block;
     border-radius: 6px;
     width: 75px;
     height: 75px;
@@ -63,5 +64,9 @@ a.podcast-post-artwork {
 }
 
 .podcast-post-body {
-  margin-left: 90px;
+  // margin-left: 90px;
+
+  @include media($mobile) {
+    margin-left: 0;
+  }
 }

@@ -24,6 +24,10 @@
   float: left;
   font-size: 20px;
 
+  @include media($mobile) {
+    float: none;
+  }
+
   a {
     color: $dark-gray;
 
@@ -59,40 +63,35 @@
 }
 
 .page-header-nav-item {
-  display: inline-block;
-  padding: 10px $small-spacing / 1.5;
-  font-size: 15px;
-  line-height: 1.1;
-  border-radius: 25px;
-  border: 1px solid $action-color;
-  transition: border-color $base-duration $base-timing;
-
-  &:hover {
-    border-color: shade($action-color, 25%);
-  }
+  display: block;
+  float: left;
 
   & + & {
-    margin-left: 2px;
+    margin-left: 4px;
   }
-
-  .inverse & {
-    border: 0;
-    transition: background-color $base-duration $base-timing;
-    background-color: rgba(0,0,0,0.4);
-
-    &:hover {
-      background-color: rgba(0,0,0,0.6);
-    }
-  }
-
-  // &:last-child {
-  //   margin-right: 0;
-  // }
 
   a {
+    display: block;
+    padding: 10px $small-spacing / 1.5;
+    font-size: 15px;
+    line-height: 1.1;
+    border-radius: 25px;
+    border: 1px solid $action-color;
+    transition: border-color $base-duration $base-timing;
+
+    &:hover {
+      border-color: shade($action-color, 25%);
+    }
 
     .inverse & {
+      border: 0;
+      transition: background-color $base-duration $base-timing;
+      background-color: rgba(0,0,0,0.4);
       color: white;
+
+      &:hover {
+        background-color: rgba(0,0,0,0.6);
+      }
     }
   }
 }

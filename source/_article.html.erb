@@ -8,14 +8,21 @@
   </div>
 
   <div class="post-body">
-    <%= article.body %>
+    <% if locals[:summary_only] %>
+      <%= article.summary %>
+      <%= link_to "Continue reading &rarr;", article.url %>
+    <% else %>
+      <%= article.body %>
+    <% end %>
   </div>
 
-  <div class="post-social">
-    <a href="https://twitter.com/share"
-       class="twitter-share-button"
-       data-url="http://www.scalingsaas.com<%= article.url %>"
-       data-text="<%= article.title %>"
-       data-via="ScalingSaaS"
-       data-size="large">Tweet</a>
+  <% unless locals[:summary_only] %>
+    <div class="post-social">
+      <a href="https://twitter.com/share"
+         class="twitter-share-button"
+         data-url="http://www.scalingsaas.com<%= article.url %>"
+         data-text="<%= article.title %>"
+         data-via="ScalingSaaS"
+         data-size="large">Tweet</a>
+  <% end %>
 </article>

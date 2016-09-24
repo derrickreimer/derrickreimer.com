@@ -11,6 +11,8 @@ With all the excitement of a blank canvas comes an equal amount of anxiety. You 
 
 Take a deep breath, it doesn't have to be this hard.
 
+READMORE
+
 ### Stick with what you know
 
 I know you've heard it a million times and I'm going to repeat it because it's true: any modern web stack is perfectly suitable for most web applications. Don't get me wrong, I love a good "my language is better than your language" debate as much as the next engineer. And when you scour the web for objective comparisons of different technologies, that's exactly what you will find. But the truth is, that will lead you no closer to the "right" answer because there is no right answer.

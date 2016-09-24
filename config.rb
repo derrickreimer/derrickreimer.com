@@ -2,6 +2,17 @@
 # Page options, layouts, aliases and proxies
 ###
 
+PODCASTS = {
+  "giant-robots" => {
+    name: "Giant Robots Smashing Into Other Giant Robots",
+    url: "http://giantrobots.fm/"
+  },
+  "rubyrogues" => {
+    name: "Ruby Rogues",
+    url: "https://devchat.tv/ruby-rogues"
+  }
+}
+
 # Per-page layout changes:
 #
 # With no layout
@@ -73,6 +84,18 @@ helpers do
     attributes[:style] = style if style
 
     content_tag(:div, attributes, &block)
+  end
+
+  def podcast_name(id)
+    PODCASTS.fetch(id, {}).fetch(:name, "Unknown")
+  end
+
+  def podcast_url(id)
+    PODCASTS.fetch(id, {}).fetch(:url, "Unknown")
+  end
+
+  def podcast_link(id)
+    link_to podcast_name(id), podcast_url(id)
   end
 end
 

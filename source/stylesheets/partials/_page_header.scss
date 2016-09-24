@@ -61,7 +61,12 @@
   font-size: 15px;
   line-height: 1.1;
   border-radius: 25px;
-  border: 1px solid $blue;
+  border: 1px solid $action-color;
+  transition: border-color $base-duration $base-timing;
+
+  &:hover {
+    border-color: shade($action-color, 25%);
+  }
 
   & + & {
     margin-left: 2px;
@@ -69,7 +74,12 @@
 
   .inverse & {
     border: 0;
+    transition: background-color $base-duration $base-timing;
     background-color: rgba(0,0,0,0.4);
+
+    &:hover {
+      background-color: rgba(0,0,0,0.6);
+    }
   }
 
   // &:last-child {

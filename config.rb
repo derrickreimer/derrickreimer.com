@@ -56,6 +56,24 @@ helpers do
   def disqus_page_identifier(url)
     Digest::SHA256.hexdigest(url)
   end
+
+  def page_header_div(options, &block)
+    klasses = %w(page-header)
+    klasses << 'inverse' if options[:header_inverted]
+    klasses << 'with-background' if options[:header_image]
+    klasses << options[:header_classes]
+
+    style = nil
+
+    if options[:header_image]
+      style = "background-image: url(#{options[:header_image]});"
+    end
+
+    attributes = { class: klasses.join(' ') }
+    attributes[:style] = style if style
+
+    content_tag(:div, attributes, &block)
+  end
 end
 
 # Build-specific configuration

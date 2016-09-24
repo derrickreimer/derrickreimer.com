@@ -32,7 +32,7 @@
     <meta property="og:image" content="http://www.scalingsaas.com/images/logo-square-300.png" />
   </head>
   <body class="<%= page_classes %>">
-    <div class="page-header <%= 'inverse' if current_page.data[:header_inverted] %> <%= current_page.data[:header_classes] %>">
+    <% page_header_div(current_page.data) do %>
       <div class="site-container">
         <h1 class="site-title">
           <a href="/">
@@ -55,7 +55,7 @@
           </li>
         </ul>
       </div>
-    </div>
+    <% end %>
 
     <div class="site-container">
       <div class="main-content">

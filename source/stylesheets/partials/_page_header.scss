@@ -11,8 +11,7 @@
     color: white;
   }
 
-  &.bkg-overhead {
-    background-image: url('/images/bkg-overhead.jpg');
+  &.with-background {
     background-size: cover;
     background-position: 50%;
     min-height: 300px;

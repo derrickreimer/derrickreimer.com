@@ -15,7 +15,25 @@
     background-size: cover;
     background-position: 50%;
     min-height: 300px;
+    position: relative;
+
+    &:before {
+      content: '';
+    	position: absolute;
+    	top: 0;
+    	right: 0;
+    	left: 0;
+      height: 170px;
+
+      // @include linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0));
+      background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6), transparent);
+      background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0.6), transparent);
+    }
   }
+}
+
+.page-navigation {
+  position: relative;
 }
 
 .site-title {
@@ -74,9 +92,10 @@
     display: block;
     padding: 10px $small-spacing / 1.5;
     font-size: 15px;
+    font-weight: bold;
     line-height: 1.1;
     border-radius: 25px;
-    border: 1px solid $action-color;
+    border: 2px solid $action-color;
     transition: border-color $base-duration $base-timing;
 
     &:hover {
@@ -84,13 +103,14 @@
     }
 
     .inverse & {
-      border: 0;
-      transition: background-color $base-duration $base-timing;
-      background-color: rgba(0,0,0,0.4);
+      // border: 0;
+      border-color: #fff;
+      // transition: background-color $base-duration $base-timing;
+      // background-color: rgba(0,0,0,0.4);
       color: white;
 
       &:hover {
-        background-color: rgba(0,0,0,0.6);
+        // background-color: rgba(0,0,0,0.6);
       }
     }
   }

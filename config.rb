@@ -10,6 +10,14 @@ PODCASTS = {
   "rubyrogues" => {
     name: "Ruby Rogues",
     url: "https://devchat.tv/ruby-rogues"
+  },
+  "sftrou" => {
+    name: "Startups For the Rest Of Us",
+    url: "http://www.startupsfortherestofus.com/"
+  },
+  "zen-founder" => {
+    name: "Zen Founder",
+    url: "http://zenfounder.com/"
   }
 }
 

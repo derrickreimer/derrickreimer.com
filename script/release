@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "Building..."
+bundle exec middleman build
+
+echo "Deploying to GitHub pages..."
+bundle exec middleman deploy
+
+echo "Release completed"

@@ -21,6 +21,9 @@ PODCASTS = {
   }
 }
 
+set :markdown_engine, :redcarpet
+set :markdown, fenced_code_blocks: true, smartypants: true
+
 # Per-page layout changes:
 #
 # With no layout
@@ -58,12 +61,13 @@ activate :blog do |blog|
   blog.calendar_template = "calendar.html"
 
   # Enable pagination
-  # blog.paginate = true
-  # blog.per_page = 10
-  # blog.page_link = "page/{num}"
+  blog.paginate = true
+  blog.per_page = 10
+  blog.page_link = "page/{num}"
 end
 
 activate :directory_indexes
+activate :syntax
 
 # Reload the browser automatically whenever files change
 # configure :development do

@@ -3,7 +3,7 @@
 }
 
 .post-title {
-  font-size: 40px;
+  font-size: 39px;
   margin-top: 0;
   margin-bottom: 10px;
   letter-spacing: -1px;
@@ -35,6 +35,19 @@
   a {
     // font-weight: bold;
     border-bottom: 2px solid lighten($blue, 40%);
+  }
+
+  pre {
+    padding: $small-spacing;
+    background-color: $secondary-background-color;
+    overflow-x: auto;
+  }
+
+  ul {
+    margin-left: $base-spacing;
+    margin-bottom: $small-spacing;
+    list-style-type: disc;
+    list-style-position: outside;
   }
 }
 

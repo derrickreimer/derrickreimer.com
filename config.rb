@@ -3,6 +3,10 @@
 ###
 
 PODCASTS = {
+  "full-stack-radio" => {
+    name: "Full Stack Radio",
+    url: "http://www.fullstackradio.com/"
+  },
   "giant-robots" => {
     name: "Giant Robots Smashing Into Other Giant Robots",
     url: "http://giantrobots.fm/"

@@ -38,9 +38,16 @@
   }
 
   pre {
-    padding: $small-spacing;
+    padding: $base-spacing / 3;
+    line-height: $code-line-height;
     background-color: $secondary-background-color;
+    border-radius: $base-border-radius;
     overflow-x: auto;
+
+    code {
+      padding: 0;
+      background: none;
+    }
   }
 
   ul {

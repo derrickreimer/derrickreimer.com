@@ -46,7 +46,7 @@ We determined that sharding would carry high development price tag, increase our
 
 ## "Always fast" is a pipe dream
 
-We came to another important realization as we evaluated our options. It's very possible the largest Drip customer may someday have millions of subscribers and hundreds of millions of `deliveries` and `subscriber_events` to their name. Even if we sharded our database by account and gave this customer their own dedicated shard, their segmentation queries would _still_ be vulnerable to slowness.
+We came to another important realization as we evaluated our options. It's feasible that the largest Drip customer may someday have millions of subscribers and hundreds of millions of `deliveries` and `subscriber_events` to their name. Even if we sharded our database by account and gave this customer their own dedicated shard, their segmentation queries would _still_ be vulnerable to slowness.
 
 Abandoning the goal of trying to make every possible query combination run quickly allowed us to reframe the question. Instead of asking "how can we make these queries always run quickly?", we started asking "how can minimize the pain our customer experience when accomplishing the task of segmenting their subscriber database?"
 

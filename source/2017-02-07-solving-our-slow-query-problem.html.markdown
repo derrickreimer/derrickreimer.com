@@ -26,6 +26,8 @@ WHERE t.value = 'Customer'
 
 A more complex query could have many different joins against large tables, and the fact that these complex queries can be generated on the fly by the user makes them particularly challenging to optimize.
 
+READMORE
+
 ## To shard, or not to shard?
 
 The largest tables in the Drip database are the `deliveries` and `subscriber_events` tables, each nearing a billion records. A subscriber query with even a single join against one of these tables is often prohibitively slow, depending on the size of the customer's account.
@@ -39,7 +41,7 @@ We explored these approaches in depth, along the way asking ourselves these ques
 - How many new technologies will be introduced?
 - How strongly are we locked in to the approach once adopted?
 
-Deeply ingrained in our engineering culture is an [aversion to risk](TODO: insert link to boring tech article), especially when that risk lies outside of our zone of competitive advantages. We will gladly make calculated bets when it comes to building cutting-edge marketing automation features, but much less so when it making choices about our underlying database technologies.
+Deeply ingrained in our engineering culture is an [aversion to risk](http://www.scalingsaas.com/posts/choosing-the-perfect-tech-stack/), especially when that risk lies outside of our zone of competitive advantages. We will gladly make calculated bets when it comes to building cutting-edge marketing automation features, but much less so when it making choices about our underlying database technologies.
 
 We determined that sharding would carry high development price tag, increase our hosting cost by an order of magnitude, and introduce a high degree of vendor lock-in. Partitioning large tables would carry similar development costs and would limit our ability to run queries that need to span all the partitions (which is part of what makes Drip so powerful).
 

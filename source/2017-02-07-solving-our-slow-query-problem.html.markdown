@@ -41,17 +41,17 @@ We explored these approaches in depth, along the way asking ourselves these ques
 - How many new technologies will be introduced?
 - How strongly are we locked in to the approach once adopted?
 
-Deeply ingrained in our engineering culture is an [aversion to risk](http://www.scalingsaas.com/posts/choosing-the-perfect-tech-stack/), especially when that risk lies outside of our zone of competitive advantages. We will gladly make calculated bets when it comes to building cutting-edge marketing automation features, but much less so when it making choices about our underlying database technologies.
+Deeply ingrained in our engineering culture is an [aversion to risk](http://www.scalingsaas.com/posts/choosing-the-perfect-tech-stack/), especially when that risk lies outside of our zone of competitive advantages. We will gladly make calculated bets when it comes to building cutting-edge marketing automation features, but much less so when making choices about our underlying database technologies.
 
-We determined that sharding would carry high development price tag, increase our hosting cost by an order of magnitude, and introduce a high degree of vendor lock-in. Partitioning large tables would carry similar development costs and would limit our ability to run queries that need to span all the partitions (which is part of what makes Drip so powerful).
+We determined that sharding would carry a high development price tag, increase our hosting cost by an order of magnitude, and introduce a high degree of vendor lock-in. Partitioning large tables would carry similar development costs and would limit our ability to run queries that need to span all the partitions (which is part of what makes Drip so powerful).
 
 ## "Always fast" is a pipe dream
 
 We came to another important realization as we evaluated our options. It's feasible that the largest Drip customer may someday have millions of subscribers and hundreds of millions of `deliveries` and `subscriber_events` to their name. Even if we sharded our database by account and gave this customer their own dedicated shard, their segmentation queries would _still_ be vulnerable to slowness.
 
-Abandoning the goal of trying to make every possible query combination run quickly allowed us to reframe the question. Instead of asking "how can we make these queries always run quickly?", we started asking "how can minimize the pain our customer experience when accomplishing the task of segmenting their subscriber database?"
+Abandoning the goal of trying to make every possible query combination run quickly allowed us to reframe the question. Instead of asking "how can we make these queries always run quickly?", we started asking "how can minimize the pain our customers experience when accomplishing the task of segmenting their subscriber database?"
 
-This led to a key observation: segments tend to be long-lived and reused many times. For example, the criteria that defines who belongs in a "Customer" segment is unlikely to change. Once defined, the user is likely to reference that segment in many different scenarios, such as when sending a broadcast email targeted to existing customers, or within a workflow decision to send customer down a different journey than non-customers.
+This led to a key observation: segments tend to be long-lived and reused many times. For example, the criteria that defines who belongs in a "Customer" segment is unlikely to change. Once defined, the user is likely to reference that segment in many different scenarios, such as when sending a broadcast email targeted to existing customers, or within a workflow decision to send customers down a different journey than non-customers.
 
 In its current form, complex segments were guaranteed to run slowly every time they were viewed. If we could reduce that slowness to just the first time a segment is built, that would dramatically improve the user experience.
 
@@ -59,9 +59,9 @@ In its current form, complex segments were guaranteed to run slowly every time t
 
 We had long assumed that it was not feasible to cache the results of a segmentation query, because the tolerance threshold for stale results is extremely tight. Unlike analytics data, an invalid segment cache could result in someone receiving an email they shoudn't have, or worse, getting pruned from a subscriber database erroneously.
 
-Questioning our initial assumption, we realized that it _is_ possible to keep the cached results fresh in realtime, provided that "recheck" segment membership anytime a subscriber event occurs. More over, we could piggyback off of our automation engine infrastructure to process these rechecks without significant development effort.
+Questioning our initial assumption, we realized that it _is_ possible to keep the cached results fresh in realtime, provided that we "recheck" segment membership anytime a subscriber event occurs. More over, we could piggyback off of our automation engine infrastructure to process these rechecks without significant development effort.
 
-With a strategy in hand, the next step was to choose the technology for storing this cached data. The natural choice was [Redis](https://redis.io/). There were a number of qualities about Redis that made is particularly attractive:
+With a strategy in hand, the next step was to choose the technology for storing this cached data. The natural choice was [Redis](https://redis.io/). There were a number of qualities about Redis that made it particularly attractive:
 
 - We are already using it aggressively for our `Rails.cache` and our [Sidekiq](http://sidekiq.org) queues
 - We know how to deploy it and the potential pitfalls
@@ -71,8 +71,8 @@ With a strategy in hand, the next step was to choose the technology for storing 
 
 The final piece of the puzzle was crafting the user experience. Here's the flow that we settled on:
 
-- When a user build a segment, we attempt to run the query and return the results right away. If it the query finishes within a few seconds, great!
-- If the query is taking a while, then display a message to the user that we are going to compute it in the background and email them when it's ready.
+- When a user builds a segment, attempt to run the query and return the results right away. If the query finishes within a few seconds, great!
+- If the query is taking a while, display a message to the user that we are going to compute it in the background and email them when it's ready.
 - Kick off a background process that will attempt to run the SQL query with a much longer timeout. If the query finishes before timing out, stick the results in a Redis set and let the user know it's ready.
 - If the query is taking a _really_ long time, fallback to a "looping" strategy where we pull out each subscriber in the account and check to see if the subscriber belongs in the segment.
 

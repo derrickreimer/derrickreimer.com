@@ -1,6 +1,6 @@
 ---
 title: "Solving Our Slow Query Problem"
-date: 2017-02-07
+date: 2017-02-09
 author: Derrick Reimer
 tags: tech
 ---
@@ -57,30 +57,30 @@ In its current form, complex segments were guaranteed to run slowly every time t
 
 ## Live caching to the rescue
 
-We had long assumed that it was not feasible to cache the results of a segmentation query, because it is unacceptable to ever return stale results. Unlike analytics data, which can be a few hours behind realtime without much consequence, an invalid segment cache could result in someone receiving an email they shouldn't have, or worse, getting pruned from a subscriber database erroneously.
+We had long assumed that it was not feasible to cache the results of a segmentation query because it is unacceptable to ever return stale results. Unlike analytics data, which can be a few hours behind realtime without much consequence, an invalid segment cache could result in someone receiving an email they shouldn't have, or worse, getting pruned from a subscriber database erroneously.
 
-Questioning our initial assumption, we realized that it _is_ possible to keep the cached results fresh in realtime, provided that we "recheck" segment membership anytime a subscriber event occurs. With a strategy in hand, the next step was to choose the technology for storing this cached data. We considered using Postgres, but ultimately settled on using [Redis](https://redis.io/).
+Questioning our initial assumption, we realized that it _is_ possible to keep the cached results fresh in realtime, provided that we "recheck" segment membership anytime a subscriber event occurs. With a strategy in hand, the next step was to choose the technology for storing this cached data. We considered using Postgres, but ultimately settled on [Redis](https://redis.io/).
 
 The [sorted](https://redis.io/commands#sorted_set) and [unsorted](https://redis.io/commands#set) set data types are the killer features that made us choose Redis:
 
-- They are [countable in `O(1)` time](https://redis.io/commands/scard)
+- They are [countable in `O(1)` time](https://redis.io/commands/scard), meaning they take the same amount of time to count regardless of the number of members
 - They can be created and deleted much more quickly that inserting and deleting large batches of records in Postgres
-- They will never contain duplicate members, even if the same member is "added multiple times"
+- They will never contain duplicate members, even if the same member is "added" multiple times
 
 The final piece of the puzzle was crafting the user experience. Here's the flow that we settled on:
 
 - When a user builds a segment, attempt to run the query and return the results right away. If the query finishes within a few seconds, great!
 - If the query is taking a while, display a message to the user that we are going to compute it in the background and email them when it's ready.
-- Kick off a background process that will attempt to run the SQL query with a much longer timeout. If the query finishes before timing out, stick the results in a Redis set and let the user know it's ready.
-- If the query is taking a _really_ long time, fallback to a "looping" strategy where we pull out each subscriber in the account and check to see if the subscriber belongs in the segment.
+- Kick off a background process that will attempt to run the SQL query with a much longer timeout. If the query _still_ times out (some queries are so complicated they will run for hours without completing), fallback to a "looping" strategy where we pull out each subscriber in the account and check to see if the subscriber belongs in the segment.
+- Send the user an email with a link when the segment is ready to view.
 
 ## Deployment
 
 We deliberately chose to roll out segment caching gradually. The initial version was built as an entirely new subsystem in the codebase, so there was very little risk of breaking existing segments. Rather than modify the existing `Segment` model, we created a new `LiveSegment` model with its own database table and domain logic. This allowed us to create `LiveSegment` records in many different customers' accounts and verify correctness without impacting any of their existing segments.
 
-Once we were confident that cached segments were indeed staying in sync with the database, we migrated the caching code over to the `Segment` model and removed the transitional code. To ease with the migration, we made sure the old segment behavior remained in place if the `cached` flag was set to `false` on the segment record. In the event that a bug is discovered that a cached segment is not able to stay up-to-date, we can easily disable caching for that segment only and fallback to the old behavior.
+Once we were confident that cached segments were indeed staying up-to-date, we migrated the caching code over to the existing `Segment` model. We made sure the old behavior remained in place if the `cached` flag is set to `false` on the segment record so we can easily disable caching for specific segments if a bug is discovered.
 
-Since this use of Redis is distinct from our ephemeral caching needs (the data needs to stick around indefinitely) and Sidekiq queuing, we spun up a dedicated cluster of Redis servers that we call our "persistent Redis" store -- more details on that in a future post.
+Since this use of Redis is distinct from our ephemeral caching needs (the data needs to stick around indefinitely) and Sidekiq queuing, we spun up a dedicated cluster of Redis servers that we call our "persistent Redis" store -- more details to come on that process in a future post.
 
 ## Moving forward
 

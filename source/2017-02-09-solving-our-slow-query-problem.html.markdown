@@ -49,7 +49,7 @@ We determined that sharding would carry a high development price tag, increase o
 
 We came to another important realization as we evaluated our options. It's feasible that the largest Drip customer may someday have millions of subscribers and hundreds of millions of `deliveries` and `subscriber_events` to their name. Even if we sharded our database by account and gave this customer their own dedicated shard, their segmentation queries would _still_ be vulnerable to slowness.
 
-Abandoning the goal of trying to make every possible query combination run quickly allowed us to reframe the question. Instead of asking "how can we make these queries always run quickly?", we started asking "how can minimize the pain our customers experience when segmenting their subscriber database?"
+Abandoning the goal of trying to make every possible query combination run quickly allowed us to reframe the question. Instead of asking "how can we make these queries always run quickly?", we started asking "how can we minimize the pain our customers experience when segmenting their subscriber database?"
 
 Segments tend to be long-lived and reused many times. For example, the criteria that defines who belongs in a "Customer" segment is unlikely to change. Once defined, the user is likely to reference that segment in many different scenarios, such as when sending a broadcast email targeted to existing customers, or within a workflow decision to send customers down a different journey than non-customers.
 
@@ -64,7 +64,7 @@ Questioning our initial assumption, we realized that it _is_ possible to keep th
 The [sorted](https://redis.io/commands#sorted_set) and [unsorted](https://redis.io/commands#set) set data types are the killer features that made us choose Redis:
 
 - They are [countable in `O(1)` time](https://redis.io/commands/scard), meaning they take the same amount of time to count regardless of the number of members
-- They can be created and deleted much more quickly that inserting and deleting large batches of records in Postgres
+- They can be created and deleted much more quickly than inserting and deleting large batches of records in Postgres
 - They will never contain duplicate members, even if the same member is "added" multiple times
 
 The final piece of the puzzle was crafting the user experience. Here's the flow that we settled on:
@@ -72,7 +72,7 @@ The final piece of the puzzle was crafting the user experience. Here's the flow 
 - When a user builds a segment, attempt to run the query and return the results right away. If the query finishes within a few seconds, great!
 - If the query is taking a while, display a message to the user that we are going to compute it in the background and email them when it's ready.
 - Kick off a background process that will attempt to run the SQL query with a much longer timeout. If the query _still_ times out (some queries are so complicated they will run for hours without completing), fallback to a "looping" strategy where we pull out each subscriber in the account and check to see if the subscriber belongs in the segment.
-- Send the user an email with a link when the segment is ready to view.
+- Send the user an email with a link when the segment is ready to view. From that point forward, the cached segment will load instantaneously.
 
 ## Deployment
 
@@ -80,7 +80,7 @@ We deliberately chose to roll out segment caching gradually. The initial version
 
 Once we were confident that cached segments were indeed staying up-to-date, we migrated the caching code over to the existing `Segment` model. We made sure the old behavior remained in place if the `cached` flag is set to `false` on the segment record so we can easily disable caching for specific segments if a bug is discovered.
 
-Since this use of Redis is distinct from our ephemeral caching needs (the data needs to stick around indefinitely) and Sidekiq queuing, we spun up a dedicated cluster of Redis servers that we call our "persistent Redis" store -- more details to come on that process in a future post.
+Since this use of Redis is distinct from our ephemeral caching (segment cache data needs to stick around indefinitely) and Sidekiq queues, we spun up a dedicated cluster of Redis servers that we call our "persistent Redis" store -- more details on that to come in a future post.
 
 ## Moving forward
 

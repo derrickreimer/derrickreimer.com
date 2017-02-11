@@ -1,3 +1,28 @@
 .site-container {
   @include outer-container($page-width);
 }
+
+.pagination {
+  padding: $gutter 0;
+  text-align: center;
+
+  // text-transform: uppercase;
+  // font-size: 15px;
+  // letter-spacing: 1.5px;
+  font-weight: 800;
+}
+
+.pagination-summary {
+  color: $medium-gray;
+}
+
+.pagination-link {
+
+  &--prev {
+    margin-right: $small-spacing / 2;
+  }
+
+  &--next {
+    margin-left: $small-spacing / 2;
+  }
+}

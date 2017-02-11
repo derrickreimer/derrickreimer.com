@@ -6,7 +6,7 @@ podcast:
   id: giant-robots
   episode_number: 223
   url: http://giantrobots.fm/223
-tags: tech
+tags: podcast
 ---
 
 Ben & Derrick discuss music in the workplace, optimizing Redis, reaching larger markets beyond early adopters, and standing out in job application e-mails.

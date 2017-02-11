@@ -6,7 +6,7 @@ podcast:
   id: giant-robots
   episode_number: 220
   url: http://giantrobots.fm/220
-tags: tech
+tags: podcast
 ---
 
 Ben decides to hire a support firm, document support processes, completes the Hound pricing change, and prepares to make products their own division for next year. Meanwhile, on Drip, Derrick addresses a performance challenge.

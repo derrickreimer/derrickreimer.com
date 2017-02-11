@@ -6,7 +6,7 @@ podcast:
   id: full-stack-radio
   episode_number: 57
   url: http://www.fullstackradio.com/57
-tags: tech
+tags: podcast
 ---
 
 In this episode, Adam talks to me about the technical challenges behind building and scaling [Drip](https://drip.co), a sophisticated email marketing automation platform.

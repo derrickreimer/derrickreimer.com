@@ -6,7 +6,7 @@ podcast:
   id: giant-robots
   episode_number: 209
   url: http://giantrobots.fm/209
-tags: tech
+tags: podcast
 ---
 
 On [Drip](https://www.drip.co), Derrick deals with a high-bandwidth customer and hires a new devops team member. Meanwhile, Ben brainstorms new pricing structures for Hound.

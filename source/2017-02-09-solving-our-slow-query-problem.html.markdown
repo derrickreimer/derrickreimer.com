@@ -9,6 +9,8 @@ One of the core features of Drip is the ability to segment your subscriber datab
 
 As our Postgres dataset has grown into the multi-terabyte size range, these ad-hoc segmentation queries have become increasingly expensive to run, especially for accounts with many thousands of subscribers and millions of subscriber events.
 
+READMORE
+
 There's really nothing magical going on under the covers. The subscriber filter in Drip works like this:
 
 - Accept a blob of JSON from the UI that describes the criteria
@@ -25,8 +27,6 @@ WHERE t.value = 'Customer'
 ```
 
 A more complex query could have many different `JOIN` clauses with large tables, and the fact that these complex queries can be generated on the fly by the user makes them particularly challenging to optimize.
-
-READMORE
 
 ## To shard, or not to shard?
 

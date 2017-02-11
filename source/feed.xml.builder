@@ -11,7 +11,7 @@ xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
     xml.name "Derrick Reimer"
   end
 
-  blog.articles[0..5].each do |article|
+  blog.articles.each do |article|
     xml.entry do
       xml.title article.title
       xml.link "rel" => "alternate", "href" => URI.join(site_url, article.url)
@@ -19,7 +19,7 @@ xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
       xml.published article.date.to_time.iso8601
       xml.updated File.mtime(article.source_file).iso8601
       xml.author { xml.name article.data[:author] }
-      # xml.summary article.summary, "type" => "html"
+      xml.summary article.summary, "type" => "html"
       xml.content article.body, "type" => "html"
     end
   end

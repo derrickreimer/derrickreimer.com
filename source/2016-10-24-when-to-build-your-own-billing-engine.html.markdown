@@ -2,7 +2,7 @@
 title: "When To Build Your Own Billing Engine"
 date: 2016-10-24
 author: Derrick Reimer
-tags: tech
+tags: writing
 ---
 
 Back when we started [Drip](https://www.drip.co) in 2012, it was customary to write your own recurring billing engine.

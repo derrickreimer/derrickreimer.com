@@ -2,7 +2,7 @@
 title: "Solving Our Slow Query Problem"
 date: 2017-02-09
 author: Derrick Reimer
-tags: tech
+tags: writing
 ---
 
 One of the core features of Drip is the ability to segment your subscriber database by tags, custom fields, events performed, campaign and workflow subscriptions, and so on.

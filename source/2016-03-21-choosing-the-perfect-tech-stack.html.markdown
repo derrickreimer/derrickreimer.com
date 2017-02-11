@@ -2,7 +2,7 @@
 title: "Choosing the Perfect Tech Stack"
 date: 2016-03-21
 author: Derrick Reimer
-tags: tech
+tags: writing
 ---
 
 Nothing quite compares to greenfield software development. The canvas is blank and you finally have the opportunity to do it "The Right Way" from the ground up. If you've been building web apps for a while, you've undoubtedly found yourself working with technologies that you'd never use again, given the luxury of a blank canvas. And if you follow the open source world, there's probably a brand-spanking-new boutique framework you've been itching to take for a spin.

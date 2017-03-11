@@ -61,6 +61,9 @@ activate :blog do |blog|
   # blog.day_link = "{year}/{month}/{day}.html"
   # blog.default_extension = ".markdown"
 
+  # Don't include podcast articles in the main feed
+  blog.filter = proc { |a| !a.tags.include?("podcast") }
+
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"
 

@@ -11,11 +11,11 @@ Fundamentally, a SaaS billing engine is simply a scheduled task that runs each m
 
 Most developers these days choose not to build their own billing engine, as free platforms like Stripe subscriptions promise to rid your application code of complex billing logic. It seems like a no-brainer, right?
 
+READMORE
+
 At [Drip](https://www.drip.co), we discovered that many of our billing needs actually fall outside the "sweet spot" of recurring billing solutions on the market today. Rather than shoehorning into Stripe subscriptions, it was simpler to manage the recurring aspect of billing ourselves alongside all the other custom logic we were implementing.
 
 If your application shares similar billing characteristics as Drip, you may also find that building your own billing engine is the simpler option.
-
-READMORE
 
 ## Metered plans
 

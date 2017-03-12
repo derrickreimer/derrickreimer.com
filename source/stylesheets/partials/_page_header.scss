@@ -88,6 +88,14 @@
     margin-left: 4px;
   }
 
+  &:last-child a {
+    border-color: $action-color;
+
+    .inverse & {
+      border-color: #fff;
+    }
+  }
+
   a {
     display: block;
     padding: 10px $small-spacing / 1.5;
@@ -95,7 +103,7 @@
     font-weight: bold;
     line-height: 1.1;
     border-radius: 25px;
-    border: 2px solid $action-color;
+    border: 2px solid transparent;
     transition: border-color $base-duration $base-timing;
 
     &:hover {
@@ -103,14 +111,10 @@
     }
 
     .inverse & {
-      // border: 0;
-      border-color: #fff;
-      // transition: background-color $base-duration $base-timing;
-      // background-color: rgba(0,0,0,0.4);
       color: white;
 
       &:hover {
-        // background-color: rgba(0,0,0,0.6);
+        border-color: #fff;
       }
     }
   }

@@ -3,7 +3,13 @@
   <%= partial "disqus", locals: { page: current_page } %>
 
   <script type="text/javascript">
-    var title = document.querySelector("meta[name='article_title']").content;
-    if (title) analytics.track('Read article', { title: title });
+    var titleTag = document.querySelector("meta[property='article_title']");
+
+    if (titleTag) {
+      analytics.track('Viewed article', {
+        title: titleTag.content,
+        path: document.location.pathname,
+      });
+    }
   </script>
 <% end %>

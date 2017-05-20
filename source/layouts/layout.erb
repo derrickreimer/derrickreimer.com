@@ -27,7 +27,6 @@
       analytics.page();
     </script>
 
-    <% unless current_article.nil? %><meta property="article_title" content="<%= current_article.title %>" /><% end %>
     <meta property="og:title" content="Scaling SaaS<%= ' - ' + current_article.title unless current_article.nil? %>" />
     <meta property="og:type" content="text/html" />
     <meta property="og:url" content="http://www.scalingsaas.com<%= current_page.url %>" />
@@ -69,5 +68,15 @@
 
     <!-- Twitter share buttons -->
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+    <!-- Event tracking -->
+    <% if current_article %>
+      <script type="text/javascript">
+        analytics.track('Viewed article', {
+          title: '<%= current_article.title %>',
+          path: document.location.pathname,
+        });
+      </script>
+    <% end %>
   </body>
 </html>

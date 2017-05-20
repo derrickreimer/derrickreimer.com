@@ -1,15 +1,4 @@
 <% wrap_layout :layout do %>
   <%= partial "article", locals: { article: current_article } %>
   <%= partial "disqus", locals: { page: current_page } %>
-
-  <script type="text/javascript">
-    var titleTag = document.querySelector("meta[property='article_title']");
-
-    if (titleTag) {
-      analytics.track('Viewed article', {
-        title: titleTag.content,
-        path: document.location.pathname,
-      });
-    }
-  </script>
 <% end %>

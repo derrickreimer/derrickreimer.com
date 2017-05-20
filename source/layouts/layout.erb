@@ -27,6 +27,7 @@
       analytics.page();
     </script>
 
+    <% unless current_article.nil? %><meta property="article_title" content="<%= current_article.title %>" /><% end %>
     <meta property="og:title" content="Scaling SaaS<%= ' - ' + current_article.title unless current_article.nil? %>" />
     <meta property="og:type" content="text/html" />
     <meta property="og:url" content="http://www.scalingsaas.com<%= current_page.url %>" />

@@ -1,4 +1,9 @@
 <% wrap_layout :layout do %>
   <%= partial "article", locals: { article: current_article } %>
   <%= partial "disqus", locals: { page: current_page } %>
+
+  <script type="text/javascript">
+    var title = document.querySelector("meta[name='article_title']").content;
+    if (title) analytics.track('Read article', { title: title });
+  </script>
 <% end %>

@@ -11,7 +11,7 @@
     <% if article.data[:podcast] %>
       <%= partial "podcast_post", locals: { article: article } %>
     <% else %>
-      <% if locals[:summary_only] %>
+      <% if locals[:summary_only] && !article.data[:no_summary] %>
         <%= article.summary %>
         <p><%= link_to "Continue reading &rarr;", article.url %></p>
       <% else %>

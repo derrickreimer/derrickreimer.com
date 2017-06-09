@@ -68,8 +68,14 @@ blockquote {
 
 code {
   font-family: $font-stack-consolas;
-  font-size: modular-scale(-1);
+  font-size: 80%; //modular-scale(-1);
   background-color: $secondary-background-color;
-  border-radius: $base-border-radius;
+  border-radius: $base-border-radius * 2;
   padding: 2px 6px;
+
+  a > & {
+    padding-left: 0;
+    padding-right: 0;
+    background-color: transparent;
+  }
 }

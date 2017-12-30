@@ -3,10 +3,12 @@
 }
 
 .post-title {
-  font-size: 39px;
+  font-size: 46px;
   margin-top: 0;
   margin-bottom: 10px;
   letter-spacing: -1px;
+  font-family: $font-stack-hoefler-text;
+  font-weight: normal;
 
   a {
     color: $dark-gray;

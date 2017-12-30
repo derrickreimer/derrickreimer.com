@@ -41,7 +41,7 @@ We explored these approaches in depth, along the way asking ourselves these ques
 - How many new technologies will be introduced?
 - How strongly are we locked in to the approach once adopted?
 
-Deeply ingrained in our engineering culture is an [aversion to risk](http://www.scalingsaas.com/posts/choosing-the-perfect-tech-stack/), especially when that risk lies outside of our zone of competitive advantages. We will gladly make calculated bets when it comes to building cutting-edge marketing automation features, but much less so when making choices about our database technologies.
+Deeply ingrained in our engineering culture is an [aversion to risk](http://www.derrickreimer.com/posts/choosing-the-perfect-tech-stack/), especially when that risk lies outside of our zone of competitive advantages. We will gladly make calculated bets when it comes to building cutting-edge marketing automation features, but much less so when making choices about our database technologies.
 
 We determined that sharding would carry a high development price tag, increase our hosting cost by an order of magnitude, and introduce a high degree of vendor lock-in. Partitioning large tables would carry similar development costs and would limit our ability to run queries that need to span all the partitions (which is part of what makes Drip so powerful).
 

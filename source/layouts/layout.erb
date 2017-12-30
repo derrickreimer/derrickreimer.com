@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-    <title>Scaling SaaS<%= ' - ' + current_article.title unless current_article.nil? %></title>
+    <title><%= current_article.title + ' - ' unless current_article.nil? %>derrickreimer.com</title>
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
 
     <%= stylesheet_link_tag :site %>
@@ -29,8 +29,8 @@
 
     <meta property="og:title" content="Scaling SaaS<%= ' - ' + current_article.title unless current_article.nil? %>" />
     <meta property="og:type" content="text/html" />
-    <meta property="og:url" content="http://www.scalingsaas.com<%= current_page.url %>" />
-    <meta property="og:image" content="http://www.scalingsaas.com/images/logo-square-300.png" />
+    <meta property="og:url" content="http://www.derrickreimer.com<%= current_page.url %>" />
+    <meta property="og:image" content="http://www.derrickreimer.com/images/logo-square-300.png" />
   </head>
   <body class="<%= page_classes %>">
     <% page_header_div(current_page.data) do %>
@@ -39,11 +39,10 @@
           <h1 class="site-title">
             <a href="/">
               <% if current_page.data[:header_inverted] %>
-                <img src="/images/logo-white.svg" alt="Logo" class="logo" />
+                <img src="/images/signature-white.png" alt="Derrick Reimer" class="signature-logo" />
               <% else %>
-                <img src="/images/logo.svg" alt="Logo" class="logo" />
+                <img src="/images/signature-black.png" alt="Derrick Reimer" class="signature-logo" />
               <% end %>
-              <span class="ss">Scaling SaaS</span>
             </a>
           </h1>
 
@@ -57,7 +56,7 @@
             </li>
 
             <li class="page-header-nav-item">
-              <%= link_to 'Email Me', 'mailto:derrick@scalingsaas.com' %>
+              <%= link_to 'Email Me', 'mailto:derrick@derrickreimer.com' %>
             </li>
           </ul>
         </div>

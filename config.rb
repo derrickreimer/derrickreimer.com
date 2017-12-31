@@ -2,29 +2,6 @@
 # Page options, layouts, aliases and proxies
 ###
 
-PODCASTS = {
-  "full-stack-radio" => {
-    name: "Full Stack Radio",
-    url: "http://www.fullstackradio.com/"
-  },
-  "giant-robots" => {
-    name: "Giant Robots Smashing Into Other Giant Robots",
-    url: "http://giantrobots.fm/"
-  },
-  "rubyrogues" => {
-    name: "Ruby Rogues",
-    url: "https://devchat.tv/ruby-rogues"
-  },
-  "sftrou" => {
-    name: "Startups For the Rest Of Us",
-    url: "http://www.startupsfortherestofus.com/"
-  },
-  "zen-founder" => {
-    name: "Zen Founder",
-    url: "http://zenfounder.com/"
-  }
-}
-
 set :markdown_engine, :redcarpet
 set :markdown, fenced_code_blocks: true, smartypants: true
 
@@ -60,9 +37,6 @@ activate :blog do |blog|
   # blog.month_link = "{year}/{month}.html"
   # blog.day_link = "{year}/{month}/{day}.html"
   # blog.default_extension = ".markdown"
-
-  # Don't include podcast articles in the main feed
-  blog.filter = proc { |a| !a.tags.include?("podcast") }
 
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"
@@ -103,18 +77,6 @@ helpers do
     attributes[:style] = style if style
 
     content_tag(:div, attributes, &block)
-  end
-
-  def podcast_name(id)
-    PODCASTS.fetch(id, {}).fetch(:name, "Unknown")
-  end
-
-  def podcast_url(id)
-    PODCASTS.fetch(id, {}).fetch(:url, "Unknown")
-  end
-
-  def podcast_link(id)
-    link_to podcast_name(id), podcast_url(id)
   end
 end
 

@@ -8,15 +8,11 @@
   </div>
 
   <div class="post-body">
-    <% if article.data[:podcast] %>
-      <%= partial "podcast_post", locals: { article: article } %>
+    <% if locals[:summary_only] && !article.data[:no_summary] %>
+      <%= article.summary %>
+      <p><%= link_to "Continue reading &rarr;", article.url %></p>
     <% else %>
-      <% if locals[:summary_only] && !article.data[:no_summary] %>
-        <%= article.summary %>
-        <p><%= link_to "Continue reading &rarr;", article.url %></p>
-      <% else %>
-        <%= article.body %>
-      <% end %>
+      <%= article.body %>
     <% end %>
   </div>
 

@@ -157,8 +157,8 @@ for storage).
 
 ```elixir
 # web/models/team.ex
-defmodule Bridge.Team do
-  use Bridge.Web, :model
+defmodule MyApp.Team do
+  use MyApp.Web, :model
 
   def registration_changeset(struct, params \\ %{}) do
     struct
@@ -167,8 +167,8 @@ defmodule Bridge.Team do
 end
 
 # web/models/user.ex
-defmodule Bridge.User do
-  use Bridge.Web, :model
+defmodule MyApp.User do
+  use MyApp.Web, :model
 
   def registration_changeset(struct, params \\ %{}) do
     struct

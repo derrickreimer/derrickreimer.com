@@ -9,4 +9,4 @@ podcast:
 tags: podcast
 ---
 
-In this episode, Adam talks to me about the technical challenges behind building and scaling [Drip](https://drip.co), a sophisticated email marketing automation platform.
+In this episode, Adam talks to me about the technical challenges behind building and scaling [Drip](https://www.drip.com), a sophisticated email marketing automation platform.

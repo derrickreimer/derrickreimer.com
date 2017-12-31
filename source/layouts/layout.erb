@@ -27,7 +27,7 @@
       analytics.page();
     </script>
 
-    <meta property="og:title" content="Scaling SaaS<%= ' - ' + current_article.title unless current_article.nil? %>" />
+    <meta property="og:title" content="<%= current_article.title + ' - ' unless current_article.nil? %>derrickreimer.com" />
     <meta property="og:type" content="text/html" />
     <meta property="og:url" content="http://www.derrickreimer.com<%= current_page.url %>" />
     <meta property="og:image" content="http://www.derrickreimer.com/images/logo-square-300.png" />

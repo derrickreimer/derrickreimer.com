@@ -1,5 +1,5 @@
 ---
-title: "Leveraging Database Transactions For Complex Forms in Phoenix"
+title: "Transactions in Phoenix"
 date: 2017-06-09
 author: Derrick Reimer
 tags: elixir

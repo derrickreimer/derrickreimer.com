@@ -1,5 +1,7 @@
 .site-container {
-  @include outer-container($page-width);
+  max-width: $page-width;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pagination {

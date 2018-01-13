@@ -13,6 +13,7 @@ gem 'middleman', '>= 4.0.0'
 gem 'middleman-deploy', github: 'middleman-contrib/middleman-deploy'
 gem 'middleman-blog', github: 'middleman/middleman-blog' # https://github.com/middleman/middleman-blog/issues/269
 gem 'middleman-syntax'
+gem 'nokogiri'
 
 gem 'redcarpet', '~> 3.3', '>= 3.3.3'
 
@@ -21,4 +22,3 @@ gem 'builder', "~> 3.0"
 
 gem 'bitters'
 gem 'bourbon', '~> 4.2'
-gem 'neat'

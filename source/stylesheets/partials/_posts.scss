@@ -2,6 +2,10 @@
   margin-bottom: $base-spacing * 1.5;
 }
 
+.post-header {
+  margin-bottom: $small-spacing;
+}
+
 .post-title {
   font-size: 46px;
   margin-top: 0;
@@ -23,7 +27,7 @@
 }
 
 .post-metadata {
-  margin-bottom: $small-spacing;
+  margin-bottom: 0;
   color: $medium-gray;
 }
 
@@ -61,6 +65,16 @@
 
 .post-full-image {
   margin-bottom: $small-spacing;
+
+  &--bursting-out {
+    margin-left: -$base-spacing;
+    margin-right: -$base-spacing;
+
+    figcaption {
+      padding-left: $base-spacing;
+      padding-right: $base-spacing;
+    }
+  }
 }
 
 .embedded-tweet {

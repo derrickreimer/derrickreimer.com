@@ -11,6 +11,7 @@
   margin-top: 0;
   margin-bottom: 10px;
   letter-spacing: -1px;
+  line-height: $heading-line-height;
   font-weight: normal;
 
   a {
@@ -29,17 +30,13 @@
 .post-metadata {
   margin-bottom: 0;
   color: $medium-gray;
-}
-
-.post-timestamp {
-
+  font-size: 20px;
 }
 
 .post-body {
 
   a {
-    // font-weight: bold;
-    border-bottom: 2px solid lighten($blue, 40%);
+    text-decoration: underline;
   }
 
   pre {

@@ -18,6 +18,14 @@ h6 {
   margin: ($small-spacing * 1.5) 0 $small-spacing;
 }
 
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: $subheading-line-height;
+}
+
 p {
   margin: 0 0 $small-spacing;
 }

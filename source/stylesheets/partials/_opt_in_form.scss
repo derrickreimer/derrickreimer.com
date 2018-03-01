@@ -1,0 +1,23 @@
+.inline-opt-in {
+  margin-left: -$small-spacing;
+  margin-right: -$small-spacing;
+  margin-bottom: $small-spacing;
+  padding: $small-spacing;
+  background-color: $blue;
+  background: linear-gradient(-45deg, $purple, $blue);
+  color: #fff;
+
+  &__field {
+    display: flex;
+  }
+
+  &__input {
+    border: 0;
+    border-radius: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  &__submit {
+    background-color: #333;
+  }
+}

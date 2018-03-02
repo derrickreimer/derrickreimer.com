@@ -40,6 +40,8 @@
     font-weight: bold;
     cursor: pointer;
     transition: background-color $base-duration $base-timing;
+    -webkit-appearance: none;
+    appearance: none;
 
     &:hover {
       background-color: #000;

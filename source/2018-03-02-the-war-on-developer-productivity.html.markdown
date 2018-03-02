@@ -16,11 +16,11 @@ I realize this is not news to you now, but five years ago it was pretty ground-b
 
 Slack felt like the much-needed grease in the gears of our budding startup. It brought visibility to conversations that would have otherwise been trapped in an email silo. It lowered the barrier of formality that plagues email correspondence. It increased the velocity of communication.
 
-Simply put, it ended the need to wait.
+Simply put, it ended the need to _wait_.
 
 In the beginning, this seemed like an indelible leap ahead. Fast forward five years, and I'm convinced it has become the single greatest threat to developer productivity in the modern workplace.
 
-**The problem is that today's chat tools are amplifying the troublesome parts of human nature, rather than minimizing them..**
+**The problem is that today's chat tools are amplifying the troublesome parts of human nature, rather than minimizing them.**
 
 - We are impatient.
 - We feel anxiety for "unread" badges.

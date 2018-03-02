@@ -56,7 +56,7 @@ As makers:
 - We’d much rather be “addicted” to our craft than our chat tool
 - We believe that unmitigated access to our push notifications is damn near criminal
 
-Having spend most of my career crafting and architecting software to make companies more efficient, this is not merely a business challenge worth solving — it’s a personal mission.
+Having spent most of my career crafting and architecting software to make companies more efficient, this is not merely a business challenge worth solving — it’s a personal mission.
 
 We are undeniably standing on the shoulders of giants. Slack (and other similar chat tools) have made many great contributions to the fabric of the modern workplace. They’ve proven the value of housing team discussions in a central place. They’ve demonstrated that it’s possible to feel connected even when distributed.
 

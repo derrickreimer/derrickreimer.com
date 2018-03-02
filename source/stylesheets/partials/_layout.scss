@@ -28,3 +28,21 @@
     margin-left: $small-spacing / 2;
   }
 }
+
+.hello-bar {
+  padding: 12px 0;
+  background-color: $blue;
+  background: linear-gradient(-45deg, lighten($blue, 25%), $blue);
+  border-bottom: 2px solid #fff;
+  color: #fff;
+
+  &__button {
+    color: #fff;
+    border-bottom: 2px solid rgba(255,255,255,0.8);
+
+    &:hover {
+      color: #fff;
+      border-bottom-color: #fff;
+    }
+  }
+}

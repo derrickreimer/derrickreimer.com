@@ -1,0 +1,356 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="/favicon.png">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Adamina" rel="stylesheet">
+
+    <title>Transactions in Phoenix - derrickreimer.com</title>
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+
+    <link href="/stylesheets/site.css" rel="stylesheet" />
+    <link href="/stylesheets/github.css" rel="stylesheet" />
+    <script src="/javascripts/analytics.js"></script>
+
+    <script type="text/javascript">
+      analytics.initialize({
+        'Google Analytics': {
+           trackingId: 'UA-75340229-1'
+         },
+         'Drip': {
+           account: '8045758'
+         }
+      });
+
+      analytics.page();
+    </script>
+
+    <meta property="og:title" content="Transactions in Phoenix - derrickreimer.com" />
+    <meta property="og:type" content="text/html" />
+    <meta property="og:url" content="http://www.derrickreimer.com/posts/transactions-in-phoenix/" />
+    <meta property="og:image" content="http://www.derrickreimer.com/images/logo-square-300.png" />
+  </head>
+  <body class="posts posts_transactions-in-phoenix posts_transactions-in-phoenix_index">
+    <div class="hello-bar">
+      <div class="main-content">
+        <strong>I'm starting something new.</strong>
+        <a href="/posts/the-war-on-developer-productivity" class="hello-bar__button">Read the manifesto &rarr;</a>
+      </div>
+    </div>
+<div class="page-header ">      <div class="page-navigation">
+        <div class="site-container">
+          <h1 class="site-title">
+            <a href="/">
+                <img src="/images/signature-black.png" alt="Derrick Reimer" class="signature-logo" />
+            </a>
+          </h1>
+
+          <ul class="page-header-nav">
+            <li class="page-header-nav-item">
+              <a href="/about/">About</a>
+            </li>
+
+            <li class="page-header-nav-item">
+              <a href="http://artofproductpodcast.com">Podcast</a>
+            </li>
+
+            <li class="page-header-nav-item">
+              <a href="mailto:derrick@derrickreimer.com">Email Me</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+</div>
+    <div class="site-container">
+      <div class="main-content">
+          <article class="post">
+  <div class="post-header">
+    <h2 class="post-title"><a href="/posts/transactions-in-phoenix/">Transactions in Phoenix</a></h2>
+    <div class="post-metadata">
+      <time class="post-timestamp">June  9, 2017</time>
+    </div>
+  </div>
+
+  <div class="post-body">
+      <p>I recently set out to implement user registration for a project I&rsquo;m working on
+in Elixir/Phoenix. It wasn&rsquo;t long before I encountered a challenge that I have
+stumbled upon with every other ORM library: accepting a collection of form
+inputs and saving it across multiple (related) records in the database.</p>
+
+<p>There&rsquo;s more than one way to tackle the problem (with varying degrees of
+elegance), but I discovered that <a href="https://github.com/elixir-ecto/ecto">Ecto</a>
+lends itself particularly well to solving this problem once you are familiar
+with tools available.</p>
+
+<p></p>
+
+<h2>The registration form</h2>
+
+<p>Let&rsquo;s assume that you have a <code>users</code> table and a <code>teams</code> table, and upon
+submitting the registration form you need to create a new team record and a
+new user record (the team owner).</p>
+
+<p>At a minimum, our form needs to collect the following fields:</p>
+
+<ul>
+<li>Team name</li>
+<li>Email address</li>
+<li>Password</li>
+</ul>
+
+<p>Since this HTML form includes fields that belong in multiple database records,
+it does not make sense to bind the form directly to the <code>User</code> or <code>Team</code> changesets.</p>
+
+<p>One alternative is to <a href="https://hexdocs.pm/phoenix_html/Phoenix.HTML.Form.html#module-with-connection-data">bind the form to <code>@conn</code> structure</a>:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>&lt;%= form_for @conn, team_path(@conn, :create), [as: :signup], fn f -&gt; %&gt;
+  &lt;div class="form-field"&gt;
+    &lt;%= label f, :team_name, "Team Name" %&gt;
+    &lt;%= text_input f, :team_name %&gt;
+  &lt;/div&gt;
+
+  &lt;div class="form-field"&gt;
+    &lt;%= label f, :email, "Email" %&gt;
+    &lt;%= email_input f, :email %&gt;
+  &lt;/div&gt;
+
+  &lt;div class="form-field"&gt;
+    &lt;%= label f, :password, "Password" %&gt;
+    &lt;%= password_input f, :password %&gt;
+  &lt;/div&gt;
+
+  &lt;div class="form-controls"&gt;
+    &lt;%= submit "Sign up" %&gt;
+  &lt;/div&gt;
+&lt;% end %&gt;
+</code></pre></div>
+<p>Upon submission, the form data is available in the request params under the
+<code>&quot;signup&quot;</code> key. This may be suitable for very simple use cases, but quickly becomes
+cumbersome when you need more complicated logic, like data validations and
+default values.</p>
+
+<p>Fortunately, Ecto changesets do not have to correspond to an actual database table!
+This means we can still use a changeset to implement our validation logic
+in a &ldquo;virtual&rdquo; model. Let&rsquo;s call it <code>Registration</code> and drop it in our models directory:</p>
+<div class="highlight"><pre class="highlight elixir"><code><span class="c1"># web/models/registration.ex</span>
+<span class="k">defmodule</span> <span class="no">MyApp</span><span class="o">.</span><span class="no">Registration</span> <span class="k">do</span>
+  <span class="kn">import</span> <span class="no">Ecto</span><span class="o">.</span><span class="no">Changeset</span>
+
+  <span class="nv">@types</span> <span class="p">%{</span>
+    <span class="ss">team_name:</span> <span class="ss">:string</span><span class="p">,</span>
+    <span class="ss">email:</span> <span class="ss">:string</span><span class="p">,</span>
+    <span class="ss">password:</span> <span class="ss">:string</span>
+  <span class="p">}</span>
+
+  <span class="nv">@doc</span> <span class="sd">"""
+  Builds a changeset based on the `struct` and `params`.
+  """</span>
+  <span class="k">def</span> <span class="n">form_changeset</span><span class="p">(</span><span class="n">struct</span><span class="p">,</span> <span class="n">params</span> <span class="p">\\</span> <span class="p">%{})</span> <span class="k">do</span>
+    <span class="p">{</span><span class="n">struct</span><span class="p">,</span> <span class="nv">@types</span><span class="p">}</span>
+    <span class="o">|&gt;</span> <span class="n">cast</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="no">Map</span><span class="o">.</span><span class="n">keys</span><span class="p">(</span><span class="nv">@types</span><span class="p">))</span>
+    <span class="o">|&gt;</span> <span class="n">validate_required</span><span class="p">([</span><span class="ss">:team_name</span><span class="p">,</span> <span class="ss">:email</span><span class="p">,</span> <span class="ss">:password</span><span class="p">])</span>
+    <span class="o">|&gt;</span> <span class="n">validate_length</span><span class="p">(</span><span class="ss">:team_name</span><span class="p">,</span> <span class="ss">min:</span> <span class="m">1</span><span class="p">,</span> <span class="ss">max:</span> <span class="m">255</span><span class="p">)</span>
+    <span class="o">|&gt;</span> <span class="n">validate_length</span><span class="p">(</span><span class="ss">:email</span><span class="p">,</span> <span class="ss">min:</span> <span class="m">1</span><span class="p">,</span> <span class="ss">max:</span> <span class="m">254</span><span class="p">)</span>
+    <span class="o">|&gt;</span> <span class="n">validate_length</span><span class="p">(</span><span class="ss">:password</span><span class="p">,</span> <span class="ss">min:</span> <span class="m">6</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>In the controller, we can summon a new changeset to bind to the form:</p>
+<div class="highlight"><pre class="highlight elixir"><code><span class="c1"># web/controllers/team_controller.ex</span>
+<span class="k">defmodule</span> <span class="no">MyApp</span><span class="o">.</span><span class="no">TeamController</span> <span class="k">do</span>
+  <span class="kn">use</span> <span class="no">MyApp</span><span class="o">.</span><span class="no">Web</span><span class="p">,</span> <span class="ss">:controller</span>
+  <span class="n">alias</span> <span class="no">MyApp</span><span class="o">.</span><span class="no">Registration</span>
+
+  <span class="k">def</span> <span class="n">new</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">_params</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">changeset</span> <span class="o">=</span> <span class="no">Registration</span><span class="o">.</span><span class="n">form_changeset</span><span class="p">(%{})</span>
+    <span class="n">render</span> <span class="n">conn</span><span class="p">,</span> <span class="sd">"</span><span class="s2">new.html"</span><span class="p">,</span> <span class="ss">changeset:</span> <span class="n">changeset</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="n">create</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="p">%{</span><span class="sd">"</span><span class="s2">signup"</span> <span class="o">=&gt;</span> <span class="n">signup_params</span><span class="p">})</span> <span class="k">do</span>
+    <span class="n">changeset</span> <span class="o">=</span> <span class="no">Registration</span><span class="o">.</span><span class="n">form_changeset</span><span class="p">(%{},</span> <span class="n">signup_params</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">changeset</span><span class="o">.</span><span class="n">valid?</span> <span class="k">do</span>
+      <span class="c1"># TODO: persist the data</span>
+    <span class="k">else</span>
+      <span class="n">changeset</span> <span class="o">=</span> <span class="p">%{</span><span class="n">changeset</span> <span class="o">|</span> <span class="ss">action:</span> <span class="ss">:insert</span><span class="p">}</span>
+      <span class="n">render</span> <span class="n">conn</span><span class="p">,</span> <span class="sd">"</span><span class="s2">new.html"</span><span class="p">,</span> <span class="ss">changeset:</span> <span class="n">changeset</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>In the <code>create</code> action, we check to see if the validations pass; if not,
+then we re-render the form (with errors). The <code>%{changeset | action: :insert}</code>
+step is important, because it signifies to the form helper that errors should
+be rendered.</p>
+
+<p>The template looks essentially the same as the first example, except the
+first argument is <code>@changeset</code> instead of <code>@conn</code>:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>&lt;%= form_for @changeset, team_path(@conn, :create), [as: :signup], fn f -&gt; %&gt;
+  &lt;div class="form-field"&gt;
+    &lt;%= label f, :team_name, "Team Name" %&gt;
+    &lt;%= text_input f, :team_name %&gt;
+    &lt;%= error_tag f, :team_name %&gt;
+  &lt;/div&gt;
+
+  &lt;!-- snip --&gt;
+&lt;% end %&gt;
+</code></pre></div>
+<h2>Persisting the data</h2>
+
+<p>The persistence phase should go something like this:</p>
+
+<ul>
+<li>Insert a record in <code>teams</code></li>
+<li>Insert a record in <code>users</code> (with a foreign key pointing to the team)</li>
+<li>In the event either operation fails, rollback all inserts</li>
+</ul>
+
+<p>This is a perfect candidate for a database transaction because we
+want to guarantee rollback on failure. Conveniently, Ecto comes with a handy module called <a href="https://hexdocs.pm/ecto/Ecto.Multi.html"><code>Ecto.Multi</code></a>
+that facilitates grouping a pipeline of database operations for transactions.</p>
+
+<p>Let&rsquo;s build on our <code>Registration</code> module by adding a <code>operation</code> function, and
+add <code>registration_changeset</code> functions to the <code>User</code> and <code>Team</code> models. (One of the steps not
+implemented in this example is the <code>put_password_hash</code> function in the <code>User</code>
+module which is responsible for transforming the raw password into a hashed one
+for storage).</p>
+<div class="highlight"><pre class="highlight elixir"><code><span class="c1"># web/models/team.ex</span>
+<span class="k">defmodule</span> <span class="no">MyApp</span><span class="o">.</span><span class="no">Team</span> <span class="k">do</span>
+  <span class="kn">use</span> <span class="no">MyApp</span><span class="o">.</span><span class="no">Web</span><span class="p">,</span> <span class="ss">:model</span>
+
+  <span class="k">def</span> <span class="n">registration_changeset</span><span class="p">(</span><span class="n">struct</span><span class="p">,</span> <span class="n">params</span> <span class="p">\\</span> <span class="p">%{})</span> <span class="k">do</span>
+    <span class="n">struct</span>
+    <span class="o">|&gt;</span> <span class="n">cast</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="p">[</span><span class="ss">:name</span><span class="p">])</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c1"># web/models/user.ex</span>
+<span class="k">defmodule</span> <span class="no">MyApp</span><span class="o">.</span><span class="no">User</span> <span class="k">do</span>
+  <span class="kn">use</span> <span class="no">MyApp</span><span class="o">.</span><span class="no">Web</span><span class="p">,</span> <span class="ss">:model</span>
+
+  <span class="k">def</span> <span class="n">registration_changeset</span><span class="p">(</span><span class="n">struct</span><span class="p">,</span> <span class="n">params</span> <span class="p">\\</span> <span class="p">%{})</span> <span class="k">do</span>
+    <span class="n">struct</span>
+    <span class="o">|&gt;</span> <span class="n">cast</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="p">[</span><span class="ss">:team_id</span><span class="p">,</span> <span class="ss">:email</span><span class="p">,</span> <span class="ss">:password</span><span class="p">])</span>
+    <span class="o">|&gt;</span> <span class="n">put_password_hash</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c1"># web/models/registration.ex</span>
+<span class="k">defmodule</span> <span class="no">MyApp</span><span class="o">.</span><span class="no">Registration</span> <span class="k">do</span>
+  <span class="kn">import</span> <span class="no">Ecto</span><span class="o">.</span><span class="no">Changeset</span>
+  <span class="n">alias</span> <span class="no">Ecto</span><span class="o">.</span><span class="no">Multi</span>
+
+  <span class="n">alias</span> <span class="no">MyApp</span><span class="o">.</span><span class="no">Team</span>
+  <span class="n">alias</span> <span class="no">MyApp</span><span class="o">.</span><span class="no">User</span>
+
+  <span class="c1"># ...</span>
+
+  <span class="k">def</span> <span class="n">operation</span><span class="p">(</span><span class="n">changeset</span><span class="p">)</span> <span class="k">do</span>
+    <span class="no">Multi</span><span class="o">.</span><span class="n">new</span>
+    <span class="o">|&gt;</span> <span class="no">Multi</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="ss">:team</span><span class="p">,</span> <span class="n">team_changeset</span><span class="p">(</span><span class="n">changeset</span><span class="p">))</span>
+    <span class="o">|&gt;</span> <span class="no">Multi</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="ss">:user</span><span class="p">,</span> <span class="k">fn</span> <span class="p">%{</span><span class="ss">team:</span> <span class="n">team</span><span class="p">}</span> <span class="o">-&gt;</span>
+      <span class="n">changeset</span>
+      <span class="o">|&gt;</span> <span class="n">user_changeset</span><span class="p">()</span>
+      <span class="o">|&gt;</span> <span class="n">put_change</span><span class="p">(</span><span class="ss">:team_id</span><span class="p">,</span> <span class="n">team</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+      <span class="o">|&gt;</span> <span class="no">Repo</span><span class="o">.</span><span class="n">insert</span>
+    <span class="k">end</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">defp</span> <span class="n">team_changeset</span><span class="p">(</span><span class="n">changeset</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">%{</span><span class="ss">name:</span> <span class="n">changeset</span><span class="o">.</span><span class="n">changes</span><span class="o">.</span><span class="n">team_name</span><span class="p">}</span>
+    <span class="no">Team</span><span class="o">.</span><span class="n">registration_changeset</span><span class="p">(%</span><span class="no">Team</span><span class="p">{},</span> <span class="n">params</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">defp</span> <span class="n">user_changeset</span><span class="p">(</span><span class="n">changeset</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">params</span> <span class="o">=</span>
+      <span class="n">changeset</span><span class="o">.</span><span class="n">changes</span>
+      <span class="o">|&gt;</span> <span class="no">Map</span><span class="o">.</span><span class="n">take</span><span class="p">([</span><span class="ss">:username</span><span class="p">,</span> <span class="ss">:email</span><span class="p">,</span> <span class="ss">:password</span><span class="p">,</span> <span class="ss">:time_zone</span><span class="p">])</span>
+
+    <span class="no">User</span><span class="o">.</span><span class="n">registration_changeset</span><span class="p">(%</span><span class="no">User</span><span class="p">{},</span> <span class="n">params</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>The <code>Registration.operation</code> function is responsible for building an <code>Ecto.Multi</code>
+structure that can be passed to the <a href="https://hexdocs.pm/ecto/Ecto.Repo.html#c:transaction/2"><code>Repo.transaction</code></a>
+function. The first step inserts the <code>Team</code> record, and the second step
+receives the newly-created <code>Team</code> and associates the <code>User</code> to it when inserting.</p>
+
+<p>Now that we have an function for generating our operation, we can utilize it
+in our controller.</p>
+<div class="highlight"><pre class="highlight elixir"><code><span class="k">defmodule</span> <span class="no">MyApp</span><span class="o">.</span><span class="no">TeamController</span> <span class="k">do</span>
+  <span class="kn">use</span> <span class="no">MyApp</span><span class="o">.</span><span class="no">Web</span><span class="p">,</span> <span class="ss">:controller</span>
+
+  <span class="c1"># ...</span>
+
+  <span class="k">def</span> <span class="n">create</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="p">%{</span><span class="sd">"</span><span class="s2">signup"</span> <span class="o">=&gt;</span> <span class="n">signup_params</span><span class="p">})</span> <span class="k">do</span>
+    <span class="n">changeset</span> <span class="o">=</span> <span class="no">Registration</span><span class="o">.</span><span class="n">form_changeset</span><span class="p">(%{},</span> <span class="n">signup_params</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">changeset</span><span class="o">.</span><span class="n">valid?</span> <span class="k">do</span>
+      <span class="k">case</span> <span class="no">Repo</span><span class="o">.</span><span class="n">transaction</span><span class="p">(</span><span class="no">Registration</span><span class="o">.</span><span class="n">operation</span><span class="p">(</span><span class="n">changeset</span><span class="p">))</span> <span class="k">do</span>
+        <span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="p">%{</span><span class="ss">team:</span> <span class="n">team</span><span class="p">,</span> <span class="ss">user:</span> <span class="n">user</span><span class="p">}}</span> <span class="o">-&gt;</span>
+          <span class="n">conn</span>
+          <span class="o">|&gt;</span> <span class="n">put_flash</span><span class="p">(</span><span class="ss">:info</span><span class="p">,</span> <span class="sd">"</span><span class="s2">Thanks for registering!"</span><span class="p">)</span>
+          <span class="o">|&gt;</span> <span class="n">redirect</span><span class="p">(</span><span class="ss">to:</span> <span class="n">home_path</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="ss">:index</span><span class="p">))</span>
+        <span class="p">{</span><span class="ss">:error</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">}</span> <span class="o">-&gt;</span>
+          <span class="n">conn</span>
+          <span class="o">|&gt;</span> <span class="n">put_flash</span><span class="p">(</span><span class="ss">:error</span><span class="p">,</span> <span class="sd">"</span><span class="s2">Uh oh, something went wrong. Please try again."</span><span class="p">)</span>
+          <span class="o">|&gt;</span> <span class="n">render</span><span class="p">(</span><span class="sd">"</span><span class="s2">new.html"</span><span class="p">,</span> <span class="ss">changeset:</span> <span class="n">changeset</span><span class="p">)</span>
+      <span class="k">end</span>
+    <span class="k">else</span>
+      <span class="n">changeset</span> <span class="o">=</span> <span class="p">%{</span><span class="n">changeset</span> <span class="o">|</span> <span class="ss">action:</span> <span class="ss">:insert</span><span class="p">}</span>
+      <span class="n">render</span> <span class="n">conn</span><span class="p">,</span> <span class="sd">"</span><span class="s2">new.html"</span><span class="p">,</span> <span class="ss">changeset:</span> <span class="n">changeset</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>The result is a nice and clean separation of concerns between form data and
+persistence operations, all while making good use of data integrity features
+built into PostgreSQL.</p>
+
+  </div>
+
+    <div class="post-social">
+      <a href="https://twitter.com/share"
+         class="twitter-share-button"
+         data-url="http://www.derrickreimer.com/posts/transactions-in-phoenix/"
+         data-text="Transactions in Phoenix"
+         data-via="derrickreimer.com"
+         data-size="large">Tweet</a>
+</article>
+
+  <div id="disqus_thread"></div>
+<script>
+var disqus_config = function () {
+this.page.url = 'http://www.derrickreimer.com/posts/transactions-in-phoenix/';
+this.page.identifier = 'bd35931a3ffe39e4c12f54b9f22805e919468136eb46d721be13a2fb55146738';
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//scalingsaas.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+      </div>
+    </div>
+
+    <!-- Twitter share buttons -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+    <!-- Event tracking -->
+      <script type="text/javascript">
+        analytics.track('Viewed article', {
+          title: 'Transactions in Phoenix',
+          path: document.location.pathname,
+        });
+      </script>
+  </body>
+</html>

@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="/favicon.png">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Adamina" rel="stylesheet">
+
+    <title>Choosing the Perfect Tech Stack - derrickreimer.com</title>
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+
+    <link href="/stylesheets/site.css" rel="stylesheet" />
+    <link href="/stylesheets/github.css" rel="stylesheet" />
+    <script src="/javascripts/analytics.js"></script>
+
+    <script type="text/javascript">
+      analytics.initialize({
+        'Google Analytics': {
+           trackingId: 'UA-75340229-1'
+         },
+         'Drip': {
+           account: '8045758'
+         }
+      });
+
+      analytics.page();
+    </script>
+
+    <meta property="og:title" content="Choosing the Perfect Tech Stack - derrickreimer.com" />
+    <meta property="og:type" content="text/html" />
+    <meta property="og:url" content="http://www.derrickreimer.com/posts/choosing-the-perfect-tech-stack/" />
+    <meta property="og:image" content="http://www.derrickreimer.com/images/logo-square-300.png" />
+  </head>
+  <body class="posts posts_choosing-the-perfect-tech-stack posts_choosing-the-perfect-tech-stack_index">
+    <div class="hello-bar">
+      <div class="main-content">
+        <strong>I'm starting something new.</strong>
+        <a href="/posts/the-war-on-developer-productivity" class="hello-bar__button">Read the manifesto &rarr;</a>
+      </div>
+    </div>
+<div class="page-header ">      <div class="page-navigation">
+        <div class="site-container">
+          <h1 class="site-title">
+            <a href="/">
+                <img src="/images/signature-black.png" alt="Derrick Reimer" class="signature-logo" />
+            </a>
+          </h1>
+
+          <ul class="page-header-nav">
+            <li class="page-header-nav-item">
+              <a href="/about/">About</a>
+            </li>
+
+            <li class="page-header-nav-item">
+              <a href="http://artofproductpodcast.com">Podcast</a>
+            </li>
+
+            <li class="page-header-nav-item">
+              <a href="mailto:derrick@derrickreimer.com">Email Me</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+</div>
+    <div class="site-container">
+      <div class="main-content">
+          <article class="post">
+  <div class="post-header">
+    <h2 class="post-title"><a href="/posts/choosing-the-perfect-tech-stack/">Choosing the Perfect Tech Stack</a></h2>
+    <div class="post-metadata">
+      <time class="post-timestamp">March 21, 2016</time>
+    </div>
+  </div>
+
+  <div class="post-body">
+      <p>Nothing quite compares to greenfield software development. The canvas is blank and you finally have the opportunity to do it &ldquo;The Right Way&rdquo; from the ground up. If you&rsquo;ve been building web apps for a while, you&rsquo;ve undoubtedly found yourself working with technologies that you&rsquo;d never use again, given the luxury of a blank canvas. And if you follow the open source world, there&rsquo;s probably a brand-spanking-new boutique framework you&rsquo;ve been itching to take for a spin.</p>
+
+<p>With all the excitement of a blank canvas comes an equal amount of anxiety. You know you are one ill-advised choice away from being stuck with the &ldquo;imperfect&rdquo; tech stack. You have a hunch about what you want to use, but being the dutiful engineer that you are, you spend a few hours verifying your assumptions by Googling &ldquo;Ruby vs Go&rdquo; and &ldquo;nodejs vs haskell&rdquo; only to find yourself with net loss of clarity. (Don&rsquo;t do that.)</p>
+
+<p>Take a deep breath, it doesn&rsquo;t have to be this hard.</p>
+
+<p></p>
+
+<h3>Stick with what you know</h3>
+
+<p>I know you&rsquo;ve heard it a million times and I&rsquo;m going to repeat it because it&rsquo;s true: any modern web stack is perfectly suitable for most web applications. Don&rsquo;t get me wrong, I love a good &ldquo;my language is better than your language&rdquo; debate as much as the next engineer. And when you scour the web for objective comparisons of different technologies, that&rsquo;s exactly what you will find. But the truth is, that will lead you no closer to the &ldquo;right&rdquo; answer because there is no right answer.</p>
+
+<p>If you&rsquo;re a Ruby developer, build it in Ruby. If you&rsquo;re a PHP developer, build it in PHP. Breaking ground on your new SaaS app is probably not the best time to decide to learn a new language or framework.</p>
+
+<p>In the early planning stage for <a href="https://codetree.com">Codetree</a>, I considered using Sinatra instead of Ruby on Rails. At the time, some members of the Ruby community were espousing that Rails is too heavy and I was beginning to buy into the hype. I had visions of a perfectly clean codebase with just the components it needed and nothing more. It was going to be <em>great</em>. And then I came to my senses.</p>
+
+<p>I had never built a Sinatra app before, I was probably going to move at least 20% slower, and my volume of Stack Overflow searches was probably going to double. After all, I had spent the last three years of my work life building Rails apps and polishing my skills with that framework.</p>
+
+<p>My point is not that Rails is superior to Sinatra for <strong>everyone</strong>, but it definitely was for <strong>me</strong> when as I was trying to build and launch a profitable SaaS app.</p>
+
+<h3>Favor stable over new</h3>
+
+<p>Dan McKinley (formerly with Stripe) wrote an <a href="http://mcfunley.com/choose-boring-technology">excellent piece</a> about this concept that really helped solidify my thinking on the topic. Many other titans of the tech industry have expressed <a href="https://medium.com/s-c-a-l-e/github-scaling-on-ruby-with-a-nomadic-tech-team-4db562b96dcd#.e47y62lo8">similar sentiments</a>.</p>
+
+<blockquote>
+<p>We don’t need to reinvent the wheel, we don’t need to write our own databases, we don’t need to start writing our own frameworks — because they’re all in domains that are usual. It’s a website, it’s web hosting. In the domains that are unusual, we fully embrace the need to write custom applications or build bespoke apps for that.</p>
+<footer>
+  <cite>&mdash; Sam Lambert, Director of Technology at GitHub</cite>
+</footer>
+</blockquote>
+
+<p>Remember that brand-new framework I mentioned before? Don&rsquo;t use it. Especially if it&rsquo;s a JavaScript framework &ndash; it&rsquo;ll probably be obsolete in two months anyway.</p>
+
+<p>But seriously, that last thing you want to do is introduce more variability into the system than is absolutely necessary. When you are building features, finding product-market fit, and trying to get to launch, the last thing you want to worry about is a flaw in the pre-1.0-with-almost-no-documentation database system you just adopted.</p>
+
+<div class="embedded-tweet">
+  <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Here&rsquo;s to the sane ones, the PostgreSQL-users, the troubleshooters. The placers of square pegs in square holes.</p>&mdash; Stripe (@stripe) <a href="https://twitter.com/stripe/status/582679042261843968">March 30, 2015</a></blockquote>
+</div>
+
+<p>What&rsquo;s great about this approach is you&rsquo;ve certainly worked with a handful of these &ldquo;stable&rdquo; technologies before. They are battle-tested, actively maintained, and you can probably find a book on them published more than 20 years ago.</p>
+
+<h3>Worry about scaling later</h3>
+
+<p>To say software developers have the tendency to over-engineer things is an understatement. It&rsquo;s in our nature and I don&rsquo;t think it&rsquo;s a bad thing when channeled correctly. Writing robust, well-factored code for the sake of maintainability and stability is great. Architecting your codebase to withstand the load of millions of users while building out your minimum viable product &ndash; not so great.</p>
+
+<p>I&rsquo;m sure you have been told this before. I bet it was framed like this:</p>
+
+<blockquote>
+<p>Don&rsquo;t put too much effort into over-architecting your code. Chances are you wont have many users anyway. Most startups fail.
+</p>
+</blockquote>
+
+<p>I actually think that&rsquo;s a really lousy way to look at it. I&rsquo;ve never bought into such a cynical argument and the logic does not play out for me. If I&rsquo;m to operate as if the business is going fail anyway, should I opt to skip writing tests?</p>
+
+<p>No, the reason is that no matter how experienced you are, it is impossible to foresee the exact scaling challenges you are going to encounter until you make it there. This principle is articulated well by the Extreme Programming (XP) movement.</p>
+
+<h3>There is no perfect stack</h3>
+
+<p>The irony of it all is there is no perfect tech stack. Stop striving for perfection.</p>
+
+<p>Instead, stick with what you know and avoid shiny new technologies. That will put you in the best position to tackle scaling challenges as they arise.</p>
+
+  </div>
+
+    <div class="post-social">
+      <a href="https://twitter.com/share"
+         class="twitter-share-button"
+         data-url="http://www.derrickreimer.com/posts/choosing-the-perfect-tech-stack/"
+         data-text="Choosing the Perfect Tech Stack"
+         data-via="derrickreimer.com"
+         data-size="large">Tweet</a>
+</article>
+
+  <div id="disqus_thread"></div>
+<script>
+var disqus_config = function () {
+this.page.url = 'http://www.derrickreimer.com/posts/choosing-the-perfect-tech-stack/';
+this.page.identifier = '3e621fe95dc68d8f0be92db0af071fe4bd15c0140fe857a1b4b7b3c42fffffbd';
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//scalingsaas.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+      </div>
+    </div>
+
+    <!-- Twitter share buttons -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+    <!-- Event tracking -->
+      <script type="text/javascript">
+        analytics.track('Viewed article', {
+          title: 'Choosing the Perfect Tech Stack',
+          path: document.location.pathname,
+        });
+      </script>
+  </body>
+</html>

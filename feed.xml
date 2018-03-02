@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>derrickreimer.com</title>
+  <id>http://www.derrickreimer.com/</id>
+  <link href="http://www.derrickreimer.com/"/>
+  <link href="http://www.derrickreimer.com/feed.xml" rel="self"/>
+  <updated>2018-03-01T18:00:00-06:00</updated>
+  <author>
+    <name>Derrick Reimer</name>
+  </author>
+  <entry>
+    <title>The War on Developer Productivity (And How I Intend to Win It)</title>
+    <link rel="alternate" href="http://www.derrickreimer.com/posts/the-war-on-developer-productivity/"/>
+    <id>http://www.derrickreimer.com/posts/the-war-on-developer-productivity/</id>
+    <published>2018-03-01T18:00:00-06:00</published>
+    <updated>2018-03-02T09:45:45-06:00</updated>
+    <author>
+      <name>Derrick Reimer</name>
+    </author>
+    <summary type="html">&lt;p&gt;Do you remember the first time you used Slack at work?&lt;/p&gt;
+
+&lt;p&gt;I vividly recall the impact it had on our mostly-distributed startup crew. For the first time ever I felt connected to my remote colleagues as if we were in the same building.&lt;/p&gt;
+
+&lt;p&gt;“Now we’re cooking with gas,” I told myself.&lt;/p&gt;
+
+&lt;p&gt;Anytime I had to ask my co-founder a question, he was just a quick DM or @-mention away — the digital analog to a tap on the shoulder. This proved to be much faster than firing off an email and waiting for a reply.&lt;/p&gt;
+
+&lt;p&gt;I realize this is not news to you now, but five years ago it was pretty ground-breaking.&lt;/p&gt;
+
+&lt;p&gt;Slack felt like the much-needed grease in the gears of our budding startup. It brought visibility to conversations that would have otherwise been trapped in an email silo. It lowered the barrier of formality that plagues email correspondence. It increased the velocity of communication.&lt;/p&gt;
+
+&lt;p&gt;Simply put, it ended the need to wait.&lt;/p&gt;
+
+&lt;p&gt;In the beginning, this seemed like an indelible leap ahead. Fast forward four years, and I&amp;rsquo;m convinced it has become the single greatest threat to developer productivity in the modern workplace.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The problem is that today&amp;rsquo;s chat tools are amplifying the troublesome parts of human nature, rather than minimizing them..&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We are impatient.&lt;/li&gt;
+&lt;li&gt;We feel anxiety for &amp;ldquo;unread&amp;rdquo; badges.&lt;/li&gt;
+&lt;li&gt;We are addicted to push notifications.&lt;/li&gt;
+&lt;li&gt;We think things are more urgent than they really are.&lt;/li&gt;
+&lt;li&gt;We care about our team’s perceptions and don&amp;rsquo;t want to look like we’re slacking off.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Don’t get me wrong, chat is not intrinsically bad. It’s part of what made Slack feel so magical at first, and it’s a key ingredient that is here to stay. The ability to engage with your team in real time is vital — but only when the discussion &lt;em&gt;must&lt;/em&gt; be synchronous.&lt;/p&gt;
+
+&lt;p&gt;Chat is a &lt;em&gt;greedy&lt;/em&gt; mode of communication.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It doesn’t care if you are deep in flow.&lt;/li&gt;
+&lt;li&gt;It begs you to incessantly clear its notification badges.&lt;/li&gt;
+&lt;li&gt;It buries important conversations among idle chatter when you snooze it.&lt;/li&gt;
+&lt;li&gt;It must be used with restraint or it becomes toxic.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You might be thinking, “Slack is not broken, you are just misusing it.”&lt;/p&gt;
+
+&lt;p&gt;In theory, I agree with that sentiment. Slack is &lt;em&gt;built&lt;/em&gt; for synchronous communication. If your team has the discipline to only use Slack for real time conversations and hold asynchronous discussions elsewhere (via email, inside a project management app, etc.), then you have achieved a rare feat.&lt;/p&gt;
+
+&lt;p&gt;For the rest of us, that is simply not our reality. I co-founded Drip (acquired by Leadpages in 2016) and lead engineering there for the last five years. In that time, our use of Slack scaled from just me and my co-founder to over sixty people. Despite my attempts to redirect discussions to their “proper” forum, our team’s use of Slack only grew deeper.&lt;/p&gt;
+
+&lt;p&gt;The cognitive overhead of always choosing the ideal place to hold a conversation proved to be too high.&lt;/p&gt;
+
+&lt;p&gt;The truth is that &lt;em&gt;makers&lt;/em&gt; feel the pain much more than &lt;em&gt;managers&lt;/em&gt;. A manager’s job is to be available for interruptions by their team. An effective manager is one who provides servant leadership and strives to keep their team unblocked.&lt;/p&gt;
+
+&lt;p&gt;Even the most respectful manager will inevitably interfere with maker time because Slack does very little to prevent it — in fact, it encourages it.&lt;/p&gt;
+
+&lt;p&gt;As makers:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We know that most discussions are not so urgent they warrant breaking flow&lt;/li&gt;
+&lt;li&gt;We know the painful cost of context switching&lt;/li&gt;
+&lt;li&gt;We’d much rather be “addicted” to our craft than our chat tool&lt;/li&gt;
+&lt;li&gt;We believe that unmitigated access to our push notifications is damn near criminal&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Having spent most of my career crafting and architecting software to make companies more efficient, this is not merely a business challenge worth solving — it’s a personal mission.&lt;/p&gt;
+
+&lt;p&gt;We are undeniably standing on the shoulders of giants. Slack (and other similar chat tools) have made many great contributions to the fabric of the modern workplace. They’ve proven the value of housing team discussions in a central place. They’ve demonstrated that it’s possible to feel connected even when distributed.&lt;/p&gt;
+
+&lt;p&gt;They’ve served me more animated GIFs than I ever could have imagined (for that, I will be forever grateful).&lt;/p&gt;
+
+&lt;p&gt;And yet, their flaws are killing developer productivity. We must establish a healthy balance between asynchronous and real time communication, and restore the promise of increasing connectedness while minimizing chaos.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Isn’t it time your main productivity tool actually made you more productive?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class="inline-opt-in"&gt;
+  &lt;p&gt;&lt;strong&gt;If this resonated with you, I need your help!&lt;/strong&gt; Drop your email address below to voice your support. I promise, no spam. I&amp;rsquo;ll keep you in the loop about new developments in my quest to solve this problem. 🌟🌟🌟&lt;/p&gt;
+
+  &lt;form action="https://www.getdrip.com/forms/612157132/submissions" method="post" data-drip-embedded-form="612157132"&gt;
+    &lt;div class="inline-opt-in__field"&gt;
+      &lt;input type="text" name="fields[email]" value="" class="inline-opt-in__input" /&gt;
+      &lt;input type="submit" value="Count me in 👍" class="inline-opt-in__submit" data-drip-attribute="sign-up-button" /&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+</summary>
+    <content type="html">&lt;p&gt;Do you remember the first time you used Slack at work?&lt;/p&gt;
+
+&lt;p&gt;I vividly recall the impact it had on our mostly-distributed startup crew. For the first time ever I felt connected to my remote colleagues as if we were in the same building.&lt;/p&gt;
+
+&lt;p&gt;“Now we’re cooking with gas,” I told myself.&lt;/p&gt;
+
+&lt;p&gt;Anytime I had to ask my co-founder a question, he was just a quick DM or @-mention away — the digital analog to a tap on the shoulder. This proved to be much faster than firing off an email and waiting for a reply.&lt;/p&gt;
+
+&lt;p&gt;I realize this is not news to you now, but five years ago it was pretty ground-breaking.&lt;/p&gt;
+
+&lt;p&gt;Slack felt like the much-needed grease in the gears of our budding startup. It brought visibility to conversations that would have otherwise been trapped in an email silo. It lowered the barrier of formality that plagues email correspondence. It increased the velocity of communication.&lt;/p&gt;
+
+&lt;p&gt;Simply put, it ended the need to wait.&lt;/p&gt;
+
+&lt;p&gt;In the beginning, this seemed like an indelible leap ahead. Fast forward four years, and I&amp;rsquo;m convinced it has become the single greatest threat to developer productivity in the modern workplace.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The problem is that today&amp;rsquo;s chat tools are amplifying the troublesome parts of human nature, rather than minimizing them..&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We are impatient.&lt;/li&gt;
+&lt;li&gt;We feel anxiety for &amp;ldquo;unread&amp;rdquo; badges.&lt;/li&gt;
+&lt;li&gt;We are addicted to push notifications.&lt;/li&gt;
+&lt;li&gt;We think things are more urgent than they really are.&lt;/li&gt;
+&lt;li&gt;We care about our team’s perceptions and don&amp;rsquo;t want to look like we’re slacking off.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Don’t get me wrong, chat is not intrinsically bad. It’s part of what made Slack feel so magical at first, and it’s a key ingredient that is here to stay. The ability to engage with your team in real time is vital — but only when the discussion &lt;em&gt;must&lt;/em&gt; be synchronous.&lt;/p&gt;
+
+&lt;p&gt;Chat is a &lt;em&gt;greedy&lt;/em&gt; mode of communication.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It doesn’t care if you are deep in flow.&lt;/li&gt;
+&lt;li&gt;It begs you to incessantly clear its notification badges.&lt;/li&gt;
+&lt;li&gt;It buries important conversations among idle chatter when you snooze it.&lt;/li&gt;
+&lt;li&gt;It must be used with restraint or it becomes toxic.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You might be thinking, “Slack is not broken, you are just misusing it.”&lt;/p&gt;
+
+&lt;p&gt;In theory, I agree with that sentiment. Slack is &lt;em&gt;built&lt;/em&gt; for synchronous communication. If your team has the discipline to only use Slack for real time conversations and hold asynchronous discussions elsewhere (via email, inside a project management app, etc.), then you have achieved a rare feat.&lt;/p&gt;
+
+&lt;p&gt;For the rest of us, that is simply not our reality. I co-founded Drip (acquired by Leadpages in 2016) and lead engineering there for the last five years. In that time, our use of Slack scaled from just me and my co-founder to over sixty people. Despite my attempts to redirect discussions to their “proper” forum, our team’s use of Slack only grew deeper.&lt;/p&gt;
+
+&lt;p&gt;The cognitive overhead of always choosing the ideal place to hold a conversation proved to be too high.&lt;/p&gt;
+
+&lt;p&gt;The truth is that &lt;em&gt;makers&lt;/em&gt; feel the pain much more than &lt;em&gt;managers&lt;/em&gt;. A manager’s job is to be available for interruptions by their team. An effective manager is one who provides servant leadership and strives to keep their team unblocked.&lt;/p&gt;
+
+&lt;p&gt;Even the most respectful manager will inevitably interfere with maker time because Slack does very little to prevent it — in fact, it encourages it.&lt;/p&gt;
+
+&lt;p&gt;As makers:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We know that most discussions are not so urgent they warrant breaking flow&lt;/li&gt;
+&lt;li&gt;We know the painful cost of context switching&lt;/li&gt;
+&lt;li&gt;We’d much rather be “addicted” to our craft than our chat tool&lt;/li&gt;
+&lt;li&gt;We believe that unmitigated access to our push notifications is damn near criminal&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Having spent most of my career crafting and architecting software to make companies more efficient, this is not merely a business challenge worth solving — it’s a personal mission.&lt;/p&gt;
+
+&lt;p&gt;We are undeniably standing on the shoulders of giants. Slack (and other similar chat tools) have made many great contributions to the fabric of the modern workplace. They’ve proven the value of housing team discussions in a central place. They’ve demonstrated that it’s possible to feel connected even when distributed.&lt;/p&gt;
+
+&lt;p&gt;They’ve served me more animated GIFs than I ever could have imagined (for that, I will be forever grateful).&lt;/p&gt;
+
+&lt;p&gt;And yet, their flaws are killing developer productivity. We must establish a healthy balance between asynchronous and real time communication, and restore the promise of increasing connectedness while minimizing chaos.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Isn’t it time your main productivity tool actually made you more productive?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class="inline-opt-in"&gt;
+  &lt;p&gt;&lt;strong&gt;If this resonated with you, I need your help!&lt;/strong&gt; Drop your email address below to voice your support. I promise, no spam. I&amp;rsquo;ll keep you in the loop about new developments in my quest to solve this problem. 🌟🌟🌟&lt;/p&gt;
+
+  &lt;form action="https://www.getdrip.com/forms/612157132/submissions" method="post" data-drip-embedded-form="612157132"&gt;
+    &lt;div class="inline-opt-in__field"&gt;
+      &lt;input type="text" name="fields[email]" value="" class="inline-opt-in__input" /&gt;
+      &lt;input type="submit" value="Count me in 👍" class="inline-opt-in__submit" data-drip-attribute="sign-up-button" /&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Transactions in Phoenix</title>
+    <link rel="alternate" href="http://www.derrickreimer.com/posts/transactions-in-phoenix/"/>
+    <id>http://www.derrickreimer.com/posts/transactions-in-phoenix/</id>
+    <published>2017-06-08T19:00:00-05:00</published>
+    <updated>2018-03-01T07:54:38-06:00</updated>
+    <author>
+      <name>Derrick Reimer</name>
+    </author>
+    <summary type="html">&lt;p&gt;I recently set out to implement user registration for a project I’m working on
+in Elixir/Phoenix. It wasn’t long before I encountered a challenge that I have
+stumbled upon with every other ORM library: accepting a collection of form
+inputs and saving it across multiple (related) records in the database.&lt;/p&gt;
+
+&lt;p&gt;There’s more than one way to tackle the problem (with varying degrees of
+elegance), but I discovered that &lt;a href="https://github.com/elixir-ecto/ecto"&gt;Ecto&lt;/a&gt;
+lends itself particularly well to solving this problem once you are familiar
+with tools available.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;I recently set out to implement user registration for a project I&amp;rsquo;m working on
+in Elixir/Phoenix. It wasn&amp;rsquo;t long before I encountered a challenge that I have
+stumbled upon with every other ORM library: accepting a collection of form
+inputs and saving it across multiple (related) records in the database.&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s more than one way to tackle the problem (with varying degrees of
+elegance), but I discovered that &lt;a href="https://github.com/elixir-ecto/ecto"&gt;Ecto&lt;/a&gt;
+lends itself particularly well to solving this problem once you are familiar
+with tools available.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2&gt;The registration form&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s assume that you have a &lt;code&gt;users&lt;/code&gt; table and a &lt;code&gt;teams&lt;/code&gt; table, and upon
+submitting the registration form you need to create a new team record and a
+new user record (the team owner).&lt;/p&gt;
+
+&lt;p&gt;At a minimum, our form needs to collect the following fields:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Team name&lt;/li&gt;
+&lt;li&gt;Email address&lt;/li&gt;
+&lt;li&gt;Password&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Since this HTML form includes fields that belong in multiple database records,
+it does not make sense to bind the form directly to the &lt;code&gt;User&lt;/code&gt; or &lt;code&gt;Team&lt;/code&gt; changesets.&lt;/p&gt;
+
+&lt;p&gt;One alternative is to &lt;a href="https://hexdocs.pm/phoenix_html/Phoenix.HTML.Form.html#module-with-connection-data"&gt;bind the form to &lt;code&gt;@conn&lt;/code&gt; structure&lt;/a&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;&amp;lt;%= form_for @conn, team_path(@conn, :create), [as: :signup], fn f -&amp;gt; %&amp;gt;
+  &amp;lt;div class="form-field"&amp;gt;
+    &amp;lt;%= label f, :team_name, "Team Name" %&amp;gt;
+    &amp;lt;%= text_input f, :team_name %&amp;gt;
+  &amp;lt;/div&amp;gt;
+
+  &amp;lt;div class="form-field"&amp;gt;
+    &amp;lt;%= label f, :email, "Email" %&amp;gt;
+    &amp;lt;%= email_input f, :email %&amp;gt;
+  &amp;lt;/div&amp;gt;
+
+  &amp;lt;div class="form-field"&amp;gt;
+    &amp;lt;%= label f, :password, "Password" %&amp;gt;
+    &amp;lt;%= password_input f, :password %&amp;gt;
+  &amp;lt;/div&amp;gt;
+
+  &amp;lt;div class="form-controls"&amp;gt;
+    &amp;lt;%= submit "Sign up" %&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;% end %&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Upon submission, the form data is available in the request params under the
+&lt;code&gt;&amp;quot;signup&amp;quot;&lt;/code&gt; key. This may be suitable for very simple use cases, but quickly becomes
+cumbersome when you need more complicated logic, like data validations and
+default values.&lt;/p&gt;
+
+&lt;p&gt;Fortunately, Ecto changesets do not have to correspond to an actual database table!
+This means we can still use a changeset to implement our validation logic
+in a &amp;ldquo;virtual&amp;rdquo; model. Let&amp;rsquo;s call it &lt;code&gt;Registration&lt;/code&gt; and drop it in our models directory:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight elixir"&gt;&lt;code&gt;&lt;span class="c1"&gt;# web/models/registration.ex&lt;/span&gt;
+&lt;span class="k"&gt;defmodule&lt;/span&gt; &lt;span class="no"&gt;MyApp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="no"&gt;Registration&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+  &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="no"&gt;Ecto&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="no"&gt;Changeset&lt;/span&gt;
+
+  &lt;span class="nv"&gt;@types&lt;/span&gt; &lt;span class="p"&gt;%{&lt;/span&gt;
+    &lt;span class="ss"&gt;team_name:&lt;/span&gt; &lt;span class="ss"&gt;:string&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="ss"&gt;email:&lt;/span&gt; &lt;span class="ss"&gt;:string&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="ss"&gt;password:&lt;/span&gt; &lt;span class="ss"&gt;:string&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+
+  &lt;span class="nv"&gt;@doc&lt;/span&gt; &lt;span class="sd"&gt;"""
+  Builds a changeset based on the `struct` and `params`.
+  """&lt;/span&gt;
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="n"&gt;form_changeset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;struct&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;params&lt;/span&gt; &lt;span class="p"&gt;\\&lt;/span&gt; &lt;span class="p"&gt;%{})&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;struct&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;@types&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="o"&gt;|&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;cast&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="no"&gt;Map&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keys&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;@types&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="o"&gt;|&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;validate_required&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="ss"&gt;:team_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:email&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:password&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="o"&gt;|&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;validate_length&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:team_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;min:&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;max:&lt;/span&gt; &lt;span class="m"&gt;255&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="o"&gt;|&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;validate_length&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:email&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;min:&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;max:&lt;/span&gt; &lt;span class="m"&gt;254&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="o"&gt;|&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;validate_length&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:password&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;min:&lt;/span&gt; &lt;span class="m"&gt;6&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In the controller, we can summon a new changeset to bind to the form:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight elixir"&gt;&lt;code&gt;&lt;span class="c1"&gt;# web/controllers/team_controller.ex&lt;/span&gt;
+&lt;span class="k"&gt;defmodule&lt;/span&gt; &lt;span class="no"&gt;MyApp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="no"&gt;TeamController&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+  &lt;span class="kn"&gt;use&lt;/span&gt; &lt;span class="no"&gt;MyApp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="no"&gt;Web&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:controller&lt;/span&gt;
+  &lt;span class="n"&gt;alias&lt;/span&gt; &lt;span class="no"&gt;MyApp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="no"&gt;Registration&lt;/span&gt;
+
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;_params&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="n"&gt;changeset&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="no"&gt;Registration&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;form_changeset&lt;/span&gt;&lt;span class="p"&gt;(%{})&lt;/span&gt;
+    &lt;span class="n"&gt;render&lt;/span&gt; &lt;span class="n"&gt;conn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="sd"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;new.html"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;changeset:&lt;/span&gt; &lt;span class="n"&gt;changeset&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="n"&gt;create&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;%{&lt;/span&gt;&lt;span class="sd"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;signup"&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;signup_params&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="n"&gt;changeset&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="no"&gt;Registration&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;form_changeset&lt;/span&gt;&lt;span class="p"&gt;(%{},&lt;/span&gt; &lt;span class="n"&gt;signup_params&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;changeset&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;valid?&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+      &lt;span class="c1"&gt;# TODO: persist the data&lt;/span&gt;
+    &lt;span class="k"&gt;else&lt;/span&gt;
+      &lt;span class="n"&gt;changeset&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;%{&lt;/span&gt;&lt;span class="n"&gt;changeset&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="ss"&gt;action:&lt;/span&gt; &lt;span class="ss"&gt;:insert&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+      &lt;span class="n"&gt;render&lt;/span&gt; &lt;span class="n"&gt;conn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="sd"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;new.html"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;changeset:&lt;/span&gt; &lt;span class="n"&gt;changeset&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In the &lt;code&gt;create&lt;/code&gt; action, we check to see if the validations pass; if not,
+then we re-render the form (with errors). The &lt;code&gt;%{changeset | action: :insert}&lt;/code&gt;
+step is important, because it signifies to the form helper that errors should
+be rendered.&lt;/p&gt;
+
+&lt;p&gt;The template looks essentially the same as the first example, except the
+first argument is &lt;code&gt;@changeset&lt;/code&gt; instead of &lt;code&gt;@conn&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;&amp;lt;%= form_for @changeset, team_path(@conn, :create), [as: :signup], fn f -&amp;gt; %&amp;gt;
+  &amp;lt;div class="form-field"&amp;gt;
+    &amp;lt;%= label f, :team_name, "Team Name" %&amp;gt;
+    &amp;lt;%= text_input f, :team_name %&amp;gt;
+    &amp;lt;%= error_tag f, :team_name %&amp;gt;
+  &amp;lt;/div&amp;gt;
+
+  &amp;lt;!-- snip --&amp;gt;
+&amp;lt;% end %&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Persisting the data&lt;/h2&gt;
+
+&lt;p&gt;The persistence phase should go something like this:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Insert a record in &lt;code&gt;teams&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Insert a record in &lt;code&gt;users&lt;/code&gt; (with a foreign key pointing to the team)&lt;/li&gt;
+&lt;li&gt;In the event either operation fails, rollback all inserts&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This is a perfect candidate for a database transaction because we
+want to guarantee rollback on failure. Conveniently, Ecto comes with a handy module called &lt;a href="https://hexdocs.pm/ecto/Ecto.Multi.html"&gt;&lt;code&gt;Ecto.Multi&lt;/code&gt;&lt;/a&gt;
+that facilitates grouping a pipeline of database operations for transactions.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s build on our &lt;code&gt;Registration&lt;/code&gt; module by adding a &lt;code&gt;operation&lt;/code&gt; function, and
+add &lt;code&gt;registration_changeset&lt;/code&gt; functions to the &lt;code&gt;User&lt;/code&gt; and &lt;code&gt;Team&lt;/code&gt; models. (One of the steps not
+implemented in this example is the &lt;code&gt;put_password_hash&lt;/code&gt; function in the &lt;code&gt;User&lt;/code&gt;
+module which is responsible for transforming the raw password into a hashed one
+for storage).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight elixir"&gt;&lt;code&gt;&lt;span class="c1"&gt;# web/models/team.ex&lt;/span&gt;
+&lt;span class="k"&gt;defmodule&lt;/span&gt; &lt;span class="no"&gt;MyApp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="no"&gt;Team&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+  &lt;span class="kn"&gt;use&lt;/span&gt; &lt;span class="no"&gt;MyApp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="no"&gt;Web&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:model&lt;/span&gt;
+
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="n"&gt;registration_changeset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;struct&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;params&lt;/span&gt; &lt;span class="p"&gt;\\&lt;/span&gt; &lt;span class="p"&gt;%{})&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="n"&gt;struct&lt;/span&gt;
+    &lt;span class="o"&gt;|&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;cast&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:name&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="c1"&gt;# web/models/user.ex&lt;/span&gt;
+&lt;span class="k"&gt;defmodule&lt;/span&gt; &lt;span class="no"&gt;MyApp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="no"&gt;User&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+  &lt;span class="kn"&gt;use&lt;/span&gt; &lt;span class="no"&gt;MyApp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="no"&gt;Web&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:model&lt;/span&gt;
+
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="n"&gt;registration_changeset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;struct&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;params&lt;/span&gt; &lt;span class="p"&gt;\\&lt;/span&gt; &lt;span class="p"&gt;%{})&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="n"&gt;struct&lt;/span&gt;
+    &lt;span class="o"&gt;|&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;cast&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:team_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:email&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:password&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="o"&gt;|&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;put_password_hash&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="c1"&gt;# web/models/registration.ex&lt;/span&gt;
+&lt;span class="k"&gt;defmodule&lt;/span&gt; &lt;span class="no"&gt;MyApp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="no"&gt;Registration&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+  &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="no"&gt;Ecto&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="no"&gt;Changeset&lt;/span&gt;
+  &lt;span class="n"&gt;alias&lt;/span&gt; &lt;span class="no"&gt;Ecto&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="no"&gt;Multi&lt;/span&gt;
+
+  &lt;span class="n"&gt;alias&lt;/span&gt; &lt;span class="no"&gt;MyApp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="no"&gt;Team&lt;/span&gt;
+  &lt;span class="n"&gt;alias&lt;/span&gt; &lt;span class="no"&gt;MyApp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="no"&gt;User&lt;/span&gt;
+
+  &lt;span class="c1"&gt;# ...&lt;/span&gt;
+
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="n"&gt;operation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;changeset&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="no"&gt;Multi&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt;
+    &lt;span class="o"&gt;|&amp;gt;&lt;/span&gt; &lt;span class="no"&gt;Multi&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;insert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:team&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;team_changeset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;changeset&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="o"&gt;|&amp;gt;&lt;/span&gt; &lt;span class="no"&gt;Multi&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:user&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;fn&lt;/span&gt; &lt;span class="p"&gt;%{&lt;/span&gt;&lt;span class="ss"&gt;team:&lt;/span&gt; &lt;span class="n"&gt;team&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;
+      &lt;span class="n"&gt;changeset&lt;/span&gt;
+      &lt;span class="o"&gt;|&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;user_changeset&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+      &lt;span class="o"&gt;|&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;put_change&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:team_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;team&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="o"&gt;|&amp;gt;&lt;/span&gt; &lt;span class="no"&gt;Repo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;insert&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+
+  &lt;span class="k"&gt;defp&lt;/span&gt; &lt;span class="n"&gt;team_changeset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;changeset&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="n"&gt;params&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;%{&lt;/span&gt;&lt;span class="ss"&gt;name:&lt;/span&gt; &lt;span class="n"&gt;changeset&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;changes&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;team_name&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="no"&gt;Team&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;registration_changeset&lt;/span&gt;&lt;span class="p"&gt;(%&lt;/span&gt;&lt;span class="no"&gt;Team&lt;/span&gt;&lt;span class="p"&gt;{},&lt;/span&gt; &lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+
+  &lt;span class="k"&gt;defp&lt;/span&gt; &lt;span class="n"&gt;user_changeset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;changeset&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="n"&gt;params&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
+      &lt;span class="n"&gt;changeset&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;changes&lt;/span&gt;
+      &lt;span class="o"&gt;|&amp;gt;&lt;/span&gt; &lt;span class="no"&gt;Map&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;take&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="ss"&gt;:username&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:email&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:password&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:time_zone&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+
+    &lt;span class="no"&gt;User&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;registration_changeset&lt;/span&gt;&lt;span class="p"&gt;(%&lt;/span&gt;&lt;span class="no"&gt;User&lt;/span&gt;&lt;span class="p"&gt;{},&lt;/span&gt; &lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The &lt;code&gt;Registration.operation&lt;/code&gt; function is responsible for building an &lt;code&gt;Ecto.Multi&lt;/code&gt;
+structure that can be passed to the &lt;a href="https://hexdocs.pm/ecto/Ecto.Repo.html#c:transaction/2"&gt;&lt;code&gt;Repo.transaction&lt;/code&gt;&lt;/a&gt;
+function. The first step inserts the &lt;code&gt;Team&lt;/code&gt; record, and the second step
+receives the newly-created &lt;code&gt;Team&lt;/code&gt; and associates the &lt;code&gt;User&lt;/code&gt; to it when inserting.&lt;/p&gt;
+
+&lt;p&gt;Now that we have an function for generating our operation, we can utilize it
+in our controller.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight elixir"&gt;&lt;code&gt;&lt;span class="k"&gt;defmodule&lt;/span&gt; &lt;span class="no"&gt;MyApp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="no"&gt;TeamController&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+  &lt;span class="kn"&gt;use&lt;/span&gt; &lt;span class="no"&gt;MyApp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="no"&gt;Web&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:controller&lt;/span&gt;
+
+  &lt;span class="c1"&gt;# ...&lt;/span&gt;
+
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="n"&gt;create&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;%{&lt;/span&gt;&lt;span class="sd"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;signup"&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;signup_params&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="n"&gt;changeset&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="no"&gt;Registration&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;form_changeset&lt;/span&gt;&lt;span class="p"&gt;(%{},&lt;/span&gt; &lt;span class="n"&gt;signup_params&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;changeset&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;valid?&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+      &lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="no"&gt;Repo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;transaction&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="no"&gt;Registration&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;operation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;changeset&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+        &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="ss"&gt;:ok&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;%{&lt;/span&gt;&lt;span class="ss"&gt;team:&lt;/span&gt; &lt;span class="n"&gt;team&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;user:&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="p"&gt;}}&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;
+          &lt;span class="n"&gt;conn&lt;/span&gt;
+          &lt;span class="o"&gt;|&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;put_flash&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:info&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="sd"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;Thanks for registering!"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+          &lt;span class="o"&gt;|&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;redirect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;to:&lt;/span&gt; &lt;span class="n"&gt;home_path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:index&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+        &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="ss"&gt;:error&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;_&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;_&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;_&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;
+          &lt;span class="n"&gt;conn&lt;/span&gt;
+          &lt;span class="o"&gt;|&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;put_flash&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:error&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="sd"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;Uh oh, something went wrong. Please try again."&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+          &lt;span class="o"&gt;|&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;render&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sd"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;new.html"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;changeset:&lt;/span&gt; &lt;span class="n"&gt;changeset&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="k"&gt;end&lt;/span&gt;
+    &lt;span class="k"&gt;else&lt;/span&gt;
+      &lt;span class="n"&gt;changeset&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;%{&lt;/span&gt;&lt;span class="n"&gt;changeset&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="ss"&gt;action:&lt;/span&gt; &lt;span class="ss"&gt;:insert&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+      &lt;span class="n"&gt;render&lt;/span&gt; &lt;span class="n"&gt;conn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="sd"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;new.html"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;changeset:&lt;/span&gt; &lt;span class="n"&gt;changeset&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The result is a nice and clean separation of concerns between form data and
+persistence operations, all while making good use of data integrity features
+built into PostgreSQL.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Announcing: The Art of Product Podcast</title>
+    <link rel="alternate" href="http://www.derrickreimer.com/posts/announcing-art-of-product/"/>
+    <id>http://www.derrickreimer.com/posts/announcing-art-of-product/</id>
+    <published>2017-06-05T19:00:00-05:00</published>
+    <updated>2018-03-01T07:54:38-06:00</updated>
+    <author>
+      <name>Derrick Reimer</name>
+    </author>
+    <summary type="html">&lt;p&gt;Since August 2016, I&amp;rsquo;ve had the pleasure of being a regular guest co-host on
+&lt;a href="http://giantrobots.fm"&gt;Giant Robots Smashing into Other Giant Robots&lt;/a&gt; along with
+Ben Orenstein. I&amp;rsquo;ve been a long-time podcast consumer, but was initially reluctant
+to try my hand at recording myself. After some healthy prodding from Ben, I
+agreed to try a few episodes and, lo and behold, we&amp;rsquo;ve been recording ever
+since.&lt;/p&gt;
+
+&lt;p&gt;A few weeks ago, Ben dropped the news to me that he was moving on from
+Thoughtbot to start his own business. This left us an interesting new storyline
+to tell and no podcast on which to tell it!&lt;/p&gt;
+
+&lt;p&gt;So in true scrappy bootstrapper form, &lt;a href="http://artofproductpodcast.com"&gt;The Art of Product&lt;/a&gt;
+podcast was born. We plan to release one ~30 minute episode per week and continue
+with the same format from Giant Robots, discussing whatever interesting things
+we&amp;rsquo;ve been up to recently.&lt;/p&gt;
+
+&lt;p&gt;Have a listen and leave us a 5-star review in iTunes if you dig it!&lt;/p&gt;
+
+&lt;iframe width="560" height="80" scrolling="no" frameborder="no" src="https://fireside.fm/s/v-d94RjH+bYau2x9F/iframe"&gt;&lt;/iframe&gt;
+</summary>
+    <content type="html">&lt;p&gt;Since August 2016, I&amp;rsquo;ve had the pleasure of being a regular guest co-host on
+&lt;a href="http://giantrobots.fm"&gt;Giant Robots Smashing into Other Giant Robots&lt;/a&gt; along with
+Ben Orenstein. I&amp;rsquo;ve been a long-time podcast consumer, but was initially reluctant
+to try my hand at recording myself. After some healthy prodding from Ben, I
+agreed to try a few episodes and, lo and behold, we&amp;rsquo;ve been recording ever
+since.&lt;/p&gt;
+
+&lt;p&gt;A few weeks ago, Ben dropped the news to me that he was moving on from
+Thoughtbot to start his own business. This left us an interesting new storyline
+to tell and no podcast on which to tell it!&lt;/p&gt;
+
+&lt;p&gt;So in true scrappy bootstrapper form, &lt;a href="http://artofproductpodcast.com"&gt;The Art of Product&lt;/a&gt;
+podcast was born. We plan to release one ~30 minute episode per week and continue
+with the same format from Giant Robots, discussing whatever interesting things
+we&amp;rsquo;ve been up to recently.&lt;/p&gt;
+
+&lt;p&gt;Have a listen and leave us a 5-star review in iTunes if you dig it!&lt;/p&gt;
+
+&lt;iframe width="560" height="80" scrolling="no" frameborder="no" src="https://fireside.fm/s/v-d94RjH+bYau2x9F/iframe"&gt;&lt;/iframe&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Solving Our Slow Query Problem</title>
+    <link rel="alternate" href="http://www.derrickreimer.com/posts/solving-our-slow-query-problem/"/>
+    <id>http://www.derrickreimer.com/posts/solving-our-slow-query-problem/</id>
+    <published>2017-02-08T18:00:00-06:00</published>
+    <updated>2018-03-01T07:54:38-06:00</updated>
+    <author>
+      <name>Derrick Reimer</name>
+    </author>
+    <summary type="html">&lt;p&gt;One of the core features of Drip is the ability to segment your subscriber database by tags, custom fields, events performed, campaign and workflow subscriptions, and so on.&lt;/p&gt;
+
+&lt;p&gt;As our Postgres dataset has grown into the multi-terabyte size range, these ad-hoc segmentation queries have become increasingly expensive to run, especially for accounts with many thousands of subscribers and millions of subscriber events.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;One of the core features of Drip is the ability to segment your subscriber database by tags, custom fields, events performed, campaign and workflow subscriptions, and so on.&lt;/p&gt;
+
+&lt;p&gt;As our Postgres dataset has grown into the multi-terabyte size range, these ad-hoc segmentation queries have become increasingly expensive to run, especially for accounts with many thousands of subscribers and millions of subscriber events.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s really nothing magical going on under the covers. The subscriber filter in Drip works like this:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Accept a blob of JSON from the UI that describes the criteria&lt;/li&gt;
+&lt;li&gt;Parse the JSON data into individual conditions&lt;/li&gt;
+&lt;li&gt;Transform the conditions into an SQL query with the help of &lt;a href="https://github.com/rails/arel"&gt;Arel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Execute the query and return the results&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A query for &amp;ldquo;subscribers who are tagged with &amp;lsquo;Customer&amp;rsquo;&amp;rdquo; roughly translates to:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight sql"&gt;&lt;code&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;subscribers&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;
+&lt;span class="k"&gt;INNER&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="n"&gt;tags&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subscriber_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;
+&lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'Customer'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;A more complex query could have many different &lt;code&gt;JOIN&lt;/code&gt; clauses with large tables, and the fact that these complex queries can be generated on the fly by the user makes them particularly challenging to optimize.&lt;/p&gt;
+
+&lt;h2&gt;To shard, or not to shard?&lt;/h2&gt;
+
+&lt;p&gt;The largest tables in the Drip database are the &lt;code&gt;deliveries&lt;/code&gt; and &lt;code&gt;subscriber_events&lt;/code&gt; tables, each nearing a billion records. A subscriber query with even a single &lt;code&gt;JOIN&lt;/code&gt; against one of these tables is often prohibitively slow, depending on the size of the customer&amp;rsquo;s account.&lt;/p&gt;
+
+&lt;p&gt;The problem is rooted in the fact it is not feasible to hold all database indexes in RAM needed to make all the possible ad-hoc query combinations performant. Common strategies for tackling this problem include partitioning large tables by some logical key, or sharding the database entirely (using a plugin like &lt;a href="https://www.citusdata.com/"&gt;Citus Data&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;We explored these approaches in depth, along the way asking ourselves these questions:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;How much developer time will it require?&lt;/li&gt;
+&lt;li&gt;How much will it cost to host?&lt;/li&gt;
+&lt;li&gt;How many new technologies will be introduced?&lt;/li&gt;
+&lt;li&gt;How strongly are we locked in to the approach once adopted?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Deeply ingrained in our engineering culture is an &lt;a href="http://www.derrickreimer.com/posts/choosing-the-perfect-tech-stack/"&gt;aversion to risk&lt;/a&gt;, especially when that risk lies outside of our zone of competitive advantages. We will gladly make calculated bets when it comes to building cutting-edge marketing automation features, but much less so when making choices about our database technologies.&lt;/p&gt;
+
+&lt;p&gt;We determined that sharding would carry a high development price tag, increase our hosting cost by an order of magnitude, and introduce a high degree of vendor lock-in. Partitioning large tables would carry similar development costs and would limit our ability to run queries that need to span all the partitions (which is part of what makes Drip so powerful).&lt;/p&gt;
+
+&lt;h2&gt;&amp;ldquo;Always fast&amp;rdquo; is a pipe dream&lt;/h2&gt;
+
+&lt;p&gt;We came to another important realization as we evaluated our options. It&amp;rsquo;s feasible that the largest Drip customer may someday have millions of subscribers and hundreds of millions of &lt;code&gt;deliveries&lt;/code&gt; and &lt;code&gt;subscriber_events&lt;/code&gt; to their name. Even if we sharded our database by account and gave this customer their own dedicated shard, their segmentation queries would &lt;em&gt;still&lt;/em&gt; be vulnerable to slowness.&lt;/p&gt;
+
+&lt;p&gt;Abandoning the goal of trying to make every possible query combination run quickly allowed us to reframe the question. Instead of asking &amp;ldquo;how can we make these queries always run quickly?&amp;rdquo;, we started asking &amp;ldquo;how can we minimize the pain our customers experience when segmenting their subscriber database?&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;Segments tend to be long-lived and reused many times. For example, the criteria that defines who belongs in a &amp;ldquo;Customer&amp;rdquo; segment is unlikely to change. Once defined, the user is likely to reference that segment in many different scenarios, such as when sending a broadcast email targeted to existing customers, or within a workflow decision to send customers down a different journey than non-customers.&lt;/p&gt;
+
+&lt;p&gt;In its current form, complex segments were guaranteed to run slowly every time they were viewed. If we could reduce that slowness to just the first time a segment is built, that would dramatically improve the user experience.&lt;/p&gt;
+
+&lt;h2&gt;Live caching to the rescue&lt;/h2&gt;
+
+&lt;p&gt;We had long assumed that it was not feasible to cache the results of a segmentation query because it is unacceptable to ever return stale results. Unlike analytics data, which can be a few hours behind realtime without much consequence, an invalid segment cache could result in someone receiving an email they shouldn&amp;rsquo;t have, or worse, getting pruned from a subscriber database erroneously.&lt;/p&gt;
+
+&lt;p&gt;Questioning our initial assumption, we realized that it &lt;em&gt;is&lt;/em&gt; possible to keep the cached results fresh in realtime, provided that we &amp;ldquo;recheck&amp;rdquo; segment membership anytime a subscriber event occurs. With a strategy in hand, the next step was to choose the technology for storing this cached data. We considered using Postgres, but ultimately settled on &lt;a href="https://redis.io/"&gt;Redis&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href="https://redis.io/commands#sorted_set"&gt;sorted&lt;/a&gt; and &lt;a href="https://redis.io/commands#set"&gt;unsorted&lt;/a&gt; set data types are the killer features that made us choose Redis:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;They are &lt;a href="https://redis.io/commands/scard"&gt;countable in &lt;code&gt;O(1)&lt;/code&gt; time&lt;/a&gt;, meaning they take the same amount of time to count regardless of the number of members&lt;/li&gt;
+&lt;li&gt;They can be created and deleted much more quickly than inserting and deleting large batches of records in Postgres&lt;/li&gt;
+&lt;li&gt;They will never contain duplicate members, even if the same member is &amp;ldquo;added&amp;rdquo; multiple times&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The final piece of the puzzle was crafting the user experience. Here&amp;rsquo;s the flow that we settled on:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;When a user builds a segment, attempt to run the query and return the results right away. If the query finishes within a few seconds, great!&lt;/li&gt;
+&lt;li&gt;If the query is taking a while, display a message to the user that we are going to compute it in the background and email them when it&amp;rsquo;s ready.&lt;/li&gt;
+&lt;li&gt;Kick off a background process that will attempt to run the SQL query with a much longer timeout. If the query &lt;em&gt;still&lt;/em&gt; times out (some queries are so complicated they will run for hours without completing), fallback to a &amp;ldquo;looping&amp;rdquo; strategy where we pull out each subscriber in the account and check to see if the subscriber belongs in the segment.&lt;/li&gt;
+&lt;li&gt;Send the user an email with a link when the segment is ready to view. From that point forward, the cached segment will load instantaneously.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Deployment&lt;/h2&gt;
+
+&lt;p&gt;We deliberately chose to roll out segment caching gradually. The initial version was built as an entirely new subsystem in the codebase, so there was very little risk of breaking existing segments. Rather than modify the existing &lt;code&gt;Segment&lt;/code&gt; model, we created a new &lt;code&gt;LiveSegment&lt;/code&gt; model with its own database table and domain logic. This allowed us to create &lt;code&gt;LiveSegment&lt;/code&gt; records in many different customers&amp;rsquo; accounts and verify correctness without impacting any of their existing segments.&lt;/p&gt;
+
+&lt;p&gt;Once we were confident that cached segments were indeed staying up-to-date, we migrated the caching code over to the existing &lt;code&gt;Segment&lt;/code&gt; model. We made sure the old behavior remained in place if the &lt;code&gt;cached&lt;/code&gt; flag is set to &lt;code&gt;false&lt;/code&gt; on the segment record so we can easily disable caching for specific segments if a bug is discovered.&lt;/p&gt;
+
+&lt;p&gt;Since this use of Redis is distinct from our ephemeral caching (segment cache data needs to stick around indefinitely) and Sidekiq queues, we spun up a dedicated cluster of Redis servers that we call our &amp;ldquo;persistent Redis&amp;rdquo; store &amp;ndash; more details on that to come in a future post.&lt;/p&gt;
+
+&lt;h2&gt;Moving forward&lt;/h2&gt;
+
+&lt;p&gt;Subscriber segmentation is not the only area prone to slow queries and we&amp;rsquo;ve only begun to scratch surface on ways we can leverage Redis sets. In time, we plan to push more denormalized data into Redis when we need to count or check inclusion in large sets. There may come a time when it makes sense to shard our Postgres database, but until that day, Redis will be instrumental in keeping the app running fast.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>When To Build Your Own Billing Engine</title>
+    <link rel="alternate" href="http://www.derrickreimer.com/posts/when-to-build-your-own-billing-engine/"/>
+    <id>http://www.derrickreimer.com/posts/when-to-build-your-own-billing-engine/</id>
+    <published>2016-10-23T19:00:00-05:00</published>
+    <updated>2018-03-01T07:54:38-06:00</updated>
+    <author>
+      <name>Derrick Reimer</name>
+    </author>
+    <summary type="html">&lt;p&gt;Back when we started &lt;a href="https://www.drip.co"&gt;Drip&lt;/a&gt; in 2012, it was customary to write your own recurring billing engine.&lt;/p&gt;
+
+&lt;p&gt;Fundamentally, a SaaS billing engine is simply a scheduled task that runs each month for each customer and hits a payment API to charge them. Layered on top that is the concept of pricing tiers, trial periods, failed charge retry, proration, annual plans, and invoice generation.&lt;/p&gt;
+
+&lt;p&gt;Most developers these days choose not to build their own billing engine, as free platforms like Stripe subscriptions promise to rid your application code of complex billing logic. It seems like a no-brainer, right?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;Back when we started &lt;a href="https://www.drip.co"&gt;Drip&lt;/a&gt; in 2012, it was customary to write your own recurring billing engine.&lt;/p&gt;
+
+&lt;p&gt;Fundamentally, a SaaS billing engine is simply a scheduled task that runs each month for each customer and hits a payment API to charge them. Layered on top that is the concept of pricing tiers, trial periods, failed charge retry, proration, annual plans, and invoice generation.&lt;/p&gt;
+
+&lt;p&gt;Most developers these days choose not to build their own billing engine, as free platforms like Stripe subscriptions promise to rid your application code of complex billing logic. It seems like a no-brainer, right?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;At &lt;a href="https://www.drip.co"&gt;Drip&lt;/a&gt;, we discovered that many of our billing needs actually fall outside the &amp;ldquo;sweet spot&amp;rdquo; of recurring billing solutions on the market today. Rather than shoehorning into Stripe subscriptions, it was simpler to manage the recurring aspect of billing ourselves alongside all the other custom logic we were implementing.&lt;/p&gt;
+
+&lt;p&gt;If your application shares similar billing characteristics as Drip, you may also find that building your own billing engine is the simpler option.&lt;/p&gt;
+
+&lt;h2&gt;Metered plans&lt;/h2&gt;
+
+&lt;p&gt;Drip&amp;rsquo;s pricing tiers are fundamentally based on the number of subscribers in your account. At the time of writing, the &amp;ldquo;Starter&amp;rdquo; plan allows up to 100 subscribers, the &amp;ldquo;Basic&amp;rdquo; plan allows up to 2,500 subscribers, and so on. The highest published plan level we have is our &amp;ldquo;Business&amp;rdquo; plan for $149, but it doesn&amp;rsquo;t stop there. When your usage exceeds 12,500 subscribers, we utilize a step function to determine your price:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;amount = $149 + $35 * ceil((subscriber_count - 12,500) / 5,000)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We actually split that calculation into multiple steps, so that we can also generate a unique name for the plan and figure out the subscriber limit:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;factor = ceil((subscriber_count - 12,500) / 5,000)
+amount = $149 + $35 * factor
+subscriber_limit = 12,500 + (5,000 * factor)
+name = "Enterprise-#{factor}"
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Theoretically, there are an infinite number of possible Drip plans: Enterprise-1, Enterprise-2, &amp;hellip; , Enterprise-100, and so on.&lt;/p&gt;
+
+&lt;p&gt;Another characteristic of Drip&amp;rsquo;s billing engine is plan auto-adjustment. As soon as a customer exceeds the limits of their current plan, we automatically move them to a plan that fits their usage (and send them an email letting them know what happened).&lt;/p&gt;
+
+&lt;p&gt;Most billing platforms assume you have a discrete set of plans. While it is possible to programmatically create new plans in Stripe using the API, for example, it is still up to you to compute the plan amount in your own code. This is a big leak in the abstraction and requires your application to have deep knowledge about your pricing tiers.&lt;/p&gt;
+
+&lt;h2&gt;Grandfathering and price testing&lt;/h2&gt;
+
+&lt;p&gt;We&amp;rsquo;ve raised prices several times over the past few years as Drip has become a more valuable platform. We are strong believers that (in most cases) you should not raise prices for existing customers &amp;ndash; a concept often referred to as &amp;ldquo;grandfathering&amp;rdquo;. For Drip, this means making sure that if a customer gets auto-upgraded, the plan we put them on will be computed based on what the pricing structure was when they became a customer.&lt;/p&gt;
+
+&lt;p&gt;To make this happen, we introduced the concept of &lt;strong&gt;versioned billing&lt;/strong&gt;. When a customer signs up, they are assigned a version number corresponding to whatever pricing is currently advertised. Each version has its own:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Set of standard pricing tiers&lt;/li&gt;
+&lt;li&gt;Formula for computing &amp;ldquo;enterprise&amp;rdquo; tiers&lt;/li&gt;
+&lt;li&gt;Subscriber and broadcast sending limits&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This guarantees that existing customers will never be impacted by new pricing changes (unless their version is modified). With versioning in place, you are free to experiment with new pricing structures and even A/B test them against each other without worrying about impacting existing customers.&lt;/p&gt;
+
+&lt;h2&gt;Annual plans&lt;/h2&gt;
+
+&lt;p&gt;Collecting a year&amp;rsquo;s worth of revenue from your customers (in exchange for a nice discount) is an excellent way to improve your cash flow and fund your growth drivers, especially if you are a self-funded company. Yet, annual billing is major challenge to pull off for companies with metered plans. This is likely why it&amp;rsquo;s difficult to find any other email marketing provider with similar market positioning as Drip that offers annual plans.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s the challenge: suppose a customer decides to buy an annual plan while they are on our $49 plan. The customer has just paid $490 for their next year of service and does not expect to get billed for another twelve months. But if we are doing our job right, this customer is successful with Drip and cruises over the subscriber limit of the $49 plan in no time. This leaves us with a few options:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Charge the customer right away for the prorated difference&lt;/li&gt;
+&lt;li&gt;Eat the difference and charge the customer at the higher plan level next year&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Neither of these choices are acceptable. Some of the most successful Drip customers have been known to climb three (or more) pricing tiers in the span of one month. Attempting to charge prorated amounts would make for very messy bookkeeping and might actually result in the customer getting charged more often than if they were on monthly billing. (Customers often upgrade to annual to make their bookkeeping simpler).&lt;/p&gt;
+
+&lt;p&gt;To overcome these obstacles at Drip, we implemented a credit-based system. When a customer upgrades to annual, they &amp;ldquo;buy&amp;rdquo; a certain amount of credit at a discounted rate. At the moment, one year of the $49 plan costs $490 and the customer is given $588 of credit on their subscription. The customer is still billed on a monthly basis, but instead of charging their credit card, we deduct their current plan amount from their credit balance.&lt;/p&gt;
+
+&lt;p&gt;If they get auto-upgraded, no problem &amp;ndash; we will just end up chipping away at their credit balance faster. This means the customer may have to end up paying again before one year has passed, but at least we are charging them at the latest possible point instead of every time they exceed their limits.&lt;/p&gt;
+
+&lt;h2&gt;Keeping everything in sync&lt;/h2&gt;
+
+&lt;p&gt;When I was building &lt;a href="https://codetree.com"&gt;Codetree&lt;/a&gt;, I decided to use Stripe subscriptions because the pricing structure was much simpler than Drip&amp;rsquo;s. One of the trickiest parts to manage was keeping the Codetree database in sync with the data stored in Stripe.&lt;/p&gt;
+
+&lt;p&gt;At a minimum, you must install a webhook to consume events from Stripe so that you will know when your subscriptions transition to different states. Although Stripe&amp;rsquo;s webhooks are well-documented, I still had to write a fair amount of code to ensure that payloads were being processed correctly.&lt;/p&gt;
+
+&lt;p&gt;I also had to write code to handle registration, plan changes, cancellations, reactivations, and manual adjustments (like one-off trial extensions). Implementing that functionality in Drip&amp;rsquo;s custom billing engine was notably simpler, because it did not involve hitting an external API for every task.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;The objective here is not to criticize existing billing platforms, but rather to challenge the assumption that it is always easier to reach for an existing platform than build your own.&lt;/p&gt;
+
+&lt;p&gt;If you have a discrete set of plans that do not auto-adjust and you anticipate your business model to remain fairly stable, then adopting a platform like Stripe subscriptions is probably the way to go. But if your business model resembles Drip&amp;rsquo;s, it&amp;rsquo;s worth considering giving yourself the flexibility of controlling the whole billing process.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Choosing the Perfect Tech Stack</title>
+    <link rel="alternate" href="http://www.derrickreimer.com/posts/choosing-the-perfect-tech-stack/"/>
+    <id>http://www.derrickreimer.com/posts/choosing-the-perfect-tech-stack/</id>
+    <published>2016-03-20T19:00:00-05:00</published>
+    <updated>2018-03-01T07:54:38-06:00</updated>
+    <author>
+      <name>Derrick Reimer</name>
+    </author>
+    <summary type="html">&lt;p&gt;Nothing quite compares to greenfield software development. The canvas is blank and you finally have the opportunity to do it “The Right Way” from the ground up. If you’ve been building web apps for a while, you’ve undoubtedly found yourself working with technologies that you’d never use again, given the luxury of a blank canvas. And if you follow the open source world, there’s probably a brand-spanking-new boutique framework you’ve been itching to take for a spin.&lt;/p&gt;
+
+&lt;p&gt;With all the excitement of a blank canvas comes an equal amount of anxiety. You know you are one ill-advised choice away from being stuck with the “imperfect” tech stack. You have a hunch about what you want to use, but being the dutiful engineer that you are, you spend a few hours verifying your assumptions by Googling “Ruby vs Go” and “nodejs vs haskell” only to find yourself with net loss of clarity. (Don’t do that.)&lt;/p&gt;
+
+&lt;p&gt;Take a deep breath, it doesn’t have to be this hard.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;Nothing quite compares to greenfield software development. The canvas is blank and you finally have the opportunity to do it &amp;ldquo;The Right Way&amp;rdquo; from the ground up. If you&amp;rsquo;ve been building web apps for a while, you&amp;rsquo;ve undoubtedly found yourself working with technologies that you&amp;rsquo;d never use again, given the luxury of a blank canvas. And if you follow the open source world, there&amp;rsquo;s probably a brand-spanking-new boutique framework you&amp;rsquo;ve been itching to take for a spin.&lt;/p&gt;
+
+&lt;p&gt;With all the excitement of a blank canvas comes an equal amount of anxiety. You know you are one ill-advised choice away from being stuck with the &amp;ldquo;imperfect&amp;rdquo; tech stack. You have a hunch about what you want to use, but being the dutiful engineer that you are, you spend a few hours verifying your assumptions by Googling &amp;ldquo;Ruby vs Go&amp;rdquo; and &amp;ldquo;nodejs vs haskell&amp;rdquo; only to find yourself with net loss of clarity. (Don&amp;rsquo;t do that.)&lt;/p&gt;
+
+&lt;p&gt;Take a deep breath, it doesn&amp;rsquo;t have to be this hard.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h3&gt;Stick with what you know&lt;/h3&gt;
+
+&lt;p&gt;I know you&amp;rsquo;ve heard it a million times and I&amp;rsquo;m going to repeat it because it&amp;rsquo;s true: any modern web stack is perfectly suitable for most web applications. Don&amp;rsquo;t get me wrong, I love a good &amp;ldquo;my language is better than your language&amp;rdquo; debate as much as the next engineer. And when you scour the web for objective comparisons of different technologies, that&amp;rsquo;s exactly what you will find. But the truth is, that will lead you no closer to the &amp;ldquo;right&amp;rdquo; answer because there is no right answer.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re a Ruby developer, build it in Ruby. If you&amp;rsquo;re a PHP developer, build it in PHP. Breaking ground on your new SaaS app is probably not the best time to decide to learn a new language or framework.&lt;/p&gt;
+
+&lt;p&gt;In the early planning stage for &lt;a href="https://codetree.com"&gt;Codetree&lt;/a&gt;, I considered using Sinatra instead of Ruby on Rails. At the time, some members of the Ruby community were espousing that Rails is too heavy and I was beginning to buy into the hype. I had visions of a perfectly clean codebase with just the components it needed and nothing more. It was going to be &lt;em&gt;great&lt;/em&gt;. And then I came to my senses.&lt;/p&gt;
+
+&lt;p&gt;I had never built a Sinatra app before, I was probably going to move at least 20% slower, and my volume of Stack Overflow searches was probably going to double. After all, I had spent the last three years of my work life building Rails apps and polishing my skills with that framework.&lt;/p&gt;
+
+&lt;p&gt;My point is not that Rails is superior to Sinatra for &lt;strong&gt;everyone&lt;/strong&gt;, but it definitely was for &lt;strong&gt;me&lt;/strong&gt; when as I was trying to build and launch a profitable SaaS app.&lt;/p&gt;
+
+&lt;h3&gt;Favor stable over new&lt;/h3&gt;
+
+&lt;p&gt;Dan McKinley (formerly with Stripe) wrote an &lt;a href="http://mcfunley.com/choose-boring-technology"&gt;excellent piece&lt;/a&gt; about this concept that really helped solidify my thinking on the topic. Many other titans of the tech industry have expressed &lt;a href="https://medium.com/s-c-a-l-e/github-scaling-on-ruby-with-a-nomadic-tech-team-4db562b96dcd#.e47y62lo8"&gt;similar sentiments&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;We don’t need to reinvent the wheel, we don’t need to write our own databases, we don’t need to start writing our own frameworks — because they’re all in domains that are usual. It’s a website, it’s web hosting. In the domains that are unusual, we fully embrace the need to write custom applications or build bespoke apps for that.&lt;/p&gt;
+&lt;footer&gt;
+  &lt;cite&gt;&amp;mdash; Sam Lambert, Director of Technology at GitHub&lt;/cite&gt;
+&lt;/footer&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Remember that brand-new framework I mentioned before? Don&amp;rsquo;t use it. Especially if it&amp;rsquo;s a JavaScript framework &amp;ndash; it&amp;rsquo;ll probably be obsolete in two months anyway.&lt;/p&gt;
+
+&lt;p&gt;But seriously, that last thing you want to do is introduce more variability into the system than is absolutely necessary. When you are building features, finding product-market fit, and trying to get to launch, the last thing you want to worry about is a flaw in the pre-1.0-with-almost-no-documentation database system you just adopted.&lt;/p&gt;
+
+&lt;div class="embedded-tweet"&gt;
+  &lt;blockquote class="twitter-tweet" data-lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;Here&amp;rsquo;s to the sane ones, the PostgreSQL-users, the troubleshooters. The placers of square pegs in square holes.&lt;/p&gt;&amp;mdash; Stripe (@stripe) &lt;a href="https://twitter.com/stripe/status/582679042261843968"&gt;March 30, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+
+&lt;p&gt;What&amp;rsquo;s great about this approach is you&amp;rsquo;ve certainly worked with a handful of these &amp;ldquo;stable&amp;rdquo; technologies before. They are battle-tested, actively maintained, and you can probably find a book on them published more than 20 years ago.&lt;/p&gt;
+
+&lt;h3&gt;Worry about scaling later&lt;/h3&gt;
+
+&lt;p&gt;To say software developers have the tendency to over-engineer things is an understatement. It&amp;rsquo;s in our nature and I don&amp;rsquo;t think it&amp;rsquo;s a bad thing when channeled correctly. Writing robust, well-factored code for the sake of maintainability and stability is great. Architecting your codebase to withstand the load of millions of users while building out your minimum viable product &amp;ndash; not so great.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m sure you have been told this before. I bet it was framed like this:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Don&amp;rsquo;t put too much effort into over-architecting your code. Chances are you wont have many users anyway. Most startups fail.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I actually think that&amp;rsquo;s a really lousy way to look at it. I&amp;rsquo;ve never bought into such a cynical argument and the logic does not play out for me. If I&amp;rsquo;m to operate as if the business is going fail anyway, should I opt to skip writing tests?&lt;/p&gt;
+
+&lt;p&gt;No, the reason is that no matter how experienced you are, it is impossible to foresee the exact scaling challenges you are going to encounter until you make it there. This principle is articulated well by the Extreme Programming (XP) movement.&lt;/p&gt;
+
+&lt;h3&gt;There is no perfect stack&lt;/h3&gt;
+
+&lt;p&gt;The irony of it all is there is no perfect tech stack. Stop striving for perfection.&lt;/p&gt;
+
+&lt;p&gt;Instead, stick with what you know and avoid shiny new technologies. That will put you in the best position to tackle scaling challenges as they arise.&lt;/p&gt;
+</content>
+  </entry>
+</feed>

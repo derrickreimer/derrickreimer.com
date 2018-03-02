@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="/favicon.png">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Adamina" rel="stylesheet">
+
+    <title>derrickreimer.com</title>
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+
+    <link href="/stylesheets/site.css" rel="stylesheet" />
+    <link href="/stylesheets/github.css" rel="stylesheet" />
+    <script src="/javascripts/analytics.js"></script>
+
+    <script type="text/javascript">
+      analytics.initialize({
+        'Google Analytics': {
+           trackingId: 'UA-75340229-1'
+         },
+         'Drip': {
+           account: '8045758'
+         }
+      });
+
+      analytics.page();
+    </script>
+
+    <meta property="og:title" content="derrickreimer.com" />
+    <meta property="og:type" content="text/html" />
+    <meta property="og:url" content="http://www.derrickreimer.com/tags/writing/" />
+    <meta property="og:image" content="http://www.derrickreimer.com/images/logo-square-300.png" />
+  </head>
+  <body class="tags tags_writing tags_writing_index">
+    <div class="hello-bar">
+      <div class="main-content">
+        <strong>I'm starting something new.</strong>
+        <a href="/posts/the-war-on-developer-productivity" class="hello-bar__button">Read the manifesto &rarr;</a>
+      </div>
+    </div>
+<div class="page-header ">      <div class="page-navigation">
+        <div class="site-container">
+          <h1 class="site-title">
+            <a href="/">
+                <img src="/images/signature-black.png" alt="Derrick Reimer" class="signature-logo" />
+            </a>
+          </h1>
+
+          <ul class="page-header-nav">
+            <li class="page-header-nav-item">
+              <a href="/about/">About</a>
+            </li>
+
+            <li class="page-header-nav-item">
+              <a href="http://artofproductpodcast.com">Podcast</a>
+            </li>
+
+            <li class="page-header-nav-item">
+              <a href="mailto:derrick@derrickreimer.com">Email Me</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+</div>
+    <div class="site-container">
+      <div class="main-content">
+        <h2 class="tag-header">Tagged with "writing"</h1>
+
+  <article class="post">
+  <div class="post-header">
+    <h2 class="post-title"><a href="/posts/announcing-art-of-product/">Announcing: The Art of Product Podcast</a></h2>
+    <div class="post-metadata">
+      <time class="post-timestamp">June  6, 2017</time>
+    </div>
+  </div>
+
+  <div class="post-body">
+      <p>Since August 2016, I&rsquo;ve had the pleasure of being a regular guest co-host on
+<a href="http://giantrobots.fm">Giant Robots Smashing into Other Giant Robots</a> along with
+Ben Orenstein. I&rsquo;ve been a long-time podcast consumer, but was initially reluctant
+to try my hand at recording myself. After some healthy prodding from Ben, I
+agreed to try a few episodes and, lo and behold, we&rsquo;ve been recording ever
+since.</p>
+
+<p>A few weeks ago, Ben dropped the news to me that he was moving on from
+Thoughtbot to start his own business. This left us an interesting new storyline
+to tell and no podcast on which to tell it!</p>
+
+<p>So in true scrappy bootstrapper form, <a href="http://artofproductpodcast.com">The Art of Product</a>
+podcast was born. We plan to release one ~30 minute episode per week and continue
+with the same format from Giant Robots, discussing whatever interesting things
+we&rsquo;ve been up to recently.</p>
+
+<p>Have a listen and leave us a 5-star review in iTunes if you dig it!</p>
+
+<iframe width="560" height="80" scrolling="no" frameborder="no" src="https://fireside.fm/s/v-d94RjH+bYau2x9F/iframe"></iframe>
+
+  </div>
+
+</article>
+
+  <article class="post">
+  <div class="post-header">
+    <h2 class="post-title"><a href="/posts/solving-our-slow-query-problem/">Solving Our Slow Query Problem</a></h2>
+    <div class="post-metadata">
+      <time class="post-timestamp">February  9, 2017</time>
+    </div>
+  </div>
+
+  <div class="post-body">
+      <p>One of the core features of Drip is the ability to segment your subscriber database by tags, custom fields, events performed, campaign and workflow subscriptions, and so on.</p>
+
+<p>As our Postgres dataset has grown into the multi-terabyte size range, these ad-hoc segmentation queries have become increasingly expensive to run, especially for accounts with many thousands of subscribers and millions of subscriber events.</p>
+
+<p></p>
+      <p><a href="/posts/solving-our-slow-query-problem/">Continue reading &rarr;</a></p>
+  </div>
+
+</article>
+
+  <article class="post">
+  <div class="post-header">
+    <h2 class="post-title"><a href="/posts/when-to-build-your-own-billing-engine/">When To Build Your Own Billing Engine</a></h2>
+    <div class="post-metadata">
+      <time class="post-timestamp">October 24, 2016</time>
+    </div>
+  </div>
+
+  <div class="post-body">
+      <p>Back when we started <a href="https://www.drip.co">Drip</a> in 2012, it was customary to write your own recurring billing engine.</p>
+
+<p>Fundamentally, a SaaS billing engine is simply a scheduled task that runs each month for each customer and hits a payment API to charge them. Layered on top that is the concept of pricing tiers, trial periods, failed charge retry, proration, annual plans, and invoice generation.</p>
+
+<p>Most developers these days choose not to build their own billing engine, as free platforms like Stripe subscriptions promise to rid your application code of complex billing logic. It seems like a no-brainer, right?</p>
+
+<p></p>
+      <p><a href="/posts/when-to-build-your-own-billing-engine/">Continue reading &rarr;</a></p>
+  </div>
+
+</article>
+
+  <article class="post">
+  <div class="post-header">
+    <h2 class="post-title"><a href="/posts/choosing-the-perfect-tech-stack/">Choosing the Perfect Tech Stack</a></h2>
+    <div class="post-metadata">
+      <time class="post-timestamp">March 21, 2016</time>
+    </div>
+  </div>
+
+  <div class="post-body">
+      <p>Nothing quite compares to greenfield software development. The canvas is blank and you finally have the opportunity to do it “The Right Way” from the ground up. If you’ve been building web apps for a while, you’ve undoubtedly found yourself working with technologies that you’d never use again, given the luxury of a blank canvas. And if you follow the open source world, there’s probably a brand-spanking-new boutique framework you’ve been itching to take for a spin.</p>
+
+<p>With all the excitement of a blank canvas comes an equal amount of anxiety. You know you are one ill-advised choice away from being stuck with the “imperfect” tech stack. You have a hunch about what you want to use, but being the dutiful engineer that you are, you spend a few hours verifying your assumptions by Googling “Ruby vs Go” and “nodejs vs haskell” only to find yourself with net loss of clarity. (Don’t do that.)</p>
+
+<p>Take a deep breath, it doesn’t have to be this hard.</p>
+
+<p></p>
+      <p><a href="/posts/choosing-the-perfect-tech-stack/">Continue reading &rarr;</a></p>
+  </div>
+
+</article>
+
+
+  <div class="pagination">
+
+
+</div>
+
+
+      </div>
+    </div>
+
+    <!-- Twitter share buttons -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+    <!-- Event tracking -->
+  </body>
+</html>

@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="/favicon.png">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Adamina" rel="stylesheet">
+
+    <title>When To Build Your Own Billing Engine - derrickreimer.com</title>
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+
+    <link href="/stylesheets/site.css" rel="stylesheet" />
+    <link href="/stylesheets/github.css" rel="stylesheet" />
+    <script src="/javascripts/analytics.js"></script>
+
+    <script type="text/javascript">
+      analytics.initialize({
+        'Google Analytics': {
+           trackingId: 'UA-75340229-1'
+         },
+         'Drip': {
+           account: '8045758'
+         }
+      });
+
+      analytics.page();
+    </script>
+
+    <meta property="og:title" content="When To Build Your Own Billing Engine - derrickreimer.com" />
+    <meta property="og:type" content="text/html" />
+    <meta property="og:url" content="http://www.derrickreimer.com/posts/when-to-build-your-own-billing-engine/" />
+    <meta property="og:image" content="http://www.derrickreimer.com/images/logo-square-300.png" />
+  </head>
+  <body class="posts posts_when-to-build-your-own-billing-engine posts_when-to-build-your-own-billing-engine_index">
+    <div class="hello-bar">
+      <div class="main-content">
+        <strong>I'm starting something new.</strong>
+        <a href="/posts/the-war-on-developer-productivity" class="hello-bar__button">Read the manifesto &rarr;</a>
+      </div>
+    </div>
+<div class="page-header ">      <div class="page-navigation">
+        <div class="site-container">
+          <h1 class="site-title">
+            <a href="/">
+                <img src="/images/signature-black.png" alt="Derrick Reimer" class="signature-logo" />
+            </a>
+          </h1>
+
+          <ul class="page-header-nav">
+            <li class="page-header-nav-item">
+              <a href="/about/">About</a>
+            </li>
+
+            <li class="page-header-nav-item">
+              <a href="http://artofproductpodcast.com">Podcast</a>
+            </li>
+
+            <li class="page-header-nav-item">
+              <a href="mailto:derrick@derrickreimer.com">Email Me</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+</div>
+    <div class="site-container">
+      <div class="main-content">
+          <article class="post">
+  <div class="post-header">
+    <h2 class="post-title"><a href="/posts/when-to-build-your-own-billing-engine/">When To Build Your Own Billing Engine</a></h2>
+    <div class="post-metadata">
+      <time class="post-timestamp">October 24, 2016</time>
+    </div>
+  </div>
+
+  <div class="post-body">
+      <p>Back when we started <a href="https://www.drip.co">Drip</a> in 2012, it was customary to write your own recurring billing engine.</p>
+
+<p>Fundamentally, a SaaS billing engine is simply a scheduled task that runs each month for each customer and hits a payment API to charge them. Layered on top that is the concept of pricing tiers, trial periods, failed charge retry, proration, annual plans, and invoice generation.</p>
+
+<p>Most developers these days choose not to build their own billing engine, as free platforms like Stripe subscriptions promise to rid your application code of complex billing logic. It seems like a no-brainer, right?</p>
+
+<p></p>
+
+<p>At <a href="https://www.drip.co">Drip</a>, we discovered that many of our billing needs actually fall outside the &ldquo;sweet spot&rdquo; of recurring billing solutions on the market today. Rather than shoehorning into Stripe subscriptions, it was simpler to manage the recurring aspect of billing ourselves alongside all the other custom logic we were implementing.</p>
+
+<p>If your application shares similar billing characteristics as Drip, you may also find that building your own billing engine is the simpler option.</p>
+
+<h2>Metered plans</h2>
+
+<p>Drip&rsquo;s pricing tiers are fundamentally based on the number of subscribers in your account. At the time of writing, the &ldquo;Starter&rdquo; plan allows up to 100 subscribers, the &ldquo;Basic&rdquo; plan allows up to 2,500 subscribers, and so on. The highest published plan level we have is our &ldquo;Business&rdquo; plan for $149, but it doesn&rsquo;t stop there. When your usage exceeds 12,500 subscribers, we utilize a step function to determine your price:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>amount = $149 + $35 * ceil((subscriber_count - 12,500) / 5,000)
+</code></pre></div>
+<p>We actually split that calculation into multiple steps, so that we can also generate a unique name for the plan and figure out the subscriber limit:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>factor = ceil((subscriber_count - 12,500) / 5,000)
+amount = $149 + $35 * factor
+subscriber_limit = 12,500 + (5,000 * factor)
+name = "Enterprise-#{factor}"
+</code></pre></div>
+<p>Theoretically, there are an infinite number of possible Drip plans: Enterprise-1, Enterprise-2, &hellip; , Enterprise-100, and so on.</p>
+
+<p>Another characteristic of Drip&rsquo;s billing engine is plan auto-adjustment. As soon as a customer exceeds the limits of their current plan, we automatically move them to a plan that fits their usage (and send them an email letting them know what happened).</p>
+
+<p>Most billing platforms assume you have a discrete set of plans. While it is possible to programmatically create new plans in Stripe using the API, for example, it is still up to you to compute the plan amount in your own code. This is a big leak in the abstraction and requires your application to have deep knowledge about your pricing tiers.</p>
+
+<h2>Grandfathering and price testing</h2>
+
+<p>We&rsquo;ve raised prices several times over the past few years as Drip has become a more valuable platform. We are strong believers that (in most cases) you should not raise prices for existing customers &ndash; a concept often referred to as &ldquo;grandfathering&rdquo;. For Drip, this means making sure that if a customer gets auto-upgraded, the plan we put them on will be computed based on what the pricing structure was when they became a customer.</p>
+
+<p>To make this happen, we introduced the concept of <strong>versioned billing</strong>. When a customer signs up, they are assigned a version number corresponding to whatever pricing is currently advertised. Each version has its own:</p>
+
+<ul>
+<li>Set of standard pricing tiers</li>
+<li>Formula for computing &ldquo;enterprise&rdquo; tiers</li>
+<li>Subscriber and broadcast sending limits</li>
+</ul>
+
+<p>This guarantees that existing customers will never be impacted by new pricing changes (unless their version is modified). With versioning in place, you are free to experiment with new pricing structures and even A/B test them against each other without worrying about impacting existing customers.</p>
+
+<h2>Annual plans</h2>
+
+<p>Collecting a year&rsquo;s worth of revenue from your customers (in exchange for a nice discount) is an excellent way to improve your cash flow and fund your growth drivers, especially if you are a self-funded company. Yet, annual billing is major challenge to pull off for companies with metered plans. This is likely why it&rsquo;s difficult to find any other email marketing provider with similar market positioning as Drip that offers annual plans.</p>
+
+<p>Here&rsquo;s the challenge: suppose a customer decides to buy an annual plan while they are on our $49 plan. The customer has just paid $490 for their next year of service and does not expect to get billed for another twelve months. But if we are doing our job right, this customer is successful with Drip and cruises over the subscriber limit of the $49 plan in no time. This leaves us with a few options:</p>
+
+<ul>
+<li>Charge the customer right away for the prorated difference</li>
+<li>Eat the difference and charge the customer at the higher plan level next year</li>
+</ul>
+
+<p>Neither of these choices are acceptable. Some of the most successful Drip customers have been known to climb three (or more) pricing tiers in the span of one month. Attempting to charge prorated amounts would make for very messy bookkeeping and might actually result in the customer getting charged more often than if they were on monthly billing. (Customers often upgrade to annual to make their bookkeeping simpler).</p>
+
+<p>To overcome these obstacles at Drip, we implemented a credit-based system. When a customer upgrades to annual, they &ldquo;buy&rdquo; a certain amount of credit at a discounted rate. At the moment, one year of the $49 plan costs $490 and the customer is given $588 of credit on their subscription. The customer is still billed on a monthly basis, but instead of charging their credit card, we deduct their current plan amount from their credit balance.</p>
+
+<p>If they get auto-upgraded, no problem &ndash; we will just end up chipping away at their credit balance faster. This means the customer may have to end up paying again before one year has passed, but at least we are charging them at the latest possible point instead of every time they exceed their limits.</p>
+
+<h2>Keeping everything in sync</h2>
+
+<p>When I was building <a href="https://codetree.com">Codetree</a>, I decided to use Stripe subscriptions because the pricing structure was much simpler than Drip&rsquo;s. One of the trickiest parts to manage was keeping the Codetree database in sync with the data stored in Stripe.</p>
+
+<p>At a minimum, you must install a webhook to consume events from Stripe so that you will know when your subscriptions transition to different states. Although Stripe&rsquo;s webhooks are well-documented, I still had to write a fair amount of code to ensure that payloads were being processed correctly.</p>
+
+<p>I also had to write code to handle registration, plan changes, cancellations, reactivations, and manual adjustments (like one-off trial extensions). Implementing that functionality in Drip&rsquo;s custom billing engine was notably simpler, because it did not involve hitting an external API for every task.</p>
+
+<hr>
+
+<p>The objective here is not to criticize existing billing platforms, but rather to challenge the assumption that it is always easier to reach for an existing platform than build your own.</p>
+
+<p>If you have a discrete set of plans that do not auto-adjust and you anticipate your business model to remain fairly stable, then adopting a platform like Stripe subscriptions is probably the way to go. But if your business model resembles Drip&rsquo;s, it&rsquo;s worth considering giving yourself the flexibility of controlling the whole billing process.</p>
+
+  </div>
+
+    <div class="post-social">
+      <a href="https://twitter.com/share"
+         class="twitter-share-button"
+         data-url="http://www.derrickreimer.com/posts/when-to-build-your-own-billing-engine/"
+         data-text="When To Build Your Own Billing Engine"
+         data-via="derrickreimer.com"
+         data-size="large">Tweet</a>
+</article>
+
+  <div id="disqus_thread"></div>
+<script>
+var disqus_config = function () {
+this.page.url = 'http://www.derrickreimer.com/posts/when-to-build-your-own-billing-engine/';
+this.page.identifier = 'a0982ba894b6eefe4aa376bad84d518d58cc35f5219109f1de7562da1c54baa8';
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//scalingsaas.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+      </div>
+    </div>
+
+    <!-- Twitter share buttons -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+    <!-- Event tracking -->
+      <script type="text/javascript">
+        analytics.track('Viewed article', {
+          title: 'When To Build Your Own Billing Engine',
+          path: document.location.pathname,
+        });
+      </script>
+  </body>
+</html>

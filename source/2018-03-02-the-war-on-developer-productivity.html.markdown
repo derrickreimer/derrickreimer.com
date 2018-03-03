@@ -58,16 +58,14 @@ As makers:
 
 Having spent most of my career crafting and architecting software to make companies more efficient, this is not merely a business challenge worth solving — it’s a personal mission.
 
-We are undeniably standing on the shoulders of giants. Slack (and other similar chat tools) have made many great contributions to the fabric of the modern workplace. They’ve proven the value of housing team discussions in a central place. They’ve demonstrated that it’s possible to feel connected even when distributed.
+We are undeniably standing on the shoulders of giants. Slack (and other similar chat tools) have made many great contributions to the fabric of the modern workplace. They’ve proven the value of housing team discussions in a central place. They’ve demonstrated that it’s possible to feel connected even when distributed. They’ve served me more animated GIFs than I ever could have imagined.
 
-They’ve served me more animated GIFs than I ever could have imagined (for that, I will be forever grateful).
-
-And yet, their flaws are killing developer productivity. We must establish a healthy balance between asynchronous and real time communication, and restore the promise of increasing connectedness while minimizing chaos.
+And yet, their flaws are killing developer productivity. We must establish a healthy balance between asynchronous and real time communication, and restore the promise of connecting teams without all the chaos.
 
 **Isn’t it time your main productivity tool actually made you more productive?**
 
 <div class="inline-opt-in">
-  <p><strong>If this resonated with you, I need your help!</strong> Drop your email address below to voice your support. I promise, no spam. I'll keep you in the loop about new developments in my quest to solve this problem. 🌟🌟🌟</p>
+  <p><strong>If this resonates with you, I need your help!</strong> Drop your email address below to voice your support. I promise, no spam. I'll keep you in the loop about new developments in my quest to solve this problem. 🌟🌟🌟</p>
 
   <form action="https://www.getdrip.com/forms/612157132/submissions" method="post" data-drip-embedded-form="612157132">
     <div class="inline-opt-in__field">

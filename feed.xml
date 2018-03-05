@@ -13,7 +13,7 @@
     <link rel="alternate" href="http://www.derrickreimer.com/posts/the-war-on-developer-productivity/"/>
     <id>http://www.derrickreimer.com/posts/the-war-on-developer-productivity/</id>
     <published>2018-03-01T18:00:00-06:00</published>
-    <updated>2018-03-05T10:55:06-06:00</updated>
+    <updated>2018-03-05T12:21:37-06:00</updated>
     <author>
       <name>Derrick Reimer</name>
     </author>
@@ -88,7 +88,7 @@
 
   &lt;form action="https://www.getdrip.com/forms/612157132/submissions" method="post" data-drip-embedded-form="612157132"&gt;
     &lt;div class="inline-opt-in__field"&gt;
-      &lt;input type="text" name="fields[email]" value="" class="inline-opt-in__input" /&gt;
+      &lt;input type="email" name="fields[email]" value="" class="inline-opt-in__input" /&gt;
       &lt;input type="submit" value="Count me in 👍" class="inline-opt-in__submit" data-drip-attribute="sign-up-button" /&gt;
     &lt;/div&gt;
   &lt;/form&gt;
@@ -165,7 +165,7 @@
 
   &lt;form action="https://www.getdrip.com/forms/612157132/submissions" method="post" data-drip-embedded-form="612157132"&gt;
     &lt;div class="inline-opt-in__field"&gt;
-      &lt;input type="text" name="fields[email]" value="" class="inline-opt-in__input" /&gt;
+      &lt;input type="email" name="fields[email]" value="" class="inline-opt-in__input" /&gt;
       &lt;input type="submit" value="Count me in 👍" class="inline-opt-in__submit" data-drip-attribute="sign-up-button" /&gt;
     &lt;/div&gt;
   &lt;/form&gt;

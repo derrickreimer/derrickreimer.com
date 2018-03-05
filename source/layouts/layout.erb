@@ -32,6 +32,9 @@
     <meta property="og:type" content="text/html" />
     <meta property="og:url" content="http://www.derrickreimer.com<%= current_page.url %>" />
     <meta property="og:image" content="http://www.derrickreimer.com/images/logo-square-300.png" />
+    <% if current_page.data.description %>
+      <meta property="og:description" content="<%= current_page.data.description %>" />
+    <% end %>
   </head>
   <body class="<%= page_classes %>">
     <div class="hello-bar">

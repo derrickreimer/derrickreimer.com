@@ -2,6 +2,7 @@
 title: "The War on Developer Productivity (And How I Intend to Win It)"
 date: 2018-03-02
 author: Derrick Reimer
+description: "In the beginning, Slack seemed like an indelible leap ahead. Fast forward five years, and I'm convinced it has become the single greatest threat to developer productivity in the modern workplace."
 ---
 
 Do you remember the first time you used Slack at work?

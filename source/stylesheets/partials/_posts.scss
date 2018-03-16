@@ -4,15 +4,19 @@
 
 .post-header {
   margin-bottom: $small-spacing;
+  // padding-bottom: $small-spacing;
+  // text-align: center;
+  // border-bottom: 1px double $light-gray;
 }
 
 .post-title {
-  font-size: 42px;
+  // font-size: 42px;
   margin-top: 0;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   letter-spacing: -1px;
   line-height: $heading-line-height;
-  font-weight: normal;
+  font-size: 42px;
+  font-weight: 800;
 
   a {
     color: $dark-gray;
@@ -29,7 +33,7 @@
 
 .post-metadata {
   margin-bottom: 0;
-  color: $medium-gray;
+  color: #777;
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;

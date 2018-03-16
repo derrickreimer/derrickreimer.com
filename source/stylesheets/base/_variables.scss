@@ -12,7 +12,7 @@ $gutter: modular-scale(3, 1em, $golden) !global;
 
 // Typography
 $base-font-family: $font-stack-system;
-$heading-font-family: $font-stack-adamina;
+$heading-font-family: $font-stack-system;
 $mono-font-family: 'Inconsolata', $font-stack-courier-new;
 
 // Font Sizes
@@ -24,7 +24,7 @@ $sidebar-font-size: $base-font-size * 0.8;
 $base-line-height: 1.7;
 $code-line-height: 1.5;
 $subheading-line-height: 1.5;
-$heading-line-height: 1.5;
+$heading-line-height: 1.4;
 
 // Other Sizes
 $base-border-radius: 3px;

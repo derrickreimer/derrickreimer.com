@@ -21,6 +21,8 @@ Simply put, it ended the need to _wait_.
 
 In the beginning, this seemed like an indelible leap ahead. Fast forward five years, and I'm convinced it has become the single greatest threat to developer productivity in the modern workplace.
 
+READMORE
+
 **The problem is that today's chat tools are amplifying the troublesome parts of human nature, rather than minimizing them.**
 
 - We are impatient.

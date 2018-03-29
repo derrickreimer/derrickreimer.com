@@ -4,10 +4,150 @@
   <id>http://www.derrickreimer.com/</id>
   <link href="http://www.derrickreimer.com/"/>
   <link href="http://www.derrickreimer.com/feed.xml" rel="self"/>
-  <updated>2018-03-01T18:00:00-06:00</updated>
+  <updated>2018-03-28T19:00:00-05:00</updated>
   <author>
     <name>Derrick Reimer</name>
   </author>
+  <entry>
+    <title>Building Level #1: Idea Validation</title>
+    <link rel="alternate" href="http://www.derrickreimer.com/posts/building-level-1-idea-validation/"/>
+    <id>http://www.derrickreimer.com/posts/building-level-1-idea-validation/</id>
+    <published>2018-03-28T19:00:00-05:00</published>
+    <updated>2018-03-29T12:46:34-05:00</updated>
+    <author>
+      <name>Derrick Reimer</name>
+    </author>
+    <summary type="html">&lt;p&gt;Over the past two weeks, I’ve had 21 conversations with people who are fed up with interruptive chat tools.&lt;/p&gt;
+
+&lt;p&gt;One sentiment, in particular, has been unanimous: everyone has expressed a willingness and desire to be involved in the process of solving this problem. In that spirit, this post is the first of many where I’ll share details about the process of building Level.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;Over the past two weeks, I&amp;rsquo;ve had 21 conversations with people who are fed up with interruptive chat tools.&lt;/p&gt;
+
+&lt;p&gt;One sentiment, in particular, has been unanimous: everyone has expressed a willingness and desire to be involved in the process of solving this problem. In that spirit, this post is the first of many where I&amp;rsquo;ll share details about the process of building Level.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;Like many who have ventured into startup land, I&amp;rsquo;ve learned what can happen when you assume that the problems &lt;em&gt;you&lt;/em&gt; are experiencing are the same as your target market is suffering.&lt;/p&gt;
+
+&lt;p&gt;My mission right now is to become as confident as possible that the product I want to build is going to resonate with my chosen niche of customers.&lt;/p&gt;
+
+&lt;h2&gt;Establishing the narrative&lt;/h2&gt;
+
+&lt;p&gt;Before I could begin the validation process, I first needed to find people who are likely experiencing similar problems. My vehicle of choice for generating inbound interest was &lt;a href="http://www.derrickreimer.com/posts/the-war-on-developer-productivity/"&gt;a manifesto&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I spent over 10 hours writing, editing, rewriting parts, and refining some more. My Drip co-founder, Rob, played the role of editor. (If you find yourself crafting a piece like this, it helps tremendously to have a second set of eyes!)&lt;/p&gt;
+
+&lt;p&gt;The primary goal was to stir enough emotion in the reader to compel them to take action &amp;mdash; in this case, to put their email address in the opt-in form with this call-to-action:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;If this resonates with you, I need your help! Drop your email address below to voice your support. I promise, no spam. I’ll keep you in the loop about new developments in my quest to solve this problem. 🌟🌟🌟&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I published the manifesto on my final day at Drip (to uphold a public promise I made on my podcast) but opted to hold off actively promoting it until the following Monday when I would be available to engage with folks online.&lt;/p&gt;
+
+&lt;p&gt;The promotion went like this:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Post a tweet linking to the manifesto&lt;/li&gt;
+&lt;li&gt;Directly reach out to friends for a share on Twitter&lt;/li&gt;
+&lt;li&gt;Pour $100 into promoting the tweet&lt;/li&gt;
+&lt;li&gt;Share it on Hacker News and Reddit&lt;/li&gt;
+&lt;li&gt;Email my newsletter about it&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In total, this effort drove:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2,300 uniques to the website&lt;/li&gt;
+&lt;li&gt;56 retweets&lt;/li&gt;
+&lt;li&gt;262 new subscribers&lt;/li&gt;
+&lt;li&gt;A bunch of conversations&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The Twitter Ads promotion was not very successful. It drove 27,000 impressions, but only 18 link clicks and 0 retweets. Next time, I would try configuring my audience rather than relying on Twitter to choose who to show the promoted tweet.&lt;/p&gt;
+
+&lt;p&gt;A week later, Basecamp founder David Heinemeier Hansson (DHH) serendipitously tweeted a link to the manifesto to his 286k followers:&lt;/p&gt;
+
+&lt;blockquote class="twitter-tweet" data-lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;“The single greatest threat to developer productivity in the modern workplace” &lt;a href="https://t.co/yV2IehhCGh"&gt;https://t.co/yV2IehhCGh&lt;/a&gt;&lt;/p&gt;&amp;mdash; DHH (@dhh) &lt;a href="https://twitter.com/dhh/status/973583032623009793?ref_src=twsrc%5Etfw"&gt;March 13, 2018&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;br&gt;
+This tweet drove even more traffic than the initial promotion (but fewer email subscribers). As of today, 526 people have joined the list. Overall, I&amp;rsquo;m quite happy with the initial reception.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/manifesto-traffic.png" alt="Manifesto traffic" /&gt;&lt;/p&gt;
+
+&lt;h2&gt;Talking to people&lt;/h2&gt;
+
+&lt;p&gt;The next step was to learn more specifically about what&amp;rsquo;s not working for folks. The manifesto was intentionally vague about how I&amp;rsquo;m thinking of solving the problem, so as not to introduce too much bias.&lt;/p&gt;
+
+&lt;p&gt;I considered emailing only a subset of the list to gauge the volume of response but decided to throw caution to the wind and send it to everyone. My goal was to book at least ten one-on-one conversations in the coming week. I was honestly not quite sure what to expect.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s the email copy:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;Subject: May I ask a favor?
+
+Hey {{ subscriber.first_name }},
+
+It's been a whirlwind week! I officially launched the manifesto
+to the world last Monday (March 5th). In case you forgot, it's the
+one about The War on Developer Productivity.
+
+You and 520 others have joined the movement so far! 🎉
+
+Now, the real work begins. I have a bunch of ideas scribbled in my
+notebook already, but I want to hear about your experience with chat
+in the workplace.
+
+What's working for you? What's not working for you?
+
+This is your opportunity to help steer the product vision.
+
+If you're game, click below to make your voice heard:
+
+👉 Book 20 minutes to chat with Derrick [link]
+
+Until next time,
+Derrick
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It turns out people were very eager to chat. Here are the email metrics:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;80% open rate&lt;/li&gt;
+&lt;li&gt;30% click rate&lt;/li&gt;
+&lt;li&gt;8.6% conversion rate (42 bookings)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That&amp;rsquo;s over 14 hours of conversations with potential customers!&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m using &lt;a href="https://calendly.com/"&gt;Calendly&lt;/a&gt; to manage scheduling and &lt;a href="https://zoom.us/"&gt;Zoom&lt;/a&gt; for the video calls. I intentionally restricted them to afternoons to save my morning hours for creative work, which proved to be a wise choice.&lt;/p&gt;
+
+&lt;p&gt;The calls are a mix of free-form conversation and structured information gathering. It&amp;rsquo;s ever-evolving, but here&amp;rsquo;s what the questionnaire currently looks like:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;May I record this call?&lt;/strong&gt; It&amp;rsquo;s polite to ask first.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;What is your company and what is your role?&lt;/strong&gt; This question helps me determine whether the person is a decision maker in their organization and helps me understand their perspective as either a maker, manager, or combo of the two.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;How large is your team?&lt;/strong&gt; This one is important because, in my experience, chat tends to become increasingly chaotic as team sizes grow.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;What tools do you use today?&lt;/strong&gt; I&amp;rsquo;m particularly interested in what the balance is between chat, project management, and email in their organization.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Why are you interested in Level? What problems do you want it to solve?&lt;/strong&gt; At this point, the conversation turns free-form.  My goal here is to understand the root of the problem they are experiencing.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;What integrations do you use?&lt;/strong&gt; My goal with this question is to learn which integrations are essential and gauge their level of satisfaction with them.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Would you be willing to switch?&lt;/strong&gt; The idea here is to assess how entrenched they are in their current tools and what the most significant hurdles would be for switching. If the person is a not decision maker, I phrase this a bit differently.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Do you pay for your current tool?&lt;/strong&gt; This one helps me gauge their willingness to pay for Level.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I&amp;rsquo;m about halfway through the scheduled calls right now and it has been time well spent. There are a handful of ideas that keep surfacing over and over again. These are already helping to shape my assumptions about how the product ought to work. Hearing the words people use to describe their problems will help me craft impactful copy once I begin marketing the product.&lt;/p&gt;
+
+&lt;p&gt;My friend Ben reminded me, &amp;ldquo;Your first five customers are probably in that group.&amp;rdquo; I am enjoying building personal connections with fans of the mission &amp;mdash; one of the many advantages of being small in an industry full of giants.&lt;/p&gt;
+
+&lt;h2&gt;Next steps&lt;/h2&gt;
+
+&lt;p&gt;I&amp;rsquo;ve been working on a prototype in my spare time over last few months, mostly to play with a new technology stack (more details on that in a future post). To avoid introducing unnecessary inertia, I will likely start with a fresh repository and harvest parts from the prototype as needed.&lt;/p&gt;
+
+&lt;p&gt;Before getting too deep into writing code, I&amp;rsquo;m planning to work with my designer to nail down some concrete UI flows. I&amp;rsquo;m a fan of the design-first approach, and I&amp;rsquo;m eager to share more details with folks to keep the feedback cycle tight.&lt;/p&gt;
+
+&lt;p&gt;Until next time!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>The War on Developer Productivity (And How I Intend to Win It)</title>
     <link rel="alternate" href="http://www.derrickreimer.com/posts/the-war-on-developer-productivity/"/>

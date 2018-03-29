@@ -47,6 +47,7 @@
   }
 
   pre {
+    margin-bottom: $small-spacing;
     padding: $base-spacing / 3;
     line-height: $code-line-height;
     background-color: $secondary-background-color;
@@ -60,10 +61,13 @@
   }
 
   ul {
-    margin-left: $base-spacing;
+    margin-left: 40px;
     margin-bottom: $small-spacing;
     list-style-type: disc;
-    list-style-position: outside;
+  }
+
+  ol {
+    margin-bottom: $small-spacing;
   }
 }
 

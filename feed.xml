@@ -153,7 +153,7 @@ Derrick
     <link rel="alternate" href="http://www.derrickreimer.com/posts/the-war-on-developer-productivity/"/>
     <id>http://www.derrickreimer.com/posts/the-war-on-developer-productivity/</id>
     <published>2018-03-01T18:00:00-06:00</published>
-    <updated>2018-03-05T12:21:37-06:00</updated>
+    <updated>2018-03-29T15:50:26-05:00</updated>
     <author>
       <name>Derrick Reimer</name>
     </author>
@@ -171,69 +171,9 @@ Derrick
 
 &lt;p&gt;Simply put, it ended the need to &lt;em&gt;wait&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;In the beginning, this seemed like an indelible leap ahead. Fast forward five years, and I&amp;rsquo;m convinced it has become the single greatest threat to developer productivity in the modern workplace.&lt;/p&gt;
+&lt;p&gt;In the beginning, this seemed like an indelible leap ahead. Fast forward five years, and I’m convinced it has become the single greatest threat to developer productivity in the modern workplace.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;The problem is that today&amp;rsquo;s chat tools are amplifying the troublesome parts of human nature, rather than minimizing them.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;We are impatient.&lt;/li&gt;
-&lt;li&gt;We feel anxiety for &amp;ldquo;unread&amp;rdquo; badges.&lt;/li&gt;
-&lt;li&gt;We are addicted to push notifications.&lt;/li&gt;
-&lt;li&gt;We think things are more urgent than they really are.&lt;/li&gt;
-&lt;li&gt;We care about our team’s perceptions and don&amp;rsquo;t want to look like we’re slacking off.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Don’t get me wrong, chat is not intrinsically bad. It’s part of what made Slack feel so magical at first, and it’s a key ingredient that is here to stay. The ability to engage with your team in real time is vital — but only when the discussion &lt;em&gt;must&lt;/em&gt; be synchronous.&lt;/p&gt;
-
-&lt;p&gt;Chat is a &lt;em&gt;greedy&lt;/em&gt; mode of communication.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;It doesn’t care if you are deep in flow.&lt;/li&gt;
-&lt;li&gt;It begs you to incessantly clear its notification badges.&lt;/li&gt;
-&lt;li&gt;It buries important conversations among idle chatter when you snooze it.&lt;/li&gt;
-&lt;li&gt;It must be used with restraint or it becomes toxic.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;You might be thinking, “Slack is not broken, you are just misusing it.”&lt;/p&gt;
-
-&lt;p&gt;In theory, I agree with that sentiment. Slack is &lt;em&gt;built&lt;/em&gt; for synchronous communication. If your team has the discipline to only use Slack for real time conversations and hold asynchronous discussions elsewhere (via email, inside a project management app, etc.), then you have achieved a rare feat.&lt;/p&gt;
-
-&lt;p&gt;For the rest of us, that is simply not our reality. I co-founded Drip (acquired by Leadpages in 2016) and led engineering there for the last five years. In that time, our use of Slack scaled from just me and my co-founder to over sixty people. Despite my attempts to redirect discussions to their “proper” forum, our team’s use of Slack only escalated.&lt;/p&gt;
-
-&lt;p&gt;The cognitive overhead of always choosing the ideal place to hold a conversation proved to be too high.&lt;/p&gt;
-
-&lt;p&gt;The truth is that &lt;em&gt;makers&lt;/em&gt; feel the pain much more than &lt;em&gt;managers&lt;/em&gt;. A manager’s job is to be available for interruptions by their team. An effective manager is one who provides servant leadership and strives to keep their team unblocked.&lt;/p&gt;
-
-&lt;p&gt;Even the most respectful manager will inevitably interfere with maker time because Slack does very little to prevent it — in fact, it encourages it.&lt;/p&gt;
-
-&lt;p&gt;As makers:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;We know that most discussions are not so urgent they warrant breaking flow&lt;/li&gt;
-&lt;li&gt;We know the painful cost of context switching&lt;/li&gt;
-&lt;li&gt;We’d much rather be “addicted” to our craft than our chat tool&lt;/li&gt;
-&lt;li&gt;We believe that unmitigated access to our push notifications is damn near criminal&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Having spent most of my career crafting and architecting software to make companies more efficient, this is not merely a business challenge worth solving — it’s a personal mission.&lt;/p&gt;
-
-&lt;p&gt;We are undeniably standing on the shoulders of giants. Slack (and other similar chat tools) have made many great contributions to the fabric of the modern workplace. They’ve proven the value of housing team discussions in a central place. They’ve demonstrated that it’s possible to feel connected even when distributed. They’ve served me more animated GIFs than I ever could have imagined.&lt;/p&gt;
-
-&lt;p&gt;And yet, their flaws are killing developer productivity. We must establish a healthy balance between asynchronous and real time communication, and restore the promise of connecting teams without all the chaos.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Isn’t it time your main productivity tool actually made you more productive?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class="inline-opt-in"&gt;
-  &lt;p&gt;&lt;strong&gt;If this resonates with you, I need your help!&lt;/strong&gt; Drop your email address below to voice your support. I promise, no spam. I&amp;rsquo;ll keep you in the loop about new developments in my quest to solve this problem. 🌟🌟🌟&lt;/p&gt;
-
-  &lt;form action="https://www.getdrip.com/forms/612157132/submissions" method="post" data-drip-embedded-form="612157132"&gt;
-    &lt;div class="inline-opt-in__field"&gt;
-      &lt;input type="email" name="fields[email]" value="" class="inline-opt-in__input" /&gt;
-      &lt;input type="submit" value="Count me in 👍" class="inline-opt-in__submit" data-drip-attribute="sign-up-button" /&gt;
-    &lt;/div&gt;
-  &lt;/form&gt;
-&lt;/div&gt;
-</summary>
+&lt;p&gt;&lt;/p&gt;</summary>
     <content type="html">&lt;p&gt;Do you remember the first time you used Slack at work?&lt;/p&gt;
 
 &lt;p&gt;I vividly recall the impact it had on our mostly-distributed startup crew. For the first time ever I felt connected to my remote colleagues as if we were in the same building.&lt;/p&gt;
@@ -249,6 +189,8 @@ Derrick
 &lt;p&gt;Simply put, it ended the need to &lt;em&gt;wait&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;In the beginning, this seemed like an indelible leap ahead. Fast forward five years, and I&amp;rsquo;m convinced it has become the single greatest threat to developer productivity in the modern workplace.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;The problem is that today&amp;rsquo;s chat tools are amplifying the troublesome parts of human nature, rather than minimizing them.&lt;/strong&gt;&lt;/p&gt;
 

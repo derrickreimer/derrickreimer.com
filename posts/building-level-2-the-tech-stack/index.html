@@ -1,0 +1,291 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="/favicon.png">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+    <title>Building Level #2: The Tech Stack - derrickreimer.com</title>
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+
+    <link href="/stylesheets/site.css" rel="stylesheet" />
+    <link href="/stylesheets/github.css" rel="stylesheet" />
+    <script src="/javascripts/analytics.js"></script>
+
+    <script type="text/javascript">
+      analytics.initialize({
+        'Google Analytics': {
+           trackingId: 'UA-75340229-1'
+         },
+         'Drip': {
+           account: '8045758'
+         }
+      });
+
+      analytics.page();
+    </script>
+
+    <meta property="og:title" content="Building Level #2: The Tech Stack - derrickreimer.com" />
+    <meta property="og:type" content="text/html" />
+    <meta property="og:url" content="http://www.derrickreimer.com/posts/building-level-2-the-tech-stack/" />
+    <meta property="og:image" content="http://www.derrickreimer.com/images/logo-square-300.png" />
+  </head>
+  <body class="posts posts_building-level-2-the-tech-stack posts_building-level-2-the-tech-stack_index">
+    <div class="hello-bar">
+      <div class="main-content">
+        <strong>I'm starting something new.</strong>
+        <a href="/posts/the-war-on-developer-productivity" class="hello-bar__button">Read the manifesto &rarr;</a>
+      </div>
+    </div>
+<div class="page-header ">      <div class="page-navigation">
+        <div class="site-container">
+          <h1 class="site-title">
+            <a href="/">
+                <img src="/images/signature-black.png" alt="Derrick Reimer" class="signature-logo" />
+            </a>
+          </h1>
+
+          <ul class="page-header-nav">
+            <li class="page-header-nav-item">
+              <a href="/about/">About</a>
+            </li>
+
+            <li class="page-header-nav-item">
+              <a href="http://artofproductpodcast.com">Podcast</a>
+            </li>
+
+            <li class="page-header-nav-item">
+              <a href="mailto:derrick@derrickreimer.com">Email Me</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+</div>
+    <div class="site-container">
+      <div class="main-content">
+          <article class="post">
+  <div class="post-header">
+    <h2 class="post-title"><a href="/posts/building-level-2-the-tech-stack/">Building Level #2: The Tech Stack</a></h2>
+    <div class="post-metadata">
+      <time class="post-timestamp">April 13, 2018</time>
+    </div>
+  </div>
+
+  <div class="post-body">
+      <p>For the last nine months, I&rsquo;ve been building a prototype of Level.</p>
+
+<p>The reason is two-fold: I needed an environment in which to play with product ideas swirling around in my head, and I wanted to gain experience with some new technologies.</p>
+
+<p>I&rsquo;ve long been a proponent of <a href="/posts/choosing-the-perfect-tech-stack/">choosing &ldquo;boring&rdquo; technologies</a>, especially when starting a new project that already has inherent risk. However, that doesn&rsquo;t mean you should <em>never</em> learn new languages and frameworks, especially if the new stack appears to fit the problem space better.</p>
+
+<p>Building the prototype was a way for me to gain confidence in my technology choices. Although it is not a perfect implementation of the product, it&rsquo;s a close enough approximation to get a feel for where pieces of the stack shine and where things get a little hairy.</p>
+
+<p></p>
+
+<p>Elm&rsquo;s promise of painless refactoring and zero runtime errors looks very appealing. But what does it feel like to write front-end code in a functional language? And how does the Elm Architecture scale for a single-page app with a significant amount of state to manage?</p>
+
+<p>These types of questions are not able to be answered by implementing &ldquo;Hello World&rdquo; or running through getting started tutorials. I had to get my hands dirty to find out for myself.</p>
+
+<p>After months of experimentation, I now feel confident that I have the Level stack nailed down.</p>
+
+<h2>Elixir &amp; Phoenix</h2>
+
+<p>Elixir initially appealed to me for many reasons:</p>
+
+<ul>
+<li>The syntax feels like Ruby.</li>
+<li>It is inherently more performant than Ruby, given the same quantity of system resources.</li>
+<li>It&rsquo;s a functional language with immutable data structures and powerful pattern matching. (I&rsquo;ve personally grown a bit weary from mutability over the years.)</li>
+<li>It has a native test framework, vibrant package ecosystem, and build tooling.</li>
+<li>The community is active.</li>
+<li>It is excellent at <a href="http://phoenixframework.org/blog/the-road-to-2-million-websocket-connections">handling many simultaneous connections</a>.</li>
+<li>Erlang (the underlying language) powers large portions of global telecommunication infrastructure and has been around for decades.</li>
+</ul>
+
+<p>Fervent support from <a href="https://thoughtbot.com/services/elixir-phoenix">thoughtbot</a>, an industry leader that I highly respect, also encouraged me to give it a try:</p>
+
+<blockquote>
+<p>Elixir/Phoenix is now my default choice for greenfield web applications. I would only choose to use Rails in cases where necessary libraries for a project did not yet exist in Elixir. And even then, I’d consider writing them.</p>
+
+<p>&mdash; Derek Prior</p>
+</blockquote>
+
+<p>Phoenix is the de-facto web framework in the Elixir world, for good reasons. It&rsquo;s blazing fast, and its tooling feels quite similar to Rails.</p>
+
+<p>One of trickiest parts of the functional paradigm is figuring out how to organize your code. A few months into my experimentation period, the team released <a href="http://phoenixframework.org/blog/phoenix-1-3-0-released">Phoenix 1.3</a> which centered around improving project structure with <a href="https://hexdocs.pm/phoenix/contexts.html">contexts</a>. This release gave me much needed clarity on how to design a maintainable functional codebase.</p>
+
+<h2>Elm</h2>
+
+<p>Most of the time, I&rsquo;m a proponent of server-side rendered HTML for web applications. I&rsquo;m of the mind that client-side rendering is usually unnecessary and only overcomplicates the architecture.</p>
+
+<p>Here are my key criteria for determining whether it makes sense to consider building a single-page app:</p>
+
+<ul>
+<li>Is the core of application real-time?</li>
+<li>Will the application remain open for hours at a time without page refreshes?</li>
+<li>Is microsecond performance critical for most interactions?</li>
+<li>Is there a significant amount of state shared between most pages?</li>
+</ul>
+
+<p>For Level, the answer to all of these is yes.</p>
+
+<p>It&rsquo;s not <em>impossible</em> to service all these requirements with a healthy dose of caching and frameworks like <a href="https://github.com/turbolinks/turbolinks">Turbolinks</a>. But, I believe there is a threshold beyond which it becomes more complicated to stick with the server-side approach once the amount of state becomes sufficiently complex.</p>
+
+<p>Choosing a front-end framework is an act of gambling. I&rsquo;ve witnessed many colleagues invest in the hottest new frameworks, only to see them become abandoned. I can imagine how many millions of dollars companies have wasted on rewrites.</p>
+
+<p>As you might imagine, I was not looking forward to rolling the dice for Level. Then I discovered <a href="http://elm-lang.org/">Elm</a>.</p>
+
+<p>Elm is a Haskell-inspired functional language that compiles into JavaScript. It is famously impossible to generate a runtime exception in Elm because of the type system and compiler. Writing Elm feels almost nothing like writing JavaScript (and I&rsquo;m personally not sad about that).</p>
+
+<p>A big selling point for me is that there is no need for external frameworks (like React) in the Elm world. The core libraries know how to render HTML and perform all the various tasks you need for web apps (like making HTTP requests). In fact, the Elm Architecture was a big inspiration for Redux, the state management library for JavaScript.</p>
+
+<p>The most prominent risk with Elm is the question of longevity: will Elm be around for the long haul? It&rsquo;s hard to say for sure, but there is an ever-growing list of well-resourced companies using Elm in production, and the creator has spoken at length about his long-term vision for the language.</p>
+
+<h2>GraphQL</h2>
+
+<p>GraphQL is an API query language developed by Facebook. It works a bit differently than typical REST APIs:</p>
+
+<ul>
+<li>Operations take place through a single endpoint</li>
+<li>Queries specify what fields they want to be returned</li>
+<li>You can fetch related nodes in a single call (hence the &ldquo;graph&rdquo;)</li>
+<li>It has a type system</li>
+</ul>
+
+<p>I&rsquo;ll use an example to demonstrate the power of GraphQL.</p>
+
+<p>Say you have a <code>Post</code> resource that belongs to a <code>User</code> and you want to list out all posts with their associated user&rsquo;s name. The GraphQL query might look something like this:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>{
+  posts(first: 2) {
+    body
+    user {
+      name
+    }
+  }
+}
+</code></pre></div>
+<p>And the response would look like this:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>{
+  "data": {
+    "posts": [{
+      "body": "Hello Jane!",
+      "user": {
+        "name": "John Doe"
+      }
+    }, {
+      "body": "Hi John!",
+      "user": {
+        "name": "Jane Doe"
+      }
+    }]
+  }
+}
+</code></pre></div>
+<p>To perform a similar operation with a standard REST API, you might hit a <code>/posts</code> endpoint that returns an array of data like this:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>[{
+  "id": 123456,
+  "user_id": 54321,
+  "body": "Hello Jane!",
+  "title": "Greetings",
+  "inserted_at": "2018-04-12T12:00:00Z"
+}, ...
+]
+</code></pre></div>
+<p>To get the user&rsquo;s name, we would then need to hit a <code>/users/:user_id</code> route for each user and receive back all the data for each user (even though we only care about their name).</p>
+
+<p>Since this results in a lot of roundtrips, a typical way to mitigate this is to include a portion of the related user&rsquo;s data in the post payload:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>[{
+  "id": 123456,
+  "user_id": 54321,
+  "body": "Hello Jane!",
+  "title": "Greetings",
+  "inserted_at": "2018-04-12T12:00:00Z",
+  "user": {
+    "name": "John Doe"
+  }
+}, ...
+]
+</code></pre></div>
+<p>The problem with this approach is that it couples your API design to your specific use cases. As more use cases stack up, the tendency is to continue adding more fields to the payload until it becomes a bloated mess.</p>
+
+<p>Furthermore, it&rsquo;s impossible to envision all the ways users will want to crawl their data, which is one of the reasons why leading platforms like GitHub, Shopify, and Facebook have begun adopting GraphQL for their public APIs.</p>
+
+<p>I have found GraphQL to be a delight to work with, and Elixir support via the <a href="http://absinthe-graphql.org/">Absinthe</a> library is fantastic.</p>
+
+<h2>Miscellanea</h2>
+
+<p>I&rsquo;d be remiss if I didn&rsquo;t mention a few other key dependencies:</p>
+
+<ul>
+<li><a href="https://www.postgresql.org/">PostgreSQL</a> for data storage</li>
+<li><a href="https://tailwindcss.com/">Tailwind CSS</a> for building the design system</li>
+<li><a href="http://brunch.io/">Brunch</a> for building front-end assets</li>
+<li><a href="https://yarnpkg.com/en/">Yarn</a> for managing node dependencies</li>
+</ul>
+
+<p>I could probably write several thousand more words about the various technologies in Level, but alas I must go forth and build!</p>
+
+<p>If you&rsquo;re interested, <a href="https://github.com/levelhq/level">take a spin through the actual Level codebase on GitHub</a>!</p>
+
+  </div>
+
+    <div class="post-social">
+      <a href="https://twitter.com/share"
+         class="twitter-share-button"
+         data-url="http://www.derrickreimer.com/posts/building-level-2-the-tech-stack/"
+         data-text="Building Level #2: The Tech Stack"
+         data-via="derrickreimer.com"
+         data-size="large">Tweet</a>
+</article>
+
+  <div id="disqus_thread"></div>
+<script>
+var disqus_config = function () {
+this.page.url = 'http://www.derrickreimer.com/posts/building-level-2-the-tech-stack/';
+this.page.identifier = 'f1c8808ed0977662248c98ea6cfd33f87f88dbea821c613df565c174d44d7882';
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//scalingsaas.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+      </div>
+    </div>
+
+    <!-- Twitter share buttons -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+    <!-- Event tracking -->
+      <script type="text/javascript">
+        analytics.track('Viewed article', {
+          title: 'Building Level #2: The Tech Stack',
+          path: document.location.pathname,
+        });
+      </script>
+
+    <script>
+      window.productHuntUpcoming = {
+        appId: 5884,
+        position: 'bottomLeft',
+      };
+
+      (function(doc, scr, src, a, b) {
+        a = doc.createElement(scr);
+        b = doc.getElementsByTagName(scr)[0];
+        a.async = true;
+        a.src = src;
+        b.parentNode.insertBefore(a, b);
+      })(document, 'script', 'https://assets.producthunt.com/assets/upwigloader.js');
+    </script>
+  </body>
+</html>

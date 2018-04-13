@@ -4,10 +4,184 @@
   <id>http://www.derrickreimer.com/</id>
   <link href="http://www.derrickreimer.com/"/>
   <link href="http://www.derrickreimer.com/feed.xml" rel="self"/>
-  <updated>2018-03-28T19:00:00-05:00</updated>
+  <updated>2018-04-12T19:00:00-05:00</updated>
   <author>
     <name>Derrick Reimer</name>
   </author>
+  <entry>
+    <title>Building Level #2: The Tech Stack</title>
+    <link rel="alternate" href="http://www.derrickreimer.com/posts/building-level-2-the-tech-stack/"/>
+    <id>http://www.derrickreimer.com/posts/building-level-2-the-tech-stack/</id>
+    <published>2018-04-12T19:00:00-05:00</published>
+    <updated>2018-04-13T09:55:15-05:00</updated>
+    <author>
+      <name>Derrick Reimer</name>
+    </author>
+    <summary type="html">&lt;p&gt;For the last nine months, I’ve been building a prototype of Level.&lt;/p&gt;
+
+&lt;p&gt;The reason is two-fold: I needed an environment in which to play with product ideas swirling around in my head, and I wanted to gain experience with some new technologies.&lt;/p&gt;
+
+&lt;p&gt;I’ve long been a proponent of &lt;a href="/posts/choosing-the-perfect-tech-stack/"&gt;choosing “boring” technologies&lt;/a&gt;, especially when starting a new project that already has inherent risk. However, that doesn’t mean you should &lt;em&gt;never&lt;/em&gt; learn new languages and frameworks, especially if the new stack appears to fit the problem space better.&lt;/p&gt;
+
+&lt;p&gt;Building the prototype was a way for me to gain confidence in my technology choices. Although it is not a perfect implementation of the product, it’s a close enough approximation to get a feel for where pieces of the stack shine and where things get a little hairy.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;For the last nine months, I&amp;rsquo;ve been building a prototype of Level.&lt;/p&gt;
+
+&lt;p&gt;The reason is two-fold: I needed an environment in which to play with product ideas swirling around in my head, and I wanted to gain experience with some new technologies.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve long been a proponent of &lt;a href="/posts/choosing-the-perfect-tech-stack/"&gt;choosing &amp;ldquo;boring&amp;rdquo; technologies&lt;/a&gt;, especially when starting a new project that already has inherent risk. However, that doesn&amp;rsquo;t mean you should &lt;em&gt;never&lt;/em&gt; learn new languages and frameworks, especially if the new stack appears to fit the problem space better.&lt;/p&gt;
+
+&lt;p&gt;Building the prototype was a way for me to gain confidence in my technology choices. Although it is not a perfect implementation of the product, it&amp;rsquo;s a close enough approximation to get a feel for where pieces of the stack shine and where things get a little hairy.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;Elm&amp;rsquo;s promise of painless refactoring and zero runtime errors looks very appealing. But what does it feel like to write front-end code in a functional language? And how does the Elm Architecture scale for a single-page app with a significant amount of state to manage?&lt;/p&gt;
+
+&lt;p&gt;These types of questions are not able to be answered by implementing &amp;ldquo;Hello World&amp;rdquo; or running through getting started tutorials. I had to get my hands dirty to find out for myself.&lt;/p&gt;
+
+&lt;p&gt;After months of experimentation, I now feel confident that I have the Level stack nailed down.&lt;/p&gt;
+
+&lt;h2&gt;Elixir &amp;amp; Phoenix&lt;/h2&gt;
+
+&lt;p&gt;Elixir initially appealed to me for many reasons:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The syntax feels like Ruby.&lt;/li&gt;
+&lt;li&gt;It is inherently more performant than Ruby, given the same quantity of system resources.&lt;/li&gt;
+&lt;li&gt;It&amp;rsquo;s a functional language with immutable data structures and powerful pattern matching. (I&amp;rsquo;ve personally grown a bit weary from mutability over the years.)&lt;/li&gt;
+&lt;li&gt;It has a native test framework, vibrant package ecosystem, and build tooling.&lt;/li&gt;
+&lt;li&gt;The community is active.&lt;/li&gt;
+&lt;li&gt;It is excellent at &lt;a href="http://phoenixframework.org/blog/the-road-to-2-million-websocket-connections"&gt;handling many simultaneous connections&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Erlang (the underlying language) powers large portions of global telecommunication infrastructure and has been around for decades.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Fervent support from &lt;a href="https://thoughtbot.com/services/elixir-phoenix"&gt;thoughtbot&lt;/a&gt;, an industry leader that I highly respect, also encouraged me to give it a try:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Elixir/Phoenix is now my default choice for greenfield web applications. I would only choose to use Rails in cases where necessary libraries for a project did not yet exist in Elixir. And even then, I’d consider writing them.&lt;/p&gt;
+
+&lt;p&gt;&amp;mdash; Derek Prior&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Phoenix is the de-facto web framework in the Elixir world, for good reasons. It&amp;rsquo;s blazing fast, and its tooling feels quite similar to Rails.&lt;/p&gt;
+
+&lt;p&gt;One of trickiest parts of the functional paradigm is figuring out how to organize your code. A few months into my experimentation period, the team released &lt;a href="http://phoenixframework.org/blog/phoenix-1-3-0-released"&gt;Phoenix 1.3&lt;/a&gt; which centered around improving project structure with &lt;a href="https://hexdocs.pm/phoenix/contexts.html"&gt;contexts&lt;/a&gt;. This release gave me much needed clarity on how to design a maintainable functional codebase.&lt;/p&gt;
+
+&lt;h2&gt;Elm&lt;/h2&gt;
+
+&lt;p&gt;Most of the time, I&amp;rsquo;m a proponent of server-side rendered HTML for web applications. I&amp;rsquo;m of the mind that client-side rendering is usually unnecessary and only overcomplicates the architecture.&lt;/p&gt;
+
+&lt;p&gt;Here are my key criteria for determining whether it makes sense to consider building a single-page app:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Is the core of application real-time?&lt;/li&gt;
+&lt;li&gt;Will the application remain open for hours at a time without page refreshes?&lt;/li&gt;
+&lt;li&gt;Is microsecond performance critical for most interactions?&lt;/li&gt;
+&lt;li&gt;Is there a significant amount of state shared between most pages?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For Level, the answer to all of these is yes.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s not &lt;em&gt;impossible&lt;/em&gt; to service all these requirements with a healthy dose of caching and frameworks like &lt;a href="https://github.com/turbolinks/turbolinks"&gt;Turbolinks&lt;/a&gt;. But, I believe there is a threshold beyond which it becomes more complicated to stick with the server-side approach once the amount of state becomes sufficiently complex.&lt;/p&gt;
+
+&lt;p&gt;Choosing a front-end framework is an act of gambling. I&amp;rsquo;ve witnessed many colleagues invest in the hottest new frameworks, only to see them become abandoned. I can imagine how many millions of dollars companies have wasted on rewrites.&lt;/p&gt;
+
+&lt;p&gt;As you might imagine, I was not looking forward to rolling the dice for Level. Then I discovered &lt;a href="http://elm-lang.org/"&gt;Elm&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Elm is a Haskell-inspired functional language that compiles into JavaScript. It is famously impossible to generate a runtime exception in Elm because of the type system and compiler. Writing Elm feels almost nothing like writing JavaScript (and I&amp;rsquo;m personally not sad about that).&lt;/p&gt;
+
+&lt;p&gt;A big selling point for me is that there is no need for external frameworks (like React) in the Elm world. The core libraries know how to render HTML and perform all the various tasks you need for web apps (like making HTTP requests). In fact, the Elm Architecture was a big inspiration for Redux, the state management library for JavaScript.&lt;/p&gt;
+
+&lt;p&gt;The most prominent risk with Elm is the question of longevity: will Elm be around for the long haul? It&amp;rsquo;s hard to say for sure, but there is an ever-growing list of well-resourced companies using Elm in production, and the creator has spoken at length about his long-term vision for the language.&lt;/p&gt;
+
+&lt;h2&gt;GraphQL&lt;/h2&gt;
+
+&lt;p&gt;GraphQL is an API query language developed by Facebook. It works a bit differently than typical REST APIs:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Operations take place through a single endpoint&lt;/li&gt;
+&lt;li&gt;Queries specify what fields they want to be returned&lt;/li&gt;
+&lt;li&gt;You can fetch related nodes in a single call (hence the &amp;ldquo;graph&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;It has a type system&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I&amp;rsquo;ll use an example to demonstrate the power of GraphQL.&lt;/p&gt;
+
+&lt;p&gt;Say you have a &lt;code&gt;Post&lt;/code&gt; resource that belongs to a &lt;code&gt;User&lt;/code&gt; and you want to list out all posts with their associated user&amp;rsquo;s name. The GraphQL query might look something like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;{
+  posts(first: 2) {
+    body
+    user {
+      name
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And the response would look like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;{
+  "data": {
+    "posts": [{
+      "body": "Hello Jane!",
+      "user": {
+        "name": "John Doe"
+      }
+    }, {
+      "body": "Hi John!",
+      "user": {
+        "name": "Jane Doe"
+      }
+    }]
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To perform a similar operation with a standard REST API, you might hit a &lt;code&gt;/posts&lt;/code&gt; endpoint that returns an array of data like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;[{
+  "id": 123456,
+  "user_id": 54321,
+  "body": "Hello Jane!",
+  "title": "Greetings",
+  "inserted_at": "2018-04-12T12:00:00Z"
+}, ...
+]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To get the user&amp;rsquo;s name, we would then need to hit a &lt;code&gt;/users/:user_id&lt;/code&gt; route for each user and receive back all the data for each user (even though we only care about their name).&lt;/p&gt;
+
+&lt;p&gt;Since this results in a lot of roundtrips, a typical way to mitigate this is to include a portion of the related user&amp;rsquo;s data in the post payload:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;[{
+  "id": 123456,
+  "user_id": 54321,
+  "body": "Hello Jane!",
+  "title": "Greetings",
+  "inserted_at": "2018-04-12T12:00:00Z",
+  "user": {
+    "name": "John Doe"
+  }
+}, ...
+]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The problem with this approach is that it couples your API design to your specific use cases. As more use cases stack up, the tendency is to continue adding more fields to the payload until it becomes a bloated mess.&lt;/p&gt;
+
+&lt;p&gt;Furthermore, it&amp;rsquo;s impossible to envision all the ways users will want to crawl their data, which is one of the reasons why leading platforms like GitHub, Shopify, and Facebook have begun adopting GraphQL for their public APIs.&lt;/p&gt;
+
+&lt;p&gt;I have found GraphQL to be a delight to work with, and Elixir support via the &lt;a href="http://absinthe-graphql.org/"&gt;Absinthe&lt;/a&gt; library is fantastic.&lt;/p&gt;
+
+&lt;h2&gt;Miscellanea&lt;/h2&gt;
+
+&lt;p&gt;I&amp;rsquo;d be remiss if I didn&amp;rsquo;t mention a few other key dependencies:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.postgresql.org/"&gt;PostgreSQL&lt;/a&gt; for data storage&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://tailwindcss.com/"&gt;Tailwind CSS&lt;/a&gt; for building the design system&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://brunch.io/"&gt;Brunch&lt;/a&gt; for building front-end assets&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://yarnpkg.com/en/"&gt;Yarn&lt;/a&gt; for managing node dependencies&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I could probably write several thousand more words about the various technologies in Level, but alas I must go forth and build!&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re interested, &lt;a href="https://github.com/levelhq/level"&gt;take a spin through the actual Level codebase on GitHub&lt;/a&gt;!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Building Level #1: Idea Validation</title>
     <link rel="alternate" href="http://www.derrickreimer.com/posts/building-level-1-idea-validation/"/>

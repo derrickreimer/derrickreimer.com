@@ -13,7 +13,7 @@
     <link rel="alternate" href="http://www.derrickreimer.com/posts/building-level-2-the-tech-stack/"/>
     <id>http://www.derrickreimer.com/posts/building-level-2-the-tech-stack/</id>
     <published>2018-04-12T19:00:00-05:00</published>
-    <updated>2018-04-13T09:55:15-05:00</updated>
+    <updated>2018-04-13T11:36:53-05:00</updated>
     <author>
       <name>Derrick Reimer</name>
     </author>
@@ -110,7 +110,7 @@
 
 &lt;p&gt;Say you have a &lt;code&gt;Post&lt;/code&gt; resource that belongs to a &lt;code&gt;User&lt;/code&gt; and you want to list out all posts with their associated user&amp;rsquo;s name. The GraphQL query might look something like this:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;{
-  posts(first: 2) {
+  posts {
     body
     user {
       name
@@ -160,7 +160,7 @@
 }, ...
 ]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The problem with this approach is that it couples your API design to your specific use cases. As more use cases stack up, the tendency is to continue adding more fields to the payload until it becomes a bloated mess.&lt;/p&gt;
+&lt;p&gt;The problem with this approach is that it &lt;em&gt;couples&lt;/em&gt; your API design to your specific use cases. As more use cases stack up, the tendency is to continue adding more fields to the payload until it becomes a bloated mess.&lt;/p&gt;
 
 &lt;p&gt;Furthermore, it&amp;rsquo;s impossible to envision all the ways users will want to crawl their data, which is one of the reasons why leading platforms like GitHub, Shopify, and Facebook have begun adopting GraphQL for their public APIs.&lt;/p&gt;
 

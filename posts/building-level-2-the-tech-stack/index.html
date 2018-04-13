@@ -31,6 +31,7 @@
     <meta property="og:type" content="text/html" />
     <meta property="og:url" content="http://www.derrickreimer.com/posts/building-level-2-the-tech-stack/" />
     <meta property="og:image" content="http://www.derrickreimer.com/images/logo-square-300.png" />
+      <meta property="og:description" content="Learn about how I'm using Elixir, Elm, GraphQL, Tailwind CSS, and more in Level." />
   </head>
   <body class="posts posts_building-level-2-the-tech-stack posts_building-level-2-the-tech-stack_index">
     <div class="hello-bar">
@@ -158,7 +159,7 @@
 
 <p>Say you have a <code>Post</code> resource that belongs to a <code>User</code> and you want to list out all posts with their associated user&rsquo;s name. The GraphQL query might look something like this:</p>
 <div class="highlight"><pre class="highlight plaintext"><code>{
-  posts(first: 2) {
+  posts {
     body
     user {
       name
@@ -208,7 +209,7 @@
 }, ...
 ]
 </code></pre></div>
-<p>The problem with this approach is that it couples your API design to your specific use cases. As more use cases stack up, the tendency is to continue adding more fields to the payload until it becomes a bloated mess.</p>
+<p>The problem with this approach is that it <em>couples</em> your API design to your specific use cases. As more use cases stack up, the tendency is to continue adding more fields to the payload until it becomes a bloated mess.</p>
 
 <p>Furthermore, it&rsquo;s impossible to envision all the ways users will want to crawl their data, which is one of the reasons why leading platforms like GitHub, Shopify, and Facebook have begun adopting GraphQL for their public APIs.</p>
 

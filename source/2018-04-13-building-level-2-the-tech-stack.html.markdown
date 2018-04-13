@@ -83,7 +83,7 @@ Say you have a `Post` resource that belongs to a `User` and you want to list out
 
 ```
 {
-  posts(first: 2) {
+  posts {
     body
     user {
       name
@@ -143,7 +143,7 @@ Since this results in a lot of roundtrips, a typical way to mitigate this is to 
 ]
 ```
 
-The problem with this approach is that it couples your API design to your specific use cases. As more use cases stack up, the tendency is to continue adding more fields to the payload until it becomes a bloated mess.
+The problem with this approach is that it _couples_ your API design to your specific use cases. As more use cases stack up, the tendency is to continue adding more fields to the payload until it becomes a bloated mess.
 
 Furthermore, it's impossible to envision all the ways users will want to crawl their data, which is one of the reasons why leading platforms like GitHub, Shopify, and Facebook have begun adopting GraphQL for their public APIs.
 

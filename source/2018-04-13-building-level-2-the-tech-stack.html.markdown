@@ -155,7 +155,6 @@ I'd be remiss if I didn't mention a few other key dependencies:
 
 - [PostgreSQL](https://www.postgresql.org/) for data storage
 - [Tailwind CSS](https://tailwindcss.com/) for building the design system
-- [Brunch](http://brunch.io/) for building front-end assets
 - [Yarn](https://yarnpkg.com/en/) for managing node dependencies
 
 I could probably write several thousand more words about the various technologies in Level, but alas I must go forth and build!

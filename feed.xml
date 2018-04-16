@@ -13,7 +13,7 @@
     <link rel="alternate" href="http://www.derrickreimer.com/posts/building-level-2-the-tech-stack/"/>
     <id>http://www.derrickreimer.com/posts/building-level-2-the-tech-stack/</id>
     <published>2018-04-12T19:00:00-05:00</published>
-    <updated>2018-04-13T11:36:53-05:00</updated>
+    <updated>2018-04-16T09:56:07-05:00</updated>
     <author>
       <name>Derrick Reimer</name>
     </author>
@@ -173,7 +173,6 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.postgresql.org/"&gt;PostgreSQL&lt;/a&gt; for data storage&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://tailwindcss.com/"&gt;Tailwind CSS&lt;/a&gt; for building the design system&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://brunch.io/"&gt;Brunch&lt;/a&gt; for building front-end assets&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://yarnpkg.com/en/"&gt;Yarn&lt;/a&gt; for managing node dependencies&lt;/li&gt;
 &lt;/ul&gt;
 

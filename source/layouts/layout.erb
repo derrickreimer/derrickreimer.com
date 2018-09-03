@@ -36,12 +36,6 @@
     <% end %>
   </head>
   <body class="<%= page_classes %>">
-    <div class="hello-bar">
-      <div class="main-content">
-        <strong>I'm starting something new called Level.</strong>
-        <a href="https://level.app" class="hello-bar__button">Check it out &rarr;</a>
-      </div>
-    </div>
     <% page_header_div(current_page.data) do %>
       <div class="page-navigation">
         <div class="site-container">
@@ -65,7 +59,7 @@
             </li>
 
             <li class="page-header-nav-item">
-              <%= link_to 'Email Me', 'mailto:derrick@derrickreimer.com' %>
+              <%= link_to 'My Startup', 'https://level.app' %>
             </li>
           </ul>
         </div>
@@ -90,20 +84,5 @@
         });
       </script>
     <% end %>
-
-    <script>
-      window.productHuntUpcoming = {
-        appId: 5884,
-        position: 'bottomLeft',
-      };
-
-      (function(doc, scr, src, a, b) {
-        a = doc.createElement(scr);
-        b = doc.getElementsByTagName(scr)[0];
-        a.async = true;
-        a.src = src;
-        b.parentNode.insertBefore(a, b);
-      })(document, 'script', 'https://assets.producthunt.com/assets/upwigloader.js');
-    </script>
   </body>
 </html>

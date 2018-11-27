@@ -16,9 +16,6 @@
 
     <script type="text/javascript">
       analytics.initialize({
-        'Google Analytics': {
-           trackingId: 'UA-75340229-1'
-         },
          'Drip': {
            account: '8045758'
          }
@@ -161,5 +158,21 @@ we&rsquo;ve been up to recently.</p>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
     <!-- Event tracking -->
+
+    <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
+    <script>
+    (function(f, a, t, h, o, m){
+    	a[h]=a[h]||function(){
+    		(a[h].q=a[h].q||[]).push(arguments)
+    	};
+    	o=f.createElement('script'),
+    	m=f.getElementsByTagName('script')[0];
+    	o.async=1; o.src=t; o.id='fathom-script';
+    	m.parentNode.insertBefore(o,m)
+    })(document, window, '//level.usesfathom.com/tracker.js', 'fathom');
+    fathom('set', 'siteId', 'PKTEG');
+    fathom('trackPageview');
+    </script>
+    <!-- / Fathom -->
   </body>
 </html>

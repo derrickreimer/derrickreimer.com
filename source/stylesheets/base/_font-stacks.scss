@@ -6,6 +6,27 @@
 /// @link goo.gl/Cxb26i
 ////
 
+$font-stack-playfair: (
+  "Playfair Display",
+  "Times New Roman",
+  serif
+);
+
+$font-stack-lato: (
+  "Lato",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  "Roboto",
+  "Oxygen",
+  "Ubuntu",
+  "Cantarell",
+  "Fira Sans",
+  "Droid Sans",
+  "Helvetica Neue",
+  sans-serif,
+);
+
 $font-stack-helvetica: (
   "Helvetica Neue",
   "Helvetica",
@@ -28,6 +49,7 @@ $font-stack-verdana: (
 );
 
 $font-stack-system: (
+  "Lato",
   -apple-system,
   BlinkMacSystemFont,
   "Segoe UI",

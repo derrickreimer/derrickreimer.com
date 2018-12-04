@@ -1,5 +1,5 @@
 ---
-title: "Building Level #1: Idea Validation"
+title: "Building Level no. 1: Idea Validation"
 date: 2018-03-29
 author: Derrick Reimer
 ---

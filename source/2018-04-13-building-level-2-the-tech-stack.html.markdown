@@ -1,5 +1,5 @@
 ---
-title: "Building Level #2: The Tech Stack"
+title: "Building Level no. 2: The Tech Stack"
 date: 2018-04-13
 author: Derrick Reimer
 description: "Learn about how I'm using Elixir, Elm, GraphQL, Tailwind CSS, and more in Level."
